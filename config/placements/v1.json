@@ -1,0 +1,181 @@
+{
+  "id": "v1",
+  "label": "Pacific theater placement v1",
+  "locked_at": "2026-06-20",
+  "notes": "Approved core-10 MGRS midpoints, footprint sizes, Northrend 20\u00b0 rotation, and 4-tier overview stack.",
+  "anchor": {
+    "description": "Maelstrom pinned to central Pacific.",
+    "wow_tile_x": 33,
+    "wow_tile_y": 30,
+    "earth_lat": 21.1559,
+    "earth_lon": -175.0784
+  },
+  "mgrs_centers": {
+    "kalimdor": "54PYA9727128663",
+    "eastern_kingdoms": "10RGN7336444042",
+    "northrend": "59VLF6810117683",
+    "pandaria": "02LNM4578587791",
+    "broken_isles": "03STB5805214259",
+    "dragon_isles": "06TWN5016624232",
+    "maelstrom": "01QFD9952840615",
+    "kul_tiras": "05RPJ2311156007",
+    "zandalar": "03NXJ8363539185",
+    "khaz_algar": "57LWL8302715828"
+  },
+  "target_footprints": {
+    "kalimdor": {
+      "span_lat_deg": 46
+    },
+    "eastern_kingdoms": {
+      "span_lat_deg": 46
+    },
+    "northrend": {
+      "span_lat_deg": 28
+    },
+    "pandaria": {
+      "span_lat_deg": 28
+    },
+    "broken_isles": {
+      "max_span_deg": 16
+    },
+    "dragon_isles": {
+      "max_span_deg": 16
+    },
+    "maelstrom": {
+      "max_span_deg": 16
+    },
+    "kul_tiras": {
+      "max_span_deg": 16
+    },
+    "zandalar": {
+      "max_span_deg": 16
+    },
+    "khaz_algar": {
+      "max_span_deg": 16
+    }
+  },
+  "overlay_rotations": {
+    "northrend": 20
+  },
+  "offsets": {},
+  "freeze_position": [],
+  "earth_placement": {
+    "kalimdor": {
+      "center_lon": 143.7496,
+      "center_lat": 13.8122,
+      "span_lon": 25.7444,
+      "span_lat": 46.0,
+      "west": 130.87738,
+      "south": -9.1878,
+      "east": 156.62182,
+      "north": 36.8122,
+      "source": "MGRS 54PYA9727128663 (target footprint)"
+    },
+    "eastern_kingdoms": {
+      "center_lon": -120.2963,
+      "center_lat": 24.7868,
+      "span_lon": 34.1033,
+      "span_lat": 46.0,
+      "west": -137.34797,
+      "south": 1.7868,
+      "east": -103.24463,
+      "north": 47.7868,
+      "source": "MGRS 10RGN7336444042 (target footprint)"
+    },
+    "northrend": {
+      "center_lon": 168.7185,
+      "center_lat": 58.7789,
+      "span_lon": 68.7507,
+      "span_lat": 28.0,
+      "west": 134.34316,
+      "south": 44.7789,
+      "east": 203.09384,
+      "north": 72.7789,
+      "source": "MGRS 59VLF6810117683 (target footprint)",
+      "rotation_deg": 20.0
+    },
+    "pandaria": {
+      "center_lon": -170.5796,
+      "center_lat": -11.87,
+      "span_lon": 35.7648,
+      "span_lat": 28.0,
+      "west": -188.461982,
+      "south": -25.87,
+      "east": -152.697218,
+      "north": 2.13,
+      "source": "MGRS 02LNM4578587791 (target footprint)"
+    },
+    "broken_isles": {
+      "center_lon": -167.7241,
+      "center_lat": 37.1434,
+      "span_lon": 16.0,
+      "span_lat": 15.5883,
+      "west": -175.7241,
+      "south": 29.349271,
+      "east": -159.7241,
+      "north": 44.937529,
+      "source": "MGRS 03STB5805214259 (target footprint)"
+    },
+    "dragon_isles": {
+      "center_lon": -146.3878,
+      "center_lat": 42.6689,
+      "span_lon": 16.0,
+      "span_lat": 12.144,
+      "west": -154.3878,
+      "south": 36.596889,
+      "east": -138.3878,
+      "north": 48.740911,
+      "source": "MGRS 06TWN5016624232 (target footprint)"
+    },
+    "maelstrom": {
+      "center_lon": -175.0784,
+      "center_lat": 21.1559,
+      "span_lon": 16.0,
+      "span_lat": 14.9216,
+      "west": -183.0784,
+      "south": 13.695085,
+      "east": -167.0784,
+      "north": 28.616715,
+      "source": "MGRS 01QFD9952840615 (target footprint)"
+    },
+    "kul_tiras": {
+      "center_lon": -151.7718,
+      "center_lat": 25.8171,
+      "span_lon": 16.0,
+      "span_lat": 12.1289,
+      "west": -159.7718,
+      "south": 19.75267,
+      "east": -143.7718,
+      "north": 31.88153,
+      "source": "MGRS 05RPJ2311156007 (target footprint)"
+    },
+    "zandalar": {
+      "center_lon": -163.3355,
+      "center_lat": 7.5887,
+      "span_lon": 11.8936,
+      "span_lat": 16.0,
+      "west": -169.282321,
+      "south": -0.4113,
+      "east": -157.388679,
+      "north": 15.5887,
+      "source": "MGRS 03NXJ8363539185 (target footprint)"
+    },
+    "khaz_algar": {
+      "center_lon": 159.7552,
+      "center_lat": -8.9026,
+      "span_lon": 16.0,
+      "span_lat": 13.1727,
+      "west": 151.7552,
+      "south": -15.488952,
+      "east": 167.7552,
+      "north": -2.316248,
+      "source": "MGRS 57LWL8302715828 (target footprint)"
+    }
+  },
+  "rebuild": [
+    "python3 scripts/apply_geographic_placements.py",
+    "python3 scripts/build_pacific_vignette.py",
+    "python3 scripts/build_kml_superoverlay.py --layer-id <region> --tier overview --variant wowcommanderalpha --kml-only",
+    "python3 scripts/build_world_globe.py --variant wowcommanderalpha --kml-only --skip-poster"
+  ]
+}

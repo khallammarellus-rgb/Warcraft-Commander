@@ -1,0 +1,14 @@
+{
+  "name": "wow-commander-portal",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Cloudflare Pages host for WoW Commander Alpha campaign KML views",
+  "scripts": {
+    "build": "python3 ../scripts/publish_portal_site.py --no-deploy",
+    "deploy": "python3 ../scripts/publish_portal_site.py --deploy",
+    "preview": "npx wrangler pages dev dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.0"
+  }
+}

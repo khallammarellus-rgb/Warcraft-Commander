@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Zereth Mortis</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Zereth Mortis z0 0/0</name>
+      <drawOrder>85</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-3.04510000</north>
+          <south>-17.74510000</south>
+          <east>36.75604000</east>
+          <west>21.81076000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>113</minLodPixels>
+          <maxLodPixels>1618</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/zereth_mortis/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-3.04510000</north>
+        <south>-17.74510000</south>
+        <east>36.75604000</east>
+        <west>21.81076000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "factions": [
+    {
+      "id": "humans",
+      "label": "Humans",
+      "category": "Alliance",
+      "path": "Alliance/humans"
+    },
+    {
+      "id": "night_elves",
+      "label": "Night Elves",
+      "category": "Alliance",
+      "path": "Alliance/night_elves"
+    },
+    {
+      "id": "dwarves",
+      "label": "Dwarves",
+      "category": "Alliance",
+      "path": "Alliance/dwarves"
+    },
+    {
+      "id": "gnomes_mechagnome",
+      "label": "Gnomes / Mechagnome",
+      "category": "Alliance",
+      "path": "Alliance/gnomes_mechagnome"
+    },
+    {
+      "id": "draenei_lightforged",
+      "label": "Draenei / Lightforged",
+      "category": "Alliance",
+      "path": "Alliance/draenei_lightforged"
+    },
+    {
+      "id": "void_elves",
+      "label": "Void Elves",
+      "category": "Alliance",
+      "path": "Alliance/void_elves"
+    },
+    {
+      "id": "worgen_gilneans",
+      "label": "Gilneans (Worgen)",
+      "category": "Alliance",
+      "path": "Alliance/worgen_gilneans"
+    },
+    {
+      "id": "kul_tiran",
+      "label": "Kul Tiran",
+      "category": "Alliance",
+      "path": "Alliance/kul_tiran"
+    },
+    {
+      "id": "orc_maghar",
+      "label": "Orc / Mag'har",
+      "category": "Horde",
+      "path": "Horde/orc_maghar"
+    },
+    {
+      "id": "forsaken",
+      "label": "Forsaken",
+      "category": "Horde",
+      "path": "Horde/forsaken"
+    },
+    {
+      "id": "tauren_highmountain",
+      "label": "Tauren / Highmountain",
+      "category": "Horde",
+      "path": "Horde/tauren_highmountain"
+    },
+    {
+      "id": "troll_zandalari",
+      "label": "Troll / Zandalari",
+      "category": "Horde",
+      "path": "Horde/troll_zandalari"
+    },
+    {
+      "id": "blood_elf",
+      "label": "Blood Elf",
+      "category": "Horde",
+      "path": "Horde/blood_elf"
+    },
+    {
+      "id": "goblin",
+      "label": "Goblin",
+      "category": "Horde",
+      "path": "Horde/goblin"
+    },
+    {
+      "id": "nightborne",
+      "label": "Nightborne",
+      "category": "Horde",
+      "path": "Horde/nightborne"
+    },
+    {
+      "id": "vulpera",
+      "label": "Vulpera",
+      "category": "Horde",
+      "path": "Horde/vulpera"
+    },
+    {
+      "id": "scourge",
+      "label": "Scourge",
+      "category": "Antagonist",
+      "path": "Antagonist/scourge"
+    },
+    {
+      "id": "demons",
+      "label": "Demons",
+      "category": "Antagonist",
+      "path": "Antagonist/demons"
+    },
+    {
+      "id": "nerubians",
+      "label": "Nerubians",
+      "category": "Antagonist",
+      "path": "Antagonist/nerubians"
+    },
+    {
+      "id": "eldritch",
+      "label": "Eldritch",
+      "category": "Antagonist",
+      "path": "Antagonist/eldritch"
+    },
+    {
+      "id": "twilight_cult",
+      "label": "Twilight Cult",
+      "category": "Antagonist",
+      "path": "Antagonist/twilight_cult"
+    },
+    {
+      "id": "naga",
+      "label": "Naga",
+      "category": "Antagonist",
+      "path": "Antagonist/naga"
+    },
+    {
+      "id": "dracthyr",
+      "label": "Dracthyr",
+      "category": "Neutral",
+      "path": "Neutral/dracthyr"
+    },
+    {
+      "id": "earthen",
+      "label": "Earthen",
+      "category": "Neutral",
+      "path": "Neutral/earthen"
+    },
+    {
+      "id": "pandaren",
+      "label": "Pandaren",
+      "category": "Neutral",
+      "path": "Neutral/pandaren"
+    },
+    {
+      "id": "haranir",
+      "label": "Haranir",
+      "category": "Neutral",
+      "path": "Neutral/haranir"
+    },
+    {
+      "id": "dragonkin",
+      "label": "Dragonkin",
+      "category": "Neutral",
+      "path": "Neutral/dragonkin"
+    },
+    {
+      "id": "elementals",
+      "label": "Elementals",
+      "category": "Neutral",
+      "path": "Neutral/elementals"
+    },
+    {
+      "id": "pirates",
+      "label": "Pirates",
+      "category": "Neutral",
+      "path": "Neutral/pirates"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+WOW.EXPORT WORKFLOW
+====================
+
+Export directory (wow.export Settings):
+  WoW-Azeroth-Map/01-raw-export
+
+DO YOU NEED MULTIPLE ZOOM LEVELS?
+  No. Export only MAX detail (MINIMAP format).
+  build_kml_superoverlay.py creates zoom levels 0-7 automatically.
+
+EXCEPTION — Azeroth zoom-out poster:
+  maps/azeroth/poster/Azeroth Master Reference.png
+  (master layout image — landmass positions here define globe placement)
+
+After adding/updating the poster:
+  python3 scripts/derive_poster_placements.py
+  python3 scripts/build_world_globe.py
+
+AZEROTH SUB-REGIONS (Kalimdor, EK, Maelstrom, etc.)
+  All use wow.export map name: azeroth
+
+  IMPORTANT: Put exports in the correct region folder yourself.
+  Do NOT use sort_azeroth_tiles.py unless you exported ONE land mass and
+  want coordinate-based sorting.
+
+  Recommended (clearest):
+  1. Select tiles for ONE land mass only (e.g. all Eastern Kingdoms)
+  2. Export MINIMAP
+  3. Move/copy ALL new PNGs directly into that region folder, e.g.:
+       maps/eastern_kingdoms/minimap/
+       maps/kalimdor/minimap/
+       maps/maelstrom/minimap/
+       maps/nazjatar/minimap/
+       maps/mechagon/minimap/
+       maps/siren_isle/minimap/
+       maps/founders_point/minimap/
+       maps/razorwind_shores/minimap/
+       maps/misc_islands/minimap/   (small islands — placeholder)
+  4. Run: python3 scripts/check_exports.py
+
+  Optional sort script (only if you used _inbox for a single-region export):
+    python3 scripts/sort_azeroth_tiles.py --move
+
+OTHER CONTINENTS (Northrend, Pandaria, etc.)
+  Each has its own wow.export map name — see config/globe.json
+  Export MINIMAP directly into that folder's minimap/ subfolder.
+
+OPPOSITE HEMISPHERE (not Azeroth archipelago)
+  Outland, Draenor, Shadowlands, Emerald Dream, Zereth Mortis, Mardum, K'aresh, Voidstorm — far side of the globe.
+  List: config/globe.json → geographic_placement.opposite_hemisphere.ids
+
+  Export paths (base dir still 01-raw-export):
+    maps/outland/minimap
+    maps/draenor/minimap
+    maps/shadowlands/minimap
+    maps/emerald_dream/minimap
+    maps/zereth_mortis/minimap
+    maps/mardum/minimap
+    maps/karesh/minimap
+    maps/voidstorm/minimap
+
+  Layers start disabled in globe.json. After export:
+    1. Set enabled: true on the layer
+    2. Nudge MGRS in geographic_placement.mgrs_centers if needed
+    3. python3 scripts/apply_geographic_placements.py
+    4. python3 scripts/build_world_globe.py
+
+  Recreate folders:
+    python3 scripts/scaffold_extra_world_folders.py
+
+  wow.export often nests tiles under maps/<mapid>/minimap/ — flatten to zone/minimap/:
+    python3 scripts/flatten_wow_exports.py
+  (also mirrors extra worlds into rawfilenoocean/maps/<zone>/minimap/)
+
+SUBTERRANEAN ZONES (dungeons, raids, caverns)
+  Folders live under maps/subterranean/<parent>/<zone>/minimap/
+  Full list: config/subterranean.json
+
+  In wow.export Settings, base export dir stays:
+    WoW-Azeroth-Map/01-raw-export
+
+  Per export, set the path to the zone's minimap folder, e.g.:
+    maps/subterranean/eastern_kingdoms/molten_core/minimap
+    maps/subterranean/khaz_algar/undermine/minimap
+    maps/subterranean/kalimdor/firelands/minimap
+
+  Steps:
+  1. In wow.export, pick the dungeon/instance map (name may differ from folder id)
+  2. Export MINIMAP
+  3. Point export output at the matching minimap/ folder above
+  4. Run: python3 scripts/check_exports.py
+
+  Recreate folders anytime:
+    python3 scripts/scaffold_subterranean_folders.py
+
+CHECK STATUS ANYTIME:
+  python3 scripts/check_exports.py

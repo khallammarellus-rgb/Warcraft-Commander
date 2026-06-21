@@ -1,0 +1,3448 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Campaign Live (EDIT HERE)</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>48280320</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <description>Editable campaign markers for Google Earth Pro. Add placemarks here — not under Campaign Board NetworkLinks in doc.kml (those are read-only). After editing: File → Save, then python3 scripts/sync_campaign_live.py --push and refresh Campaign Board links in doc.kml.</description>
+    <open>0</open>
+    <Folder>
+      <name>Campaign Package (live)</name>
+      <open>0</open>
+      <Folder>
+        <name>Kalimdor</name>
+        <open>0</open>
+        <Folder>
+          <name>Kalimdor</name>
+          <description>Editable theater — syncs to campaign/kalimdor.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>36.81220000</north>
+              <south>-9.18780000</south>
+              <east>156.62182000</east>
+              <west>130.87738000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>294</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <Style id="faction-forsaken-icon">
+              <IconStyle>
+                <Icon>
+                  <href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href>
+                </Icon>
+              </IconStyle>
+              <LabelStyle>
+                <scale>0.9</scale>
+              </LabelStyle>
+            </Style>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+                <Folder>
+                  <name>1stBn</name>
+                  <description>WOW-SETUP-SCAFFOLD — Command echelon root for battalion. Place HQ here; subordinates in child folders.</description>
+                  <open>0</open>
+                  <Folder>
+                    <name>A Co</name>
+                    <description>WOW-SETUP-SCAFFOLD — Company markers under this battalion.</description>
+                    <open>0</open>
+                  </Folder>
+                  <Folder>
+                    <name>B Co</name>
+                    <description>WOW-SETUP-SCAFFOLD — Company markers under this battalion.</description>
+                    <open>0</open>
+                  </Folder>
+                  <Folder>
+                    <name>C Co</name>
+                    <description>WOW-SETUP-SCAFFOLD — Company markers under this battalion.</description>
+                    <open>0</open>
+                  </Folder>
+                  <Folder>
+                    <name>D Co</name>
+                    <description>WOW-SETUP-SCAFFOLD — Company markers under this battalion.</description>
+                    <open>0</open>
+                  </Folder>
+                  <Folder>
+                    <name>Operational Graphics</name>
+                    <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other operational graphics.</description>
+                    <open>0</open>
+                  </Folder>
+                  <Placemark>
+                    <name>1stBn HQ 1000/1000</name>
+                    <description>Commander Test Commander, Test Host. Executive Officer Nathanos Blightcaller.
+
+To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Forsaken. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.</description>
+                    <styleUrl>#faction-forsaken-icon</styleUrl>
+                    <Point>
+                      <coordinates>143.749600,13.812200,0</coordinates>
+                    </Point>
+                  </Placemark>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place strategic-tier unit placemarks here.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Strategic).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place operational-tier unit placemarks here.</description>
+                  <open>0</open>
+                  <Placemark>
+                    <name>A Co HQ 150/150</name>
+                    <description>Commander Casual Cmdr, Blue Force. Executive Officer Bolvar Fordragon.
+
+To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Humans. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.</description>
+                    <styleUrl>#faction-humans-icon</styleUrl>
+                    <Point>
+                      <coordinates>143.749600,13.812200,0</coordinates>
+                    </Point>
+                  </Placemark>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Operational).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place tactical-tier unit placemarks here.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Tactical).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+          <Folder>
+            <name>Razorwind Shores</name>
+            <description>Editable theater — syncs to campaign/razorwind_shores.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>16.33212900</north>
+                <south>11.96867100</south>
+                <east>155.08520000</east>
+                <west>150.58520000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Crestfall</name>
+            <description>Editable theater — syncs to campaign/misc_crestfall.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>22.42682000</north>
+                <south>19.62658000</south>
+                <east>173.05280000</east>
+                <west>170.05280000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Verdant Wilds</name>
+            <description>Editable theater — syncs to campaign/misc_islands10.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>28.32267600</north>
+                <south>25.64932400</south>
+                <east>166.01700000</east>
+                <west>163.01700000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Un'gol Ruins</name>
+            <description>Editable theater — syncs to campaign/misc_islands801.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>14.75211400</north>
+                <south>12.80968600</south>
+                <east>132.25440000</east>
+                <west>129.25440000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Havenswood</name>
+            <description>Editable theater — syncs to campaign/misc_islands802.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>35.30996900</north>
+                <south>32.82483100</south>
+                <east>147.31240000</east>
+                <west>144.31240000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Jorundall</name>
+            <description>Editable theater — syncs to campaign/misc_rymoore.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>28.34320000</north>
+                <south>25.34320000</south>
+                <east>157.15712100</east>
+                <west>154.46727900</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Eastern Kingdoms</name>
+        <open>0</open>
+        <Folder>
+          <name>Eastern Kingdoms</name>
+          <description>Editable theater — syncs to campaign/eastern_kingdoms.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>47.78680000</north>
+              <south>1.78680000</south>
+              <east>-103.24463000</east>
+              <west>-137.34797000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>294</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+          <Folder>
+            <name>Founders Point</name>
+            <description>Editable theater — syncs to campaign/founders_point.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>6.57002400</north>
+                <south>2.58277600</south>
+                <east>-136.80440000</east>
+                <west>-141.30440000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Tol Barad</name>
+            <description>Editable theater — syncs to campaign/tol_barad.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>22.69300000</north>
+                <south>18.19300000</south>
+                <east>-137.43806900</east>
+                <west>-140.18233100</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Scenario Islands Tutorial</name>
+            <description>Editable theater — syncs to campaign/misc_scenarioislandstutorial.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>17.72263400</north>
+                <south>14.84296600</south>
+                <east>-115.27130000</east>
+                <west>-118.27130000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Darkmoon Faire</name>
+            <description>Editable theater — syncs to campaign/misc_darkmoonfaire.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>-0.32946400</north>
+                <south>-3.32793600</south>
+                <east>-116.36480000</east>
+                <west>-119.36480000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Northrend</name>
+        <open>0</open>
+        <Folder>
+          <name>Northrend</name>
+          <description>Editable theater — syncs to campaign/northrend.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>72.77890000</north>
+              <south>44.77890000</south>
+              <east>203.09384000</east>
+              <west>134.34316000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>439</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Whispering Reef</name>
+            <description>Editable theater — syncs to campaign/misc_islands01.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>29.72344000</north>
+                <south>27.75056000</south>
+                <east>178.38910000</east>
+                <west>175.38910000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Northrend Battleground</name>
+            <description>Editable theater — syncs to campaign/misc_northrendbg.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>52.21592200</north>
+                <south>50.33927800</south>
+                <east>176.03830000</east>
+                <west>173.03830000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Pandaria</name>
+        <open>0</open>
+        <Folder>
+          <name>Pandaria</name>
+          <description>Editable theater — syncs to campaign/pandaria.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>2.13000000</north>
+              <south>-25.87000000</south>
+              <east>-152.69721800</east>
+              <west>-188.46198200</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>228</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+          <Folder>
+            <name>Wandering Isle</name>
+            <description>Editable theater — syncs to campaign/wandering_isle.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>-10.17336100</north>
+                <south>-13.11163900</south>
+                <east>-141.12800000</east>
+                <west>-145.62800000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Snowblossom Village</name>
+            <description>Editable theater — syncs to campaign/misc_islands_panderan_farm.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>-9.93753400</north>
+                <south>-12.87826600</south>
+                <east>-154.39910000</east>
+                <west>-157.39910000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Mogu Island</name>
+            <description>Editable theater — syncs to campaign/misc_moguisland.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>2.80561000</north>
+                <south>-0.19361000</south>
+                <east>-177.42650000</east>
+                <west>-180.42650000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Broken Isles</name>
+        <open>0</open>
+        <Folder>
+          <name>Broken Isles</name>
+          <description>Editable theater — syncs to campaign/broken_isles.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>44.93752900</north>
+              <south>29.34927100</south>
+              <east>-159.72410000</east>
+              <west>-175.72410000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+          <Folder>
+            <name>Nazjatar</name>
+            <description>Editable theater — syncs to campaign/nazjatar.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>22.05215400</north>
+                <south>18.43324600</south>
+                <east>-166.26990000</east>
+                <west>-170.76990000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Skittering Hollow</name>
+            <description>Editable theater — syncs to campaign/misc_islands22.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>38.81028000</north>
+                <south>36.43412000</south>
+                <east>-176.14720000</east>
+                <west>-179.14720000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Isle of Conquest</name>
+            <description>Editable theater — syncs to campaign/misc_isleofconquest.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>51.45937900</north>
+                <south>49.06202100</south>
+                <east>-175.42170000</east>
+                <west>-178.42170000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Dragon Isles</name>
+        <open>0</open>
+        <Folder>
+          <name>Dragon Isles</name>
+          <description>Editable theater — syncs to campaign/dragon_isles.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>48.74091100</north>
+              <south>36.59688900</south>
+              <east>-138.38780000</east>
+              <west>-154.38780000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>The Maelstrom</name>
+        <open>0</open>
+        <Folder>
+          <name>The Maelstrom</name>
+          <description>Editable theater — syncs to campaign/maelstrom.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>28.61671500</north>
+              <south>13.69508500</south>
+              <east>-167.07840000</east>
+              <west>-183.07840000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Kul Tiras</name>
+        <open>0</open>
+        <Folder>
+          <name>Kul Tiras</name>
+          <description>Editable theater — syncs to campaign/kul_tiras.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>31.88153000</north>
+              <south>19.75267000</south>
+              <east>-143.77180000</east>
+              <west>-159.77180000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>The Dread Chain</name>
+            <description>Editable theater — syncs to campaign/misc_necromancyisland.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>19.40962300</north>
+                <south>16.55617700</south>
+                <east>-151.78260000</east>
+                <west>-154.78260000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Zandalar</name>
+        <open>0</open>
+        <Folder>
+          <name>Zandalar</name>
+          <description>Editable theater — syncs to campaign/zandalar.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>15.58870000</north>
+              <south>-0.41130000</south>
+              <east>-157.38867900</east>
+              <west>-169.28232100</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Naval Battle Scenario</name>
+            <description>Editable theater — syncs to campaign/misc_navalbattlescenario.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>13.93511100</north>
+                <south>11.00588900</south>
+                <east>-152.41570000</east>
+                <west>-155.41570000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Exile's Reach</name>
+            <description>Editable theater — syncs to campaign/misc_exilesreach.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>9.95284300</north>
+                <south>6.98555700</south>
+                <east>-146.20040000</east>
+                <west>-149.20040000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Khaz Algar</name>
+        <open>0</open>
+        <Folder>
+          <name>Khaz Algar</name>
+          <description>Editable theater — syncs to campaign/khaz_algar.kml</description>
+          <open>0</open>
+          <Region>
+            <LatLonAltBox>
+              <north>-2.31624800</north>
+              <south>-15.48895200</south>
+              <east>167.75520000</east>
+              <west>151.75520000</west>
+            </LatLonAltBox>
+            <Lod>
+              <minLodPixels>103</minLodPixels>
+            </Lod>
+          </Region>
+          <Folder>
+            <name>Campaign Package</name>
+            <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+            <open>0</open>
+            <Folder>
+              <name>red-cell</name>
+              <description>Red force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>white-cell</name>
+              <description>White cell / referee — adjudication markers and discovered enemy.</description>
+              <open>0</open>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>redcell-discovered</name>
+                <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>bluecell-discovered</name>
+                <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                <open>0</open>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Major Islands</name>
+          <open>0</open>
+          <Folder>
+            <name>Siren Isle</name>
+            <description>Editable theater — syncs to campaign/siren_isle.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>2.71160000</north>
+                <south>-1.78840000</south>
+                <east>160.25485500</east>
+                <west>156.87974500</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder>
+            <name>Kezan</name>
+            <description>Editable theater — syncs to campaign/kezan.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>9.03380000</north>
+                <south>4.53380000</south>
+                <east>172.61498900</east>
+                <west>171.22061100</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder>
+          <name>Minor Isles</name>
+          <open>0</open>
+          <Folder>
+            <name>Molten Cay</name>
+            <description>Editable theater — syncs to campaign/misc_islands24.kml</description>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>11.07320000</north>
+                <south>8.07320000</south>
+                <east>169.06431000</east>
+                <west>167.23889000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Folder>
+              <name>Campaign Package</name>
+              <description>Faction and tier folders for this theater. Place each unit in one tier folder under red-cell or blue-cell. White-cell uses discovered folders for manual reveal.</description>
+              <open>0</open>
+              <Folder>
+                <name>red-cell</name>
+                <description>Red force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>blue-cell</name>
+                <description>Blue force — place friendly units and graphics here.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+              <Folder>
+                <name>white-cell</name>
+                <description>White cell / referee — adjudication markers and discovered enemy.</description>
+                <open>0</open>
+                <Folder>
+                  <name>Strategic</name>
+                  <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational</name>
+                  <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Tactical</name>
+                  <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>redcell-discovered</name>
+                  <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>bluecell-discovered</name>
+                  <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
+                  <open>0</open>
+                </Folder>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>Quick View</name>
+      <open>0</open>
+      <Placemark>
+        <name>Planet</name>
+        <description>Double-click to fly. tier=planet range=30,000 mi (48,280,320 m)</description>
+        <LookAt>
+          <longitude>-175.078400</longitude>
+          <latitude>21.155900</latitude>
+          <altitude>0</altitude>
+          <range>48280320</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Kalimdor</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>143.749600</longitude>
+          <latitude>13.812200</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Eastern Kingdoms</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-120.296300</longitude>
+          <latitude>24.786800</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Northrend</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>168.718500</longitude>
+          <latitude>58.778900</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Pandaria</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-170.579600</longitude>
+          <latitude>-11.870000</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Broken Isles</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-167.724100</longitude>
+          <latitude>37.143400</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Dragon Isles</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-146.387800</longitude>
+          <latitude>42.668900</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Kul Tiras</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-151.771800</longitude>
+          <latitude>25.817100</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Zandalar</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>-163.335500</longitude>
+          <latitude>7.588700</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+      <Placemark>
+        <name>Khaz Algar</name>
+        <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+        <LookAt>
+          <longitude>159.755200</longitude>
+          <latitude>-8.902600</latitude>
+          <altitude>0</altitude>
+          <range>4828032</range>
+          <tilt>0</tilt>
+          <heading>0</heading>
+        </LookAt>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,2 @@
+# Minimal deps for merge + hosted view build in CI
+# Copy scripts/ and campaign_hosted_views dependencies from the main project when bootstrapping.

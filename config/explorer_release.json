@@ -1,0 +1,12 @@
+{
+  "explorer_version": "3.0.0",
+  "label": "Azeroth Explorer — Pacific theater",
+  "globe_version": "v3",
+  "released_at": "2026-06-21",
+  "changelog": "Initial release: Azeroth Pacific cluster, major islands, and minor isles. Opposite-hemisphere worlds (Outland, Draenor, etc.) ship in future releases.",
+  "include_opposite_hemisphere": false,
+  "extra_regions": [],
+  "github_repo": "khallammarellus-rgb/Warcraft-Commander",
+  "github_releases_url": "",
+  "github_pages_url": ""
+}

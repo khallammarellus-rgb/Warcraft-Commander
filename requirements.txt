@@ -1,0 +1,6 @@
+# For scripts/build_kml_superoverlay.py and build_terrain_underlay.py
+Pillow>=10.0.0
+pyshp>=2.3.0
+
+# Campaign setup wizard TUI
+textual>=0.80

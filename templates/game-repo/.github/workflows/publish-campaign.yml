@@ -1,0 +1,71 @@
+name: Publish campaign board
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "campaign/**"
+      - "submissions/**"
+      - ".github/workflows/publish-campaign.yml"
+  workflow_dispatch:
+
+jobs:
+  merge-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+        working-directory: ${{ github.workspace }}
+
+      - name: Merge pending submissions
+        run: |
+          shopt -s nullglob
+          for f in submissions/red-cell/* submissions/blue-cell/* submissions/white-cell/*; do
+            [ -f "$f" ] || continue
+            cell=$(echo "$f" | cut -d/ -f2)
+            base=$(basename "$f")
+            theater=$(echo "$base" | sed -n 's/.*_\([a-z_]*\)\.kmz$/\1/p')
+            if [ -z "$theater" ]; then
+              for master in campaign/*.kml; do
+                python3 scripts/merge_campaign_submission.py \
+                  --master "$master" \
+                  --submission "$f" \
+                  --cell "$cell" || true
+              done
+            else
+              master="campaign/${theater}.kml"
+              [ -f "$master" ] && python3 scripts/merge_campaign_submission.py \
+                --master "$master" \
+                --submission "$f" \
+                --cell "$cell" || true
+            fi
+          done
+
+      - name: Build portal dist
+        run: python3 scripts/publish_portal_site.py --no-deploy
+        env:
+          WOW_COMMANDER_GAME_REPO: "1"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy portal/dist --project-name=wow-commander-campaign
+
+      - name: Discord notification
+        if: success() && secrets.DISCORD_WEBHOOK_URL != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -sS -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d '{"content":"WoW Commander campaign board updated and deployed to Cloudflare Pages."}'

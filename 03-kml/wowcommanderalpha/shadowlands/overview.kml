@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Shadowlands</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Shadowlands z0 0/0</name>
+      <drawOrder>40</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>86.04190000</north>
+          <south>59.04190000</south>
+          <east>25.20588000</east>
+          <west>-34.19248000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>379</minLodPixels>
+          <maxLodPixels>6433</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/shadowlands/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>86.04190000</north>
+        <south>59.04190000</south>
+        <east>25.20588000</east>
+        <west>-34.19248000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

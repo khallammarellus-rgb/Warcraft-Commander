@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>K'aresh</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>K'aresh z0 0/0</name>
+      <drawOrder>84</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>12.32450000</north>
+          <south>-2.37550000</south>
+          <east>36.34560000</east>
+          <west>20.36040000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>113</minLodPixels>
+          <maxLodPixels>1729</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/karesh/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>12.32450000</north>
+        <south>-2.37550000</south>
+        <east>36.34560000</east>
+        <west>20.36040000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

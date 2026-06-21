@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>The Awakening Machine</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>The Awakening Machine z0 0/0</name>
+      <drawOrder>147</drawOrder>
+      <altitude>-1700.0</altitude>
+      <altitudeMode>absolute</altitudeMode>
+      <Region>
+        <LatLonAltBox>
+          <north>-7.62760000</north>
+          <south>-8.97760000</south>
+          <east>162.11951000</east>
+          <west>159.39089000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>292</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/the_awakening_machine/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-7.62760000</north>
+        <south>-8.97760000</south>
+        <east>162.11951000</east>
+        <west>159.39089000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>
