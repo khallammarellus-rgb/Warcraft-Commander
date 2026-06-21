@@ -1,6 +1,6 @@
 # WoW Commander Alpha Project
 
-Build an interactive tiled globe of Azeroth for **Google Earth Pro** — wargaming, roleplay, and campaign markup.
+Interactive tiled globe of Azeroth for **Google Earth Pro** — wargaming, roleplay, and campaign markup.
 
 **Azeroth Explorer** ships the maps only (no wargame layer). Run `scripts/Build Azeroth Explorer.command` and find the zip in `exports/`. See [docs/EXPLORER_RELEASE.md](docs/EXPLORER_RELEASE.md).
 
@@ -10,13 +10,12 @@ See [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) for deferred items.
 
 ---
 
-## What you build
+## How
 
-1. Export minimap imagery from your WoW installation with **wow.export**.
-2. Run the project build scripts to slice tiles and generate KML superoverlays.
-3. Open the world index in **Google Earth Pro** and fly around Azeroth.
+1. Exported minimap imagery with **wow.export**.
+2. Superoverlays and Pyrmaid Tiles to aid in rendering.
+3. Camera Bookmark index in **Google Earth Pro** and fly around Azeroth.
 
-The map uses fantasy coordinates — it wraps the virtual globe like a decal, not real-world GPS. That keeps wargaming layouts simple.
 
 ---
 
@@ -62,7 +61,7 @@ python3 scripts/check_images.py
 
 ## WoW Commander — campaign play
 
-Install the full globe once (`03-kml/wowcommanderalpha/doc.kml`). Turns pass **markers only**, not map tiles.
+Install the full globe once (`03-kml/wowcommanderalpha/doc.kml`). Turns pass **markers only**, not changed map tiles.
 
 ### Player launcher
 
