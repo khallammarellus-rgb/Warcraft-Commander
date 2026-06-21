@@ -2,7 +2,7 @@
 
 Interactive tiled globe of Azeroth for **Google Earth Pro** — wargaming, roleplay, and campaign markup.
 
-**Azeroth Explorer** ships the maps only (no wargame layer). Run `scripts/Build Azeroth Explorer.command` and find the zip in `exports/`. See [docs/EXPLORER_RELEASE.md](docs/EXPLORER_RELEASE.md).
+**Azeroth Explorer** (maps only) is a separate project: `../Azeroth Explorer Project` → [Azeroth-Explorer on GitHub](https://github.com/khallammarellus-rgb/Azeroth-Explorer). Build in Commander, then run **`scripts/Sync Explorer Project.command`**.
 
 Tiles come from ocean-trimmed exports in `04-edited-exports`, anchored to full-grid reference data in `01-raw-export`. The active build variant is `wowcommanderalpha`.
 
@@ -97,15 +97,12 @@ Proximity reveal defaults to **1 km** for moved or new markers. Use honor rules 
 
 ---
 
-## Azeroth Explorer
+## Azeroth Explorer (separate folder + repo)
 
-Explorer is a standalone maps-only zip for players who only want to fly around Azeroth.
+1. Double-click **`scripts/Build Azeroth Explorer.command`** (builds `Azeroth Explorer/` + MAP zip in `exports/`)
+2. Double-click **`scripts/Sync Explorer Project.command`** (copies everything to `../Azeroth Explorer Project` and pushes the GitHub site)
 
-```bash
-python3 scripts/package_azeroth_explorer.py
-```
-
-Or double-click **`scripts/Build Azeroth Explorer.command`**. Open `Azeroth Explorer.kml` from the packaged folder in Google Earth Pro.
+Upload `Azeroth-Explorer-*-MAP.zip` from the Explorer project’s `exports/` folder to GitHub Releases.
 
 ---
 

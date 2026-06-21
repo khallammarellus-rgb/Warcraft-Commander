@@ -9,7 +9,7 @@ Use this when cutting a new **GitHub Release** zip for explorers (maps only, no 
 
 ## Standard release (Pacific only)
 
-1. Edit [`config/explorer_release.json`](../config/explorer_release.json):
+1. Edit `config/explorer_release.json` in the **Azeroth Explorer Project** (`../Azeroth Explorer Project/config/`):
    - Bump `explorer_version` (semver)
    - Update `changelog`
    - Set `released_at` to today
@@ -59,4 +59,4 @@ Major version aligns with `globe_version.id` in `config/globe.json` (currently `
 - `Azeroth Explorer/tiles/` (generated staging)
 - Large tile trees under `02-tiles/`
 
-Commit only: `config/explorer_release.json`, scripts, and docs.
+Explorer release config lives in the Explorer repo. Commander only holds build scripts and `config/explorer_project.json` (pointer to the Explorer folder).

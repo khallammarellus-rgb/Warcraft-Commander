@@ -1,0 +1,35 @@
+How to publish Azeroth Explorer on GitHub Releases
+==================================================
+
+CAN YOU REMOVE "Source code (zip)"?
+  No. GitHub always adds those two files. You cannot turn them off.
+
+CAN PLAYERS DOWNLOAD EVERYTHING IN ONE CLICK?
+  GitHub does not bundle your uploaded files into one zip.
+  Upload ONE map file instead of 86 small parts.
+
+WHAT TO UPLOAD
+  exports/Azeroth-Explorer-3.0.0-MAP.zip   (about 2 GB)
+
+  GitHub Releases allow up to 2 GB per uploaded file.
+  (The 25 MB limit is only for adding files to the repo Code tab.)
+
+STEPS
+  1. Build: double-click scripts/Build Azeroth Explorer.command
+  2. GitHub → Warcraft-Commander → Releases → Edit your release (or create new)
+  3. Delete the old 86 part files if they are still attached
+  4. Attach binaries → choose Azeroth-Explorer-3.0.0-MAP.zip
+  5. At the TOP of the release description, paste:
+
+     >>> DOWNLOAD: Azeroth-Explorer-3.0.0-MAP.zip <<<
+     Do NOT download "Source code (zip)" — that is the developer project, not the map.
+
+  6. Publish
+
+WHAT PLAYERS DOWNLOAD
+  One file: Azeroth-Explorer-3.0.0-MAP.zip
+  Unzip → open Azeroth Explorer.kml in Google Earth Pro
+
+IF THE 2 GB UPLOAD FAILS IN THE BROWSER
+  Rebuild with parts: python3 scripts/package_azeroth_explorer.py --skip-build --split-mb 25
+  Or host the zip on Google Drive / Dropbox and link it from your GitHub Pages site.

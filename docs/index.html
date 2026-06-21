@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Azeroth Explorer — Google Earth maps</title>
-  <meta name="description" content="Fly around World of Warcraft's Azeroth in Google Earth Pro. Maps only — no wargame markers.">
+  <title>Warcraft Commander — Google Earth wargame</title>
+  <meta name="description" content="WoW Commander Alpha: build and play a Google Earth wargame on Azeroth with campaign markers and turn export.">
   <style>
     :root {
       --bg: #0b1020;
@@ -14,7 +14,6 @@
       --muted: #93a4bd;
       --accent: #d4af37;
       --link: #7ec8ff;
-      --ok: #5fd38d;
     }
     * { box-sizing: border-box; }
     body {
@@ -46,7 +45,6 @@
       font-size: clamp(1.75rem, 5vw, 2.25rem);
       font-weight: 700;
       margin: 0 0 0.5rem;
-      color: var(--text);
     }
     .lead { color: var(--muted); margin: 0 0 1.75rem; font-size: 1.05rem; }
     section {
@@ -72,16 +70,6 @@
       padding: 0.65rem 1.1rem;
       border-radius: 8px;
     }
-    .cta:hover { filter: brightness(1.05); }
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-    .meta strong { color: var(--text); font-weight: 600; }
     code {
       font-family: ui-monospace, "SF Mono", Menlo, monospace;
       font-size: 0.85em;
@@ -90,76 +78,58 @@
       border-radius: 4px;
     }
     .credit { font-size: 0.92rem; color: var(--muted); }
-    .regions {
-      columns: 2;
-      column-gap: 1.5rem;
-    }
-    @media (max-width: 520px) {
-      .regions { columns: 1; }
-    }
     footer {
       margin-top: 2rem;
       font-size: 0.85rem;
       color: var(--muted);
       text-align: center;
     }
-  </style>
+</style>
 </head>
 <body>
   <main>
-    <div class="badge">Maps only · Google Earth Pro</div>
-    <h1>Azeroth Explorer</h1>
-    <p class="lead">Explore World of Warcraft's Azeroth on a virtual globe. No wargame markers, no scripts, no live updates — just the map.</p>
-
-    <div class="meta">
-      <span><strong>Version</strong> 3.0.0</span>
-      <span><strong>Release</strong> Azeroth Explorer — Pacific theater</span>
-      <span><strong>Globe</strong> v3</span>
-      <span><strong>Built</strong> 2026-06-21</span>
-    </div>
-
-    <section id="download">
-      <h2>Download</h2>
-      <p>Download the latest zip from GitHub Releases.</p>
-      <p>Look for <code>azeroth-explorer-3.0.0.zip</code> on the latest release.</p>
-      <a class="cta" href="https://github.com/khallammarellus-rgb/Warcraft-Commander/releases">Get the map zip</a>
-    </section>
+    <div class="badge">Wargame · Google Earth Pro</div>
+    <h1>Warcraft Commander</h1>
+    <p class="lead">Build an interactive Azeroth globe in Google Earth Pro and run pass-and-play wargame campaigns — markers, turns, blind play, and hosted mode.</p>
 
     <section>
-      <h2>Install &amp; open</h2>
+      <h2>Get started</h2>
       <ol>
-        <li>Install <a href="https://www.google.com/earth/versions/">Google Earth Pro</a> (free).</li>
-        <li>Unzip the download and keep <code>Azeroth Explorer.kml</code>, <code>kml/</code>, and <code>tiles/</code> together.</li>
-        <li>In Google Earth Pro: <strong>File → Open</strong> → select <code>Azeroth Explorer.kml</code>.</li>
-        <li>Use <strong>Map layers → Quick View</strong> to fly between theaters. Zoom in near each landmass — tiles load as you approach.</li>
+        <li>Clone or download this repo for build scripts and config.</li>
+        <li>Export minimap tiles with <a href="https://github.com/Kruithne/wow.export">wow.export</a>.</li>
+        <li>Run <code>python3 scripts/build_world_globe.py --variant wowcommanderalpha</code>.</li>
+        <li>Open <code>03-kml/wowcommanderalpha/doc.kml</code> in Google Earth Pro.</li>
+        <li>Launch <code>scripts/WOW Commander.command</code> to set up a campaign.</li>
       </ol>
+      <a class="cta" href="https://github.com/khallammarellus-rgb/Warcraft-Commander">View on GitHub</a>
     </section>
 
     <section>
-      <h2>Pacific theater (this release)</h2>
-      <ul class="regions"><li>Kalimdor</li><li>Eastern Kingdoms</li><li>Nazjatar</li><li>Siren Isle</li><li>Founders Point</li><li>Razorwind Shores</li><li>The Maelstrom</li><li>Tol Barad</li><li>Wandering Isle</li><li>Northrend</li><li>Pandaria</li><li>Broken Isles</li><li>Zandalar</li><li>Kul Tiras</li><li>Dragon Isles</li><li>Khaz Algar</li><li>Kezan</li><li>Isle of Conquest</li><li>The Dread Chain</li><li>Jorundall</li><li>Crestfall</li><li>Havenswood</li><li>Un&#x27;gol Ruins</li><li>Snowblossom Village</li><li>Molten Cay</li><li>Skittering Hollow</li><li>Verdant Wilds</li><li>Whispering Reef</li><li>Mogu Island</li><li>Scenario Islands Tutorial</li><li>Naval Battle Scenario</li><li>Darkmoon Faire</li><li>Exile&#x27;s Reach</li><li>Northrend Battleground</li></ul>
+      <h2>Campaign play</h2>
+      <ul>
+        <li>Install the globe once — turns ship <strong>markers only</strong> as small KMZ files.</li>
+        <li>Setup wizard: factions, HQs, blind mode, cell assignment.</li>
+        <li>Export turns with <code>package_wargame_client.py</code> for Discord or email pass-and-play.</li>
+      </ul>
     </section>
 
-
     <section>
-      <h2>Changelog</h2>
-      <p>Initial release: Azeroth Pacific cluster, major islands, and minor isles. Opposite-hemisphere worlds (Outland, Draenor, etc.) ship in future releases.</p>
+      <h2>Azeroth Explorer (maps only)</h2>
+      <p class="credit">
+        Want just the map — no wargame layer? See
+        <a href="https://github.com/khallammarellus-rgb/Azeroth-Explorer">Azeroth Explorer</a>, a separate standalone download.
+      </p>
     </section>
 
     <section>
       <h2>Credits</h2>
       <p class="credit">
-        Map imagery is exported from World of Warcraft using
-        <a href="https://github.com/Kruithne/wow.export">wow.export</a> — this project would not be possible without it.
-      </p>
-      <p class="credit">
-        Looking for the wargame campaign board? That is <strong>WoW Commander Alpha</strong>, a separate build in the same repo.
+        Map imagery via <a href="https://github.com/Kruithne/wow.export">wow.export</a>.
+        This is a fan project — not affiliated with Blizzard Entertainment.
       </p>
     </section>
 
-    <footer>
-      Site: https://khallammarellus-rgb.github.io/Warcraft-Commander/
-    </footer>
+    <footer>Site: https://khallammarellus-rgb.github.io/Warcraft-Commander/</footer>
   </main>
 </body>
 </html>

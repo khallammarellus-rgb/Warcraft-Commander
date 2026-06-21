@@ -8,9 +8,19 @@ from pathlib import Path
 WOW_EXPORT_URL = "https://github.com/Kruithne/wow.export"
 
 
+def explorer_release_path(commander_root: Path) -> Path:
+    pointer = commander_root / "config" / "explorer_project.json"
+    if pointer.is_file():
+        cfg = json.loads(pointer.read_text(encoding="utf-8"))
+        explorer_root = (commander_root / cfg["path"]).resolve()
+        path = explorer_root / "config" / "explorer_release.json"
+        if path.is_file():
+            return path
+    return commander_root / "config" / "explorer_release.json"
+
+
 def load_explorer_release(project_root: Path) -> dict:
-    path = project_root / "config" / "explorer_release.json"
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(explorer_release_path(project_root).read_text(encoding="utf-8"))
 
 
 def github_releases_url(release: dict) -> str:
