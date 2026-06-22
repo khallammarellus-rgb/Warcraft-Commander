@@ -1,0 +1,53 @@
+name: Merge portal turn
+
+on:
+  repository_dispatch:
+    types: [merge-portal-turn]
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Merge job id (from portal KV)
+        required: true
+        type: string
+      portal_origin:
+        description: Portal base URL
+        required: false
+        default: https://wow-commander-campaign.pages.dev
+        type: string
+
+jobs:
+  merge-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install portal deps (wrangler)
+        run: npm ci
+        working-directory: portal
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Run merge job
+        env:
+          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET }}
+          PORTAL_ORIGIN: ${{ github.event.client_payload.portal_origin || inputs.portal_origin }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          JOB_ID="${{ github.event.client_payload.job_id || inputs.job_id }}"
+          ORIGIN="${{ github.event.client_payload.portal_origin || inputs.portal_origin }}"
+          python3 scripts/run_merge_job.py \
+            --job-id "$JOB_ID" \
+            --portal-origin "$ORIGIN" \
+            --deploy
