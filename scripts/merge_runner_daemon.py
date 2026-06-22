@@ -12,25 +12,19 @@ Use when GITHUB_MERGE_DISPATCH_TOKEN / MERGE_RUNNER_WEBHOOK_URL are not configur
 from __future__ import annotations
 
 import argparse
-import json
 import os
 import subprocess
 import sys
 import time
-import urllib.error
-import urllib.request
 from pathlib import Path
+
+from portal_http import api_json
 
 DEFAULT_ORIGIN = "https://wow-commander-campaign.pages.dev"
 
 
 def _fetch_pending(origin: str, token: str) -> list[dict]:
-    req = urllib.request.Request(
-        f"{origin.rstrip('/')}/api/merge/pending",
-        headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    data = api_json("GET", f"{origin.rstrip('/')}/api/merge/pending", token)
     return data.get("jobs") or []
 
 
@@ -54,8 +48,8 @@ def main() -> int:
     while True:
         try:
             jobs = _fetch_pending(origin, token)
-        except urllib.error.HTTPError as exc:
-            print(f"Pending poll failed ({exc.code})", file=sys.stderr)
+        except SystemExit as exc:
+            print(f"Pending poll failed: {exc}", file=sys.stderr)
             if args.once:
                 return 1
             time.sleep(args.interval)

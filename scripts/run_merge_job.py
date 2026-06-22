@@ -12,42 +12,17 @@ CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID when --deploy is set.
 from __future__ import annotations
 
 import argparse
-import json
 import os
 import subprocess
 import sys
-import urllib.error
-import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from portal_http import api_json
 from process_r2_turns import download_r2_object, wrangler_bin
 
 BUCKET = "wow-commander-turns"
-
-
-def _api(
-    method: str,
-    url: str,
-    token: str,
-    body: dict | None = None,
-) -> dict:
-    data = None
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/json",
-    }
-    if body is not None:
-        data = json.dumps(body).encode("utf-8")
-        headers["Content-Type"] = "application/json"
-    req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise SystemExit(f"API {method} {url} failed ({exc.code}): {detail}") from exc
 
 
 def main() -> int:
@@ -74,7 +49,7 @@ def main() -> int:
     origin = args.portal_origin.rstrip("/")
     project_root = Path(__file__).resolve().parent.parent
 
-    claim = _api("POST", f"{origin}/api/merge/{args.job_id}/claim", token)
+    claim = api_json("POST", f"{origin}/api/merge/{args.job_id}/claim", token)
     job = claim.get("job") or {}
     game_id = job.get("game_id")
     if not game_id:
@@ -145,7 +120,7 @@ def _complete(
         payload["error"] = error
     if deploy_url:
         payload["deploy_url"] = deploy_url
-    _api("POST", f"{origin}/api/merge/{job_id}/complete", token, payload)
+    api_json("POST", f"{origin}/api/merge/{job_id}/complete", token, payload)
 
 
 if __name__ == "__main__":

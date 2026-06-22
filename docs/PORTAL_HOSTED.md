@@ -73,21 +73,29 @@ Blue board KMZ → Red board KMZ → White ghost AAR → Turn N+1.
 
 After each board KMZ upload, the portal **auto-queues a merge job** in KV. A merge runner pulls the file from R2, merges into `campaign/<theater>.kml`, rebuilds role-filtered views, and redeploys Pages.
 
-### Option A — GitHub Actions (recommended)
+### Option A — GitHub Actions (recommended, primary)
 
-1. Add repository secrets:
+**Poll workflow** (no GitHub PAT on Cloudflare required):
+
+1. Push includes `.github/workflows/merge-portal-poll.yml` — runs every 3 minutes.
+2. Add repository secrets at GitHub → Settings → Secrets → Actions:
    - `PORTAL_ORGANIZER_SECRET` — same value as `ORGANIZER_SECRET` on Pages
-   - `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` — for `wrangler pages deploy`
-2. Add Pages secrets:
-   ```bash
-   cd portal
-   npx wrangler pages secret put GITHUB_MERGE_DISPATCH_TOKEN --project-name wow-commander-campaign
-   npx wrangler pages secret put GITHUB_REPO --project-name wow-commander-campaign
-   ```
-   - `GITHUB_MERGE_DISPATCH_TOKEN` — GitHub PAT with `repo` scope (repository_dispatch)
-   - `GITHUB_REPO` — e.g. `khallammarellus-rgb/Warcraft-Commander`
+   - `CLOUDFLARE_ACCOUNT_ID` — `855414bc6c2032e637d52e2c6ce8076e`
+   - `CLOUDFLARE_API_TOKEN` — [Create token](https://dash.cloudflare.com/profile/api-tokens) with **Account → Cloudflare Pages → Edit** and **Account → Workers R2 Storage → Read**
 
-Workflow: `.github/workflows/merge-portal-turn.yml` (triggered by `merge-portal-turn` dispatch).
+Run setup helper:
+
+```bash
+python3 scripts/configure_merge_automation.py
+```
+
+**Instant dispatch** (optional — merges within seconds of upload):
+
+```bash
+python3 scripts/configure_merge_automation.py --github-dispatch-token ghp_YOUR_PAT
+```
+
+Requires a GitHub PAT with `repo` scope. Workflow: `.github/workflows/merge-portal-turn.yml`.
 
 ### Option B — Local daemon
 
