@@ -23,6 +23,7 @@ from xml.etree import ElementTree as ET
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from build_world_globe import resolve_campaign_region_ids
+from campaign_icons import embed_icons_in_kmz
 from campaign_tier_lod import prepare_campaign_kml_xml
 from campaign_visibility import (
     GAME_FORMATS,
@@ -231,6 +232,9 @@ def package_turn_kmz(
     doc_xml += build_turn_doc_kml(turn=turn, player=player, campaign_entries=entries)
 
     output.parent.mkdir(parents=True, exist_ok=True)
+    kml_chunks: list[str] = []
+    embedded: list[str] = []
+    missing: list[str] = []
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("doc.kml", doc_xml)
         for path in packed_files:
@@ -246,7 +250,17 @@ def package_turn_kmz(
                 )
             else:
                 kml_xml = prepare_campaign_kml_xml(path)
+            kml_chunks.append(kml_xml)
             archive.writestr(f"campaign/{path.name}", kml_xml)
+
+        embedded, missing = embed_icons_in_kmz(archive, kml_chunks, project_root)
+        if embedded:
+            print(f"Embedded {len(embedded)} custom icon(s) in turn KMZ")
+        if missing:
+            print(
+                f"  Warning: {len(missing)} icon href(s) in KML but PNG missing locally "
+                f"(share an icon pack or rebuild in icon builder)"
+            )
 
     size_kb = output.stat().st_size / 1024
     return {
@@ -258,6 +272,7 @@ def package_turn_kmz(
         "size_kb": round(size_kb, 1),
         "role": role,
         "game_format": fmt if role else "no-blind",
+        "icons_embedded": len(embedded),
     }
 
 
@@ -336,7 +351,8 @@ WHITE CELL
   Manual reveal folders override blind filtering for the matching side.
 
 MARKER TIPS (keeps turn files small)
-  - Point icons only at Strategic/Operational; shared icon href, not embedded images.
+  - Point icons only at Strategic/Operational; custom PNGs embed automatically in turn KMZ.
+  - Opponent imports icon pack before turn 1 if they edit offline without portal upload.
   - LabelStyle scale 0 at Strategic.
   - Paths/polygons only in Tactical.
 """

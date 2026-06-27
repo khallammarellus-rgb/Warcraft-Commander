@@ -71,3 +71,10 @@ export async function addStorageUsage(kv: KVNamespace, sizeBytes: number): Promi
   await kv.put(STORAGE_KV_KEY, String(next));
   return getStorageUsage(kv);
 }
+
+export async function subtractStorageUsage(kv: KVNamespace, sizeBytes: number): Promise<StorageUsage> {
+  const usage = await getStorageUsage(kv);
+  const next = Math.max(0, usage.used_bytes - Math.max(0, sizeBytes));
+  await kv.put(STORAGE_KV_KEY, String(next));
+  return getStorageUsage(kv);
+}

@@ -8,6 +8,9 @@
     "deploy": "python3 ../scripts/publish_portal_site.py --deploy --all-games",
     "preview": "npx wrangler pages dev dist"
   },
+  "dependencies": {
+    "fflate": "^0.8.2"
+  },
   "devDependencies": {
     "wrangler": "^4.14.0"
   }

@@ -69,8 +69,15 @@ import {
   type MergeJob,
 } from "../lib/merge_jobs";
 import {
+  iconR2Key,
+  purgeGameArchives,
+  purgeGameIcons,
+  storeIconsFromKmzBuffer,
+} from "../lib/campaign_icons";
+import {
   assertCanStore,
   addStorageUsage,
+  subtractStorageUsage,
   getStorageUsage,
   MAX_KMZ_UPLOAD_BYTES,
   MAX_GHOST_AAR_BYTES,
@@ -232,6 +239,17 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
       const action = parts[2] || "status";
 
+      if (action === "icons" && parts[3] && method === "GET") {
+        if (!env.TURNS_BUCKET) return json({ error: "R2 not configured" }, 503);
+        const filename = parts[3].replace(/[/\\]/g, "");
+        const obj = await env.TURNS_BUCKET.get(iconR2Key(gameId, filename));
+        if (!obj) return json({ error: "Icon not found" }, 404);
+        const headers = new Headers();
+        headers.set("Content-Type", "image/png");
+        headers.set("Cache-Control", "public, max-age=3600");
+        return new Response(obj.body, { status: 200, headers });
+      }
+
       if (action === "lobby" && parts[3] === "admin" && method === "GET") {
         const token = extractBearer(request);
         if (!validateWhiteCell(env, token)) return json({ error: "Unauthorized" }, 401);
@@ -382,10 +400,21 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         const existing = await env.TURNS_BUCKET.head(key);
         if (existing) return json({ error: "Turn already archived" }, 409);
 
-        await env.TURNS_BUCKET.put(key, uploadFile.stream(), {
+        const kmzBytes = new Uint8Array(await uploadFile.arrayBuffer());
+        await env.TURNS_BUCKET.put(key, kmzBytes, {
           httpMetadata: { contentType: "application/vnd.google-earth.kmz" },
         });
         await addStorageUsage(kvUpload, fileSize);
+
+        let iconsStored = { count: 0, bytes: 0, filenames: [] as string[] };
+        try {
+          iconsStored = await storeIconsFromKmzBuffer(env.TURNS_BUCKET, gameId, kmzBytes);
+          if (iconsStored.bytes > 0) {
+            await addStorageUsage(kvUpload, iconsStored.bytes);
+          }
+        } catch (iconErr) {
+          console.error("Icon extract from KMZ failed:", iconErr);
+        }
 
         const entry = {
           type: "board_upload",
@@ -433,6 +462,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           state: next,
           merge_job: mergeJob,
           merge_runner: mergeRunner,
+          icons_stored: iconsStored.count,
         });
       }
 
@@ -527,7 +557,12 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       if (action === "lifecycle" && method === "POST") {
         const token = extractBearer(request);
         if (!validateWhiteCell(env, token)) return json({ error: "Unauthorized" }, 401);
-        const actionName = ((await request.json()) as { action?: string }).action;
+        const body = (await request.json()) as {
+          action?: string;
+          purge_icons?: boolean;
+          purge_archives?: boolean;
+        };
+        const actionName = body.action;
         const state = await loadState(env, gameId, game.campaign_id);
 
         if (actionName === "start") {
@@ -545,11 +580,51 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         if (actionName === "end") {
           state.status = "ended";
           await saveState(env, gameId, state);
+
+          const kv = kvOrNull(env);
+          const purgeIcons = body.purge_icons !== false;
+          const purgeArchives = !!body.purge_archives;
+          let iconsPurged = { deleted: 0, bytes: 0 };
+          let archivesPurged = { deleted: 0, bytes: 0 };
+
+          if (env.TURNS_BUCKET && kv) {
+            if (purgeIcons) {
+              iconsPurged = await purgeGameIcons(env.TURNS_BUCKET, gameId);
+              if (iconsPurged.bytes > 0) {
+                await subtractStorageUsage(kv, iconsPurged.bytes);
+              }
+            }
+            if (purgeArchives) {
+              archivesPurged = await purgeGameArchives(env.TURNS_BUCKET, gameId);
+              if (archivesPurged.bytes > 0) {
+                await subtractStorageUsage(kv, archivesPurged.bytes);
+              }
+            }
+          }
+
+          const purgeNote = [
+            purgeIcons && iconsPurged.deleted
+              ? `${iconsPurged.deleted} icon(s) removed (${formatBytes(iconsPurged.bytes)})`
+              : null,
+            purgeArchives && archivesPurged.deleted
+              ? `${archivesPurged.deleted} archive file(s) removed (${formatBytes(archivesPurged.bytes)})`
+              : null,
+          ]
+            .filter(Boolean)
+            .join("; ");
+
           await discordNotify(env, gameId, "game.ended", {
             title: `Campaign ended — ${game.label}`,
-            description: `Final turn: ${state.turn}`,
+            description: purgeNote
+              ? `Final turn: ${state.turn}. Storage purged: ${purgeNote}`
+              : `Final turn: ${state.turn}`,
           });
-          return json({ ok: true, state });
+          return json({
+            ok: true,
+            state,
+            icons_purged: iconsPurged,
+            archives_purged: archivesPurged,
+          });
         }
         return json({ error: "Unknown lifecycle action" }, 400);
       }

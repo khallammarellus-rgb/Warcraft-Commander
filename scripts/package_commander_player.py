@@ -45,6 +45,7 @@ PLAYER_SCRIPTS = [
     "WOW Commander.command",
     "WOW Commander.cmd",
     "player_install_wizard.py",
+    "campaign_icons.py",
     "package_icon_pack.py",
     "import_icon_pack.py",
     "create_app_launcher.py",

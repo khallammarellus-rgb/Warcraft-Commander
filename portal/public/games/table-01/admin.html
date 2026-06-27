@@ -66,7 +66,7 @@
 
     <section>
       <h2>Campaign lifecycle</h2>
-      <p class="field-hint"><strong>Start</strong> — opens turn uploads (usually auto-starts when both cells finish XO stand-up). <strong>End</strong> — freezes uploads. <strong>Process merge</strong> — queues R2 → merge → redeploy (auto after each board upload when a runner is configured). Fallback: <code>python3 scripts/merge_runner_daemon.py</code> on your machine.</p>
+      <p class="field-hint"><strong>Start</strong> — opens turn uploads (usually auto-starts when both cells finish XO stand-up). <strong>End</strong> — freezes uploads and can purge hosted unit icons (and optionally turn archives) from R2. <strong>Process merge</strong> — queues R2 → merge → redeploy (auto after each board upload when a runner is configured). Fallback: <code>python3 scripts/merge_runner_daemon.py</code> on your machine.</p>
       <div class="eo-actions">
         <button type="button" id="lifecycle-start">Start campaign</button>
         <button type="button" id="lifecycle-end" class="secondary">End campaign</button>

@@ -104,6 +104,8 @@ def build_portal_dist(
                 variant=g_variant,
                 game_format=game_format,
                 subpath=prefix,
+                portal_base=base_url.rstrip("/") if base_url else "",
+                game_id=gid,
             )
             total_written += len(written)
             print(f"  {gid}: {len(written)} KML file(s) under {out / prefix}")

@@ -252,9 +252,27 @@ async function initAdminPage() {
     });
 
     document.getElementById('lifecycle-end')?.addEventListener('click', async () => {
+      if (!confirm('End this campaign? Turn uploads will be frozen.')) return;
+      const purgeIcons = confirm(
+        'Delete stored unit icons for this table from portal storage? (Recommended — frees space for the next game.)'
+      );
+      const purgeArchives = purgeIcons && confirm(
+        'Also delete all turn KMZ archives for this table? (Cancel = keep archives, delete icons only.)'
+      );
       try {
-        await apiPost(`/api/games/${gameId}/lifecycle`, { action: 'end' }, authHeaders());
-        showMsg(msgEl, 'Campaign ended.', 'ok');
+        const data = await apiPost(
+          `/api/games/${gameId}/lifecycle`,
+          { action: 'end', purge_icons: purgeIcons, purge_archives: purgeArchives },
+          authHeaders(),
+        );
+        const parts = ['Campaign ended.'];
+        if (data.icons_purged?.deleted) {
+          parts.push(`${data.icons_purged.deleted} icon(s) purged.`);
+        }
+        if (data.archives_purged?.deleted) {
+          parts.push(`${data.archives_purged.deleted} archive(s) purged.`);
+        }
+        showMsg(msgEl, parts.join(' '), 'ok');
         await refreshStatus();
       } catch (e) { showMsg(msgEl, e.message, 'err'); }
     });

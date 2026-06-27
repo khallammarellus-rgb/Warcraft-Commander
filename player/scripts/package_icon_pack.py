@@ -19,22 +19,11 @@ from xml.etree import ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from campaign_icons import ICON_HREF_RE, icons_dir
 from package_wargame_client import campaign_dir_for_variant
 
 KML_NS = "http://www.opengis.net/kml/2.2"
-ICON_HREF_RE = re.compile(r"player_custom_icons/([^\"'<>\\s]+)", re.I)
 DEFAULT_VARIANT = "wowcommanderalpha"
-
-
-def icons_dir(project_root: Path) -> Path:
-    for rel in (
-        "player/assets/player_custom_icons",
-        "assets/player_custom_icons",
-    ):
-        path = project_root / rel
-        if path.is_dir():
-            return path
-    return project_root / "assets/player_custom_icons"
 
 
 def collect_icon_hrefs(project_root: Path, variant: str) -> set[str]:

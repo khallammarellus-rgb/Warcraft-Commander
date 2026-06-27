@@ -20,6 +20,7 @@ from campaign_visibility import (
     merge_discovered_into_opponent_view,
     viewer_sees_everything,
 )
+from campaign_icons import rewrite_icon_hrefs_to_portal
 from package_wargame_client import campaign_dir_for_variant
 
 KML_NS = "http://www.opengis.net/kml/2.2"
@@ -77,6 +78,8 @@ def write_hosted_views(
     game_format: str | None = None,
     theaters: list[str] | None = None,
     subpath: str | None = None,
+    portal_base: str | None = None,
+    game_id: str | None = None,
 ) -> list[Path]:
     """Write view/{role}/{theater}.kml and campaign/{theater}.kml under out_dir (optional subpath prefix)."""
     if subpath:
@@ -92,9 +95,15 @@ def write_hosted_views(
 
     master_dir = out_dir / "campaign"
     master_dir.mkdir(parents=True, exist_ok=True)
+    def _maybe_rewrite_icons(xml: str) -> str:
+        if portal_base and game_id:
+            return rewrite_icon_hrefs_to_portal(xml, portal_base, game_id)
+        return xml
+
     for path in paths:
         dest = master_dir / path.name
-        dest.write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
+        xml = _maybe_rewrite_icons(path.read_text(encoding="utf-8"))
+        dest.write_text(xml, encoding="utf-8")
         written.append(dest)
 
     for role in HOSTED_VIEW_ROLES:
@@ -107,6 +116,7 @@ def write_hosted_views(
                 viewer=role,
                 game_format=game_format,
             )
+            xml = _maybe_rewrite_icons(xml)
             dest = role_dir / path.name
             dest.write_text(xml, encoding="utf-8")
             written.append(dest)
