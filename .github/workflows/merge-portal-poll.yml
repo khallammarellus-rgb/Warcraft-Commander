@@ -1,7 +1,6 @@
 name: Poll portal merge jobs
 
-# Primary merge runner — no repository_dispatch token required on Cloudflare Pages.
-# Polls pending jobs every 3 minutes and runs merge + deploy when uploads queue work.
+# Primary merge runner — polls every 3 minutes; no GitHub PAT on Cloudflare required.
 
 on:
   schedule:
@@ -17,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      PORTAL_ORIGIN: https://wow-commander-campaign.pages.dev
     steps:
       - uses: actions/checkout@v4
 
@@ -26,19 +27,36 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Install portal deps (wrangler)
         run: npm ci
         working-directory: portal
 
       - name: Install Python deps
-        run: pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Verify runner secrets
+        env:
+          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET || secrets.ORGANIZER_SECRET }}
+        run: |
+          if [ -z "$ORGANIZER_SECRET" ]; then
+            echo "::error::Add repository secret PORTAL_ORGANIZER_SECRET (same value as Pages ORGANIZER_SECRET)"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::error::Add repository secret CLOUDFLARE_API_TOKEN"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "::error::Add repository secret CLOUDFLARE_ACCOUNT_ID"
+            exit 1
+          fi
+          echo "Merge runner secrets present."
 
       - name: Process pending merge jobs
         env:
-          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET }}
-          PORTAL_ORIGIN: ${{ vars.PORTAL_ORIGIN || 'https://wow-commander-campaign.pages.dev' }}
+          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET || secrets.ORGANIZER_SECRET }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: python3 scripts/merge_runner_daemon.py --once

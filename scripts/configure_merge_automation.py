@@ -85,7 +85,7 @@ def main() -> int:
     print("Add these repository secrets at:")
     print(f"  https://github.com/{GITHUB_REPO}/settings/secrets/actions")
     print()
-    print("  PORTAL_ORGANIZER_SECRET  = (same as ORGANIZER_SECRET on Pages)")
+    print("  PORTAL_ORGANIZER_SECRET  = (same as ORGANIZER_SECRET on Pages; ORGANIZER_SECRET also accepted)")
     print(f"  CLOUDFLARE_ACCOUNT_ID    = {CF_ACCOUNT_ID}")
     print("  CLOUDFLARE_API_TOKEN     = Cloudflare API token with Pages + R2 read")
     if organizer:

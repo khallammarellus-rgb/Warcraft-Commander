@@ -31,14 +31,17 @@ def _fetch_pending(origin: str, token: str) -> list[dict]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Poll and run portal merge jobs")
     parser.add_argument("--portal-origin", default=os.environ.get("PORTAL_ORIGIN", DEFAULT_ORIGIN))
-    parser.add_argument("--organizer-secret", default=os.environ.get("ORGANIZER_SECRET"))
+    parser.add_argument(
+        "--organizer-secret",
+        default=os.environ.get("ORGANIZER_SECRET") or os.environ.get("PORTAL_ORGANIZER_SECRET"),
+    )
     parser.add_argument("--interval", type=int, default=45, help="Poll interval seconds")
     parser.add_argument("--once", action="store_true", help="Process one batch and exit")
     args = parser.parse_args()
 
     token = (args.organizer_secret or "").strip()
     if not token:
-        print("Set ORGANIZER_SECRET", file=sys.stderr)
+        print("Set ORGANIZER_SECRET or PORTAL_ORGANIZER_SECRET", file=sys.stderr)
         return 1
 
     origin = args.portal_origin.rstrip("/")
