@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Isle of Conquest silhouette</name>
+    <GroundOverlay>
+      <name>Isle of Conquest silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>51.45937900</north>
+          <south>49.06202100</south>
+          <east>-175.42170000</east>
+          <west>-178.42170000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_isleofconquest/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>51.45937900</north>
+        <south>49.06202100</south>
+        <east>-175.42170000</east>
+        <west>-178.42170000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

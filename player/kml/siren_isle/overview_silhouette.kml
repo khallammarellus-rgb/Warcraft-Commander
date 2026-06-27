@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Siren Isle silhouette</name>
+    <GroundOverlay>
+      <name>Siren Isle silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>2.71160000</north>
+          <south>-1.78840000</south>
+          <east>160.25485500</east>
+          <west>156.87974500</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/siren_isle/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>2.71160000</north>
+        <south>-1.78840000</south>
+        <east>160.25485500</east>
+        <west>156.87974500</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

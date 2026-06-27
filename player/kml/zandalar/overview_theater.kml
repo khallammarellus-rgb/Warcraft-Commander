@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Zandalar theater</name>
+    <GroundOverlay>
+      <name>Zandalar theater</name>
+      <drawOrder>86</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>15.58870000</north>
+          <south>-0.41130000</south>
+          <east>-157.38867900</east>
+          <west>-169.28232100</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>580</minLodPixels>
+          <maxLodPixels>1731</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/zandalar/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>15.58870000</north>
+        <south>-0.41130000</south>
+        <east>-157.38867900</east>
+        <west>-169.28232100</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

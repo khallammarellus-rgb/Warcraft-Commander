@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Nazjatar silhouette</name>
+    <GroundOverlay>
+      <name>Nazjatar silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>22.05215400</north>
+          <south>18.43324600</south>
+          <east>-166.26990000</east>
+          <west>-170.76990000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/nazjatar/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>22.05215400</north>
+        <south>18.43324600</south>
+        <east>-166.26990000</east>
+        <west>-170.76990000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

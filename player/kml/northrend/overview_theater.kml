@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Northrend theater</name>
+    <GroundOverlay>
+      <name>Northrend theater</name>
+      <drawOrder>33</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>72.77890000</north>
+          <south>44.77890000</south>
+          <east>203.09384000</east>
+          <west>134.34316000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>2493</minLodPixels>
+          <maxLodPixels>7445</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/northrend/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>72.77890000</north>
+        <south>44.77890000</south>
+        <east>203.09384000</east>
+        <west>134.34316000</west>
+        <rotation>20.00</rotation>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

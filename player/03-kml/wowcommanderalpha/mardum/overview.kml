@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Mardum</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Mardum z0 0/0</name>
+      <drawOrder>88</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>5.55670000</north>
+          <south>-2.84330000</south>
+          <east>28.22994500</east>
+          <west>16.46665500</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>113</minLodPixels>
+          <maxLodPixels>1272</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/mardum/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>5.55670000</north>
+        <south>-2.84330000</south>
+        <east>28.22994500</east>
+        <west>16.46665500</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

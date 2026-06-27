@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Molten Cay silhouette</name>
+    <GroundOverlay>
+      <name>Molten Cay silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>11.07320000</north>
+          <south>8.07320000</south>
+          <east>169.06431000</east>
+          <west>167.23889000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands24/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>11.07320000</north>
+        <south>8.07320000</south>
+        <east>169.06431000</east>
+        <west>167.23889000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

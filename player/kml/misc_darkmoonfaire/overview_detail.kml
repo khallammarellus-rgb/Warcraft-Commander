@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Darkmoon Faire detail</name>
+    <GroundOverlay>
+      <name>Darkmoon Faire detail</name>
+      <drawOrder>96</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-0.32946400</north>
+          <south>-3.32793600</south>
+          <east>-116.36480000</east>
+          <west>-119.36480000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>109</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_darkmoonfaire/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-0.32946400</north>
+        <south>-3.32793600</south>
+        <east>-116.36480000</east>
+        <west>-119.36480000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

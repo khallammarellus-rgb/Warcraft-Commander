@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Founders Point</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Founders Point silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>6.57002400</north>
+          <south>2.58277600</south>
+          <east>-136.80440000</east>
+          <west>-141.30440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>608</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/founders_point/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>6.57002400</north>
+        <south>2.58277600</south>
+        <east>-136.80440000</east>
+        <west>-141.30440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Founders Point detail</name>
+      <drawOrder>94</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>6.57002400</north>
+          <south>2.58277600</south>
+          <east>-136.80440000</east>
+          <west>-141.30440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>590</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/founders_point/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>6.57002400</north>
+        <south>2.58277600</south>
+        <east>-136.80440000</east>
+        <west>-141.30440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

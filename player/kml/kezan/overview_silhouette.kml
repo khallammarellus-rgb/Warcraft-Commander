@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Kezan silhouette</name>
+    <GroundOverlay>
+      <name>Kezan silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>9.03380000</north>
+          <south>4.53380000</south>
+          <east>172.61498900</east>
+          <west>171.22061100</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/kezan/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>9.03380000</north>
+        <south>4.53380000</south>
+        <east>172.61498900</east>
+        <west>171.22061100</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Dragon Isles silhouette</name>
+    <GroundOverlay>
+      <name>Dragon Isles silhouette</name>
+      <drawOrder>84</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>48.74091100</north>
+          <south>36.59688900</south>
+          <east>-138.38780000</east>
+          <west>-154.38780000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>116</minLodPixels>
+          <maxLodPixels>649</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/dragon_isles/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>48.74091100</north>
+        <south>36.59688900</south>
+        <east>-138.38780000</east>
+        <west>-154.38780000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

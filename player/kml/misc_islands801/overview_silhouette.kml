@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Un'gol Ruins silhouette</name>
+    <GroundOverlay>
+      <name>Un'gol Ruins silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>14.75211400</north>
+          <south>12.80968600</south>
+          <east>132.25440000</east>
+          <west>129.25440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands801/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>14.75211400</north>
+        <south>12.80968600</south>
+        <east>132.25440000</east>
+        <west>129.25440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Exile's Reach silhouette</name>
+    <GroundOverlay>
+      <name>Exile's Reach silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>9.95284300</north>
+          <south>6.98555700</south>
+          <east>-146.20040000</east>
+          <west>-149.20040000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_exilesreach/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>9.95284300</north>
+        <south>6.98555700</south>
+        <east>-146.20040000</east>
+        <west>-149.20040000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

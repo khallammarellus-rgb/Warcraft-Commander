@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Kalimdor detail</name>
+    <GroundOverlay>
+      <name>Kalimdor detail</name>
+      <drawOrder>57</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>36.81220000</north>
+          <south>-9.18780000</south>
+          <east>156.62182000</east>
+          <west>130.87738000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>4448</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/kalimdor/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>36.81220000</north>
+        <south>-9.18780000</south>
+        <east>156.62182000</east>
+        <west>130.87738000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

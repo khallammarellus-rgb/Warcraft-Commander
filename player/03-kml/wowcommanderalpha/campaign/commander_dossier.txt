@@ -1,0 +1,137 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  SAVE THIS FILE — Keep for your records or post to Discord.      ║
+║  White-cell may request a copy of your OPORD and force laydown.  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+                     ___________________________________________
+             ____/                                           \____
+       ____/         _______________________________           \____
+      /_____________/                               \_____________\
+                          |           W O R L D             |
+                          |            .─────────.          |
+                          |           /    O F    \         |
+                          |            `─────────'          |
+                          |      W  A  R  C  R  A  F  T      |
+                          |             ·   ·   ·           |
+                         |         C O M M A N D E R         |
+                         \___________________________________/
+
+                         FIELD COMMAND DOSSIER
+                      ════════════════════════════
+
+Recorded: 21 Jun 2026 12:35 UTC
+
+DEMOGRAPHICS
+────────────
+  Commander:         Khallam
+  Force:             Dawn of the Dead
+  Echelon:           Platoon
+  HQ:                1stPlt HQ 40/40
+  Cell:              blue-cell
+  Theater:           Eastern Kingdoms
+  Blind mode:        single-blind
+  Factions:          Forsaken
+  Executive Officer: Executive Officer Nathanos Blightcaller
+  Experience:        Tactician
+
+WARNING ORDER (FROM HIGHER)
+─────────────────────────
+test
+
+OPERATION ORDER
+───────────────
+Orientation
+───────────
+Area of operations:
+
+Time zone / date-time group:
+
+Key friendly forces:
+
+Key enemy forces:
+
+Situation
+─────────
+Enemy:
+  Size:
+  Location:
+
+Adjacent units:
+
+Civil considerations:
+
+Friendly unit HQ location:
+
+All friendly units under command:
+
+Mission
+───────
+Task:
+
+Purpose:
+
+(Combine into one two-sentence mission statement below)
+
+Mission statement:
+
+Execution
+─────────
+Commander's intent:
+  Purpose:
+  Method:
+  Endstate:
+
+Tactical tasks (subordinate units):
+  Unit 1:
+  Unit 2:
+  Unit 3:
+
+Administration & Logistics
+──────────────────────────
+Equipment:
+
+Vehicles:
+
+Medical aid:
+
+GAMEPLAY — ADMINISTRATION
+───────────────────────
+Turn phases:
+  · Offensive: recon → move → attack (move and attack may be simultaneous)
+  · Defensive: recon → move → reinforce
+
+Google Earth Pro:
+  · Edit markers in Campaign Live (EDIT HERE), then save in Google Earth Pro.
+  · Sync: scripts/Sync Campaign Board.command
+  · Export your turn: scripts/Export Turn.command (red-cell or blue-cell)
+
+Command scripts (project scripts/ folder):
+  · Open Campaign Editor.command — open the live board
+  · Sync Campaign Board.command — push your edits
+  · Export Turn.command — blind export for your cell
+  · Setup Campaign.command — re-run this wizard if needed
+
+Damage: record in placemark name; delete marker when destroyed.
+Combat: attacker rolls 1dN where N = attacking force count.
+
+Command & Signal
+────────────────
+Higher command:
+
+Reinforcements:
+
+Communication (roleplay):
+
+GAMEPLAY — SIGNAL
+─────────────────
+Submit turns and coordinate play on Discord with white-cell.
+
+  · Screenshot your initial force laydown to white-cell always.
+  · Message white-cell when recon or combat reveals enemy positions.
+  · White-cell adjudicates fog-of-war, combat, and disputes.
+
+Export your filtered turn KML after each move phase so opponents only
+see what blind rules allow.
+
+             For the Horde. For the Alliance. For Azeroth.
+

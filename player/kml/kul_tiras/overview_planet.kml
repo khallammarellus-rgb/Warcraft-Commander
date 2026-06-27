@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Kul Tiras planet</name>
+    <GroundOverlay>
+      <name>Kul Tiras planet</name>
+      <drawOrder>85</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>31.88153000</north>
+          <south>19.75267000</south>
+          <east>-143.77180000</east>
+          <west>-159.77180000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>580</minLodPixels>
+          <maxLodPixels>650</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/kul_tiras/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>31.88153000</north>
+        <south>19.75267000</south>
+        <east>-143.77180000</east>
+        <west>-159.77180000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

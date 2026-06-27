@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Jorundall silhouette</name>
+    <GroundOverlay>
+      <name>Jorundall silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>28.34320000</north>
+          <south>25.34320000</south>
+          <east>157.15712100</east>
+          <west>154.46727900</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_rymoore/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>28.34320000</north>
+        <south>25.34320000</south>
+        <east>157.15712100</east>
+        <west>154.46727900</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

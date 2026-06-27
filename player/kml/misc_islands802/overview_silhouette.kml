@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Havenswood silhouette</name>
+    <GroundOverlay>
+      <name>Havenswood silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>35.30996900</north>
+          <south>32.82483100</south>
+          <east>147.31240000</east>
+          <west>144.31240000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands802/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>35.30996900</north>
+        <south>32.82483100</south>
+        <east>147.31240000</east>
+        <west>144.31240000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

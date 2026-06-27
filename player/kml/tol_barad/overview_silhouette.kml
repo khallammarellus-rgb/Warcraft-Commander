@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Tol Barad silhouette</name>
+    <GroundOverlay>
+      <name>Tol Barad silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>22.69300000</north>
+          <south>18.19300000</south>
+          <east>-137.43806900</east>
+          <west>-140.18233100</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/tol_barad/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>22.69300000</north>
+        <south>18.19300000</south>
+        <east>-137.43806900</east>
+        <west>-140.18233100</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

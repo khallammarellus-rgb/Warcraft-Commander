@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sepulcher of the First Ones</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Sepulcher of the First Ones z0 0/0</name>
+      <drawOrder>147</drawOrder>
+      <altitude>-2100.0</altitude>
+      <altitudeMode>absolute</altitudeMode>
+      <Region>
+        <LatLonAltBox>
+          <north>-9.91510000</north>
+          <south>-12.07510000</south>
+          <east>31.54074500</east>
+          <west>29.02605500</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>271</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/sepulcher_of_the_first_ones/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-9.91510000</north>
+        <south>-12.07510000</south>
+        <east>31.54074500</east>
+        <west>29.02605500</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Scenario Islands Tutorial silhouette</name>
+    <GroundOverlay>
+      <name>Scenario Islands Tutorial silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>17.72263400</north>
+          <south>14.84296600</south>
+          <east>-115.27130000</east>
+          <west>-118.27130000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_scenarioislandstutorial/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>17.72263400</north>
+        <south>14.84296600</south>
+        <east>-115.27130000</east>
+        <west>-118.27130000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

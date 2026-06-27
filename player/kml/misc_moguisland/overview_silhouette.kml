@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Mogu Island silhouette</name>
+    <GroundOverlay>
+      <name>Mogu Island silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>2.80561000</north>
+          <south>-0.19361000</south>
+          <east>-177.42650000</east>
+          <west>-180.42650000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_moguisland/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>2.80561000</north>
+        <south>-0.19361000</south>
+        <east>-177.42650000</east>
+        <west>-180.42650000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

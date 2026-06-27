@@ -1,0 +1,111 @@
+{
+  "_comment": "Small islands from 01-raw-export/maps/misc_islands/maps/<folder>/. Placed via parent_region + offset_deg (run apply_geographic_placements.py).",
+  "defaults": {
+    "layer_type": "minimap",
+    "enabled": true,
+    "size_scale": 0.06
+  },
+  "islands": [
+    {
+      "id": "misc_isleofconquest",
+      "folder": "isleofconquest",
+      "label": "Isle of Conquest",
+      "parent_region": "northrend",
+      "offset_deg": [4.0, -2.5],
+      "size_scale": 0.07,
+      "notes": "WotLK battleground — south of Icecrown"
+    },
+    {
+      "id": "misc_necromancyisland",
+      "folder": "necromancyisland",
+      "label": "The Dread Chain",
+      "parent_region": "northrend",
+      "offset_deg": [-3.5, 1.8],
+      "size_scale": 0.06,
+      "notes": "Frozen necromancy island expedition — near Northrend"
+    },
+    {
+      "id": "misc_rymoore",
+      "folder": "rymoore",
+      "label": "Jorundall",
+      "parent_region": "northrend",
+      "offset_deg": [1.5, 3.0],
+      "size_scale": 0.06,
+      "notes": "Vrykul island expedition"
+    },
+    {
+      "id": "misc_crestfall",
+      "folder": "crestfall",
+      "label": "Crestfall",
+      "parent_region": "kul_tiras",
+      "offset_deg": [-2.8, -1.5],
+      "size_scale": 0.06
+    },
+    {
+      "id": "misc_islands802",
+      "folder": "islands802",
+      "label": "Havenswood",
+      "parent_region": "kul_tiras",
+      "offset_deg": [2.2, -2.0],
+      "size_scale": 0.05,
+      "notes": "Gilnean-themed island expedition"
+    },
+    {
+      "id": "misc_islands801",
+      "folder": "islands801",
+      "label": "Un'gol Ruins",
+      "parent_region": "zandalar",
+      "offset_deg": [-2.5, 1.2],
+      "size_scale": 0.05
+    },
+    {
+      "id": "misc_islands_panderan_farm",
+      "folder": "islands_panderan_farm",
+      "label": "Snowblossom Village",
+      "parent_region": "pandaria",
+      "offset_deg": [3.0, -2.2],
+      "size_scale": 0.05
+    },
+    {
+      "id": "misc_islands24",
+      "folder": "islands24",
+      "label": "Molten Cay",
+      "parent_region": "maelstrom",
+      "offset_deg": [1.8, 1.5],
+      "size_scale": 0.06,
+      "notes": "Volcanic island expedition"
+    },
+    {
+      "id": "misc_islands22",
+      "folder": "islands22",
+      "label": "Skittering Hollow",
+      "parent_region": "dragon_isles",
+      "offset_deg": [-2.0, -1.8],
+      "size_scale": 0.05
+    },
+    {
+      "id": "misc_islands10",
+      "folder": "islands10",
+      "label": "Verdant Wilds",
+      "parent_region": "kalimdor",
+      "offset_deg": [2.5, -3.0],
+      "size_scale": 0.05
+    },
+    {
+      "id": "misc_islands11",
+      "folder": "islands11",
+      "label": "The Rotting Mire",
+      "parent_region": "broken_isles",
+      "offset_deg": [-2.2, 2.0],
+      "size_scale": 0.05
+    },
+    {
+      "id": "misc_islands01",
+      "folder": "islands01",
+      "label": "Whispering Reef",
+      "parent_region": "nazjatar",
+      "offset_deg": [1.5, 1.2],
+      "size_scale": 0.05
+    }
+  ]
+}

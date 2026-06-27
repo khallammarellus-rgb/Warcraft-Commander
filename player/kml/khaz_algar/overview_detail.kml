@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Khaz Algar detail</name>
+    <GroundOverlay>
+      <name>Khaz Algar detail</name>
+      <drawOrder>87</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-2.31624800</north>
+          <south>-15.48895200</south>
+          <east>167.75520000</east>
+          <west>151.75520000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1546</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/khaz_algar/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-2.31624800</north>
+        <south>-15.48895200</south>
+        <east>167.75520000</east>
+        <west>151.75520000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

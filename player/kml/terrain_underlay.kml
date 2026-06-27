@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Terrain underlay (Earth land mask)</name>
+    <GroundOverlay>
+      <name>Hide GE terrain on land</name>
+      <drawOrder>0</drawOrder>
+      <color>ffffffff</color>
+      <Icon>
+        <href>../tiles/_shared/terrain_underlay.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>90.00000000</north>
+        <south>-90.00000000</south>
+        <east>180.00000000</east>
+        <west>-180.00000000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

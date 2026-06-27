@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Kul Tiras detail</name>
+    <GroundOverlay>
+      <name>Kul Tiras detail</name>
+      <drawOrder>87</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>31.88153000</north>
+          <south>19.75267000</south>
+          <east>-143.77180000</east>
+          <west>-159.77180000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1546</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/kul_tiras/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>31.88153000</north>
+        <south>19.75267000</south>
+        <east>-143.77180000</east>
+        <west>-159.77180000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

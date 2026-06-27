@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Kalimdor theater</name>
+    <GroundOverlay>
+      <name>Kalimdor theater</name>
+      <drawOrder>56</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>36.81220000</north>
+          <south>-9.18780000</south>
+          <east>156.62182000</east>
+          <west>130.87738000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1668</minLodPixels>
+          <maxLodPixels>4981</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/kalimdor/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>36.81220000</north>
+        <south>-9.18780000</south>
+        <east>156.62182000</east>
+        <west>130.87738000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

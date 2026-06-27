@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Naval Battle Scenario detail</name>
+    <GroundOverlay>
+      <name>Naval Battle Scenario detail</name>
+      <drawOrder>96</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>13.93511100</north>
+          <south>11.00588900</south>
+          <east>-152.41570000</east>
+          <west>-155.41570000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>109</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_navalbattlescenario/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>13.93511100</north>
+        <south>11.00588900</south>
+        <east>-152.41570000</east>
+        <west>-155.41570000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

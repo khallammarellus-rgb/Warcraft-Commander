@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Broken Isles silhouette</name>
+    <GroundOverlay>
+      <name>Broken Isles silhouette</name>
+      <drawOrder>84</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>44.93752900</north>
+          <south>29.34927100</south>
+          <east>-159.72410000</east>
+          <west>-175.72410000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>116</minLodPixels>
+          <maxLodPixels>649</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/broken_isles/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>44.93752900</north>
+        <south>29.34927100</south>
+        <east>-159.72410000</east>
+        <west>-175.72410000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

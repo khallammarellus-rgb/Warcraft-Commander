@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Molten Core</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Molten Core z0 0/0</name>
+      <drawOrder>148</drawOrder>
+      <altitude>-2500.0</altitude>
+      <altitudeMode>absolute</altitudeMode>
+      <Region>
+        <LatLonAltBox>
+          <north>15.64290000</north>
+          <south>15.42977810</south>
+          <east>-127.62395261</east>
+          <west>-127.86454000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>65</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/molten_core/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>15.64290000</north>
+        <south>15.42977810</south>
+        <east>-127.62395261</east>
+        <west>-127.86454000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Northrend Battleground detail</name>
+    <GroundOverlay>
+      <name>Northrend Battleground detail</name>
+      <drawOrder>96</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>52.21592200</north>
+          <south>50.33927800</south>
+          <east>176.03830000</east>
+          <west>173.03830000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>109</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_northrendbg/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>52.21592200</north>
+        <south>50.33927800</south>
+        <east>176.03830000</east>
+        <west>173.03830000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

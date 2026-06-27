@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Skittering Hollow silhouette</name>
+    <GroundOverlay>
+      <name>Skittering Hollow silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>38.81028000</north>
+          <south>36.43412000</south>
+          <east>-176.14720000</east>
+          <west>-179.14720000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>120</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands22/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>38.81028000</north>
+        <south>36.43412000</south>
+        <east>-176.14720000</east>
+        <west>-179.14720000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

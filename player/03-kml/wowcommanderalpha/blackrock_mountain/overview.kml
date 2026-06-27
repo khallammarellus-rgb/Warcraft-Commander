@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Blackrock Mountain</name>
+    <LookAt>
+      <longitude>-177.350900</longitude>
+      <latitude>20.239600</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Blackrock Mountain z0 0/0</name>
+      <drawOrder>148</drawOrder>
+      <altitude>-1200.0</altitude>
+      <altitudeMode>absolute</altitudeMode>
+      <Region>
+        <LatLonAltBox>
+          <north>15.14290000</north>
+          <south>14.88017550</south>
+          <east>-128.52428537</east>
+          <west>-128.86258000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>128</minLodPixels>
+          <maxLodPixels>129</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/blackrock_mountain/0/0/0.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>15.14290000</north>
+        <south>14.88017550</south>
+        <east>-128.52428537</east>
+        <west>-128.86258000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

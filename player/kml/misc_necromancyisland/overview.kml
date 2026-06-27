@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>The Dread Chain</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>The Dread Chain silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>19.40962300</north>
+          <south>16.55617700</south>
+          <east>-151.78260000</east>
+          <west>-154.78260000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>403</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_necromancyisland/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>19.40962300</north>
+        <south>16.55617700</south>
+        <east>-151.78260000</east>
+        <west>-154.78260000</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>The Dread Chain detail</name>
+      <drawOrder>96</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>19.40962300</north>
+          <south>16.55617700</south>
+          <east>-151.78260000</east>
+          <west>-154.78260000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>392</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_necromancyisland/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>19.40962300</north>
+        <south>16.55617700</south>
+        <east>-151.78260000</east>
+        <west>-154.78260000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

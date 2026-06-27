@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Eastern Kingdoms planet</name>
+    <GroundOverlay>
+      <name>Eastern Kingdoms planet</name>
+      <drawOrder>55</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>47.78680000</north>
+          <south>1.78680000</south>
+          <east>-103.24463000</east>
+          <west>-137.34797000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1668</minLodPixels>
+          <maxLodPixels>1869</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/eastern_kingdoms/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>47.78680000</north>
+        <south>1.78680000</south>
+        <east>-103.24463000</east>
+        <west>-137.34797000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

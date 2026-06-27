@@ -1,0 +1,5 @@
+{
+  "game_format": "no-blind",
+  "reveal_radius_km": 1.0,
+  "reveal_persistent": true
+}

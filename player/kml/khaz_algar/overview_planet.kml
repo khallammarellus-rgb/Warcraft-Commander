@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Khaz Algar planet</name>
+    <GroundOverlay>
+      <name>Khaz Algar planet</name>
+      <drawOrder>85</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-2.31624800</north>
+          <south>-15.48895200</south>
+          <east>167.75520000</east>
+          <west>151.75520000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>580</minLodPixels>
+          <maxLodPixels>650</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/khaz_algar/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-2.31624800</north>
+        <south>-15.48895200</south>
+        <east>167.75520000</east>
+        <west>151.75520000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

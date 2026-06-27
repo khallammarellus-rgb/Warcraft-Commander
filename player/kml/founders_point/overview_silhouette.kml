@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Founders Point silhouette</name>
+    <GroundOverlay>
+      <name>Founders Point silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>6.57002400</north>
+          <south>2.58277600</south>
+          <east>-136.80440000</east>
+          <west>-141.30440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/founders_point/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>6.57002400</north>
+        <south>2.58277600</south>
+        <east>-136.80440000</east>
+        <west>-141.30440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

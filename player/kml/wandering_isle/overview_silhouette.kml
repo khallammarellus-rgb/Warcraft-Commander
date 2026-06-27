@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Wandering Isle silhouette</name>
+    <GroundOverlay>
+      <name>Wandering Isle silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-10.17336100</north>
+          <south>-13.11163900</south>
+          <east>-141.12800000</east>
+          <west>-145.62800000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/wandering_isle/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-10.17336100</north>
+        <south>-13.11163900</south>
+        <east>-141.12800000</east>
+        <west>-145.62800000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

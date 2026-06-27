@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Pandaria detail</name>
+    <GroundOverlay>
+      <name>Pandaria detail</name>
+      <drawOrder>67</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>2.13000000</north>
+          <south>-25.87000000</south>
+          <east>-152.69721800</east>
+          <west>-188.46198200</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>3458</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/pandaria/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>2.13000000</north>
+        <south>-25.87000000</south>
+        <east>-152.69721800</east>
+        <west>-188.46198200</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

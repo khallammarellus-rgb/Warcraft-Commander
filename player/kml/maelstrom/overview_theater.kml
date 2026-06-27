@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>The Maelstrom theater</name>
+    <GroundOverlay>
+      <name>The Maelstrom theater</name>
+      <drawOrder>86</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>28.61671500</north>
+          <south>13.69508500</south>
+          <east>-167.07840000</east>
+          <west>-183.07840000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>580</minLodPixels>
+          <maxLodPixels>1731</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/maelstrom/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>28.61671500</north>
+        <south>13.69508500</south>
+        <east>-167.07840000</east>
+        <west>-183.07840000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

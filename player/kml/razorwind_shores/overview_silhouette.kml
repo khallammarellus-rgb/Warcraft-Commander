@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Razorwind Shores silhouette</name>
+    <GroundOverlay>
+      <name>Razorwind Shores silhouette</name>
+      <drawOrder>95</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>16.33212900</north>
+          <south>11.96867100</south>
+          <east>155.08520000</east>
+          <west>150.58520000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>182</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/razorwind_shores/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>16.33212900</north>
+        <south>11.96867100</south>
+        <east>155.08520000</east>
+        <west>150.58520000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>

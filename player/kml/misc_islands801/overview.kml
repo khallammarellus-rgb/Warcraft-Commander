@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Un'gol Ruins</name>
+    <LookAt>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
+      <altitude>0</altitude>
+      <range>25000000</range>
+      <tilt>0</tilt>
+      <heading>0</heading>
+    </LookAt>
+    <GroundOverlay>
+      <name>Un'gol Ruins silhouette</name>
+      <drawOrder>97</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>14.75211400</north>
+          <south>12.80968600</south>
+          <east>132.25440000</east>
+          <west>129.25440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>403</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands801/overview_silhouette.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>14.75211400</north>
+        <south>12.80968600</south>
+        <east>132.25440000</east>
+        <west>129.25440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Un'gol Ruins detail</name>
+      <drawOrder>96</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>14.75211400</north>
+          <south>12.80968600</south>
+          <east>132.25440000</east>
+          <west>129.25440000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>392</minLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../tiles/misc_islands801/overview_detail.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>14.75211400</north>
+        <south>12.80968600</south>
+        <east>132.25440000</east>
+        <west>129.25440000</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>
