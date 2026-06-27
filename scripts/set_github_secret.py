@@ -12,9 +12,8 @@ import argparse
 import base64
 import json
 import os
+import subprocess
 import sys
-import urllib.error
-import urllib.request
 from pathlib import Path
 
 REPO = "khallammarellus-rgb/Warcraft-Commander"
@@ -66,12 +65,18 @@ def main() -> int:
         "X-GitHub-Api-Version": "2022-11-28",
     }
 
-    key_req = urllib.request.Request(
-        f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key",
-        headers=headers,
+    key_url = f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/public-key"
+    proc = subprocess.run(
+        ["curl", "-fsS", "-H", f"Authorization: Bearer {gh_token}", "-H", "Accept: application/vnd.github+json",
+         "-H", "X-GitHub-Api-Version: 2022-11-28", key_url],
+        capture_output=True,
+        text=True,
+        check=False,
     )
-    with urllib.request.urlopen(key_req, timeout=60) as resp:
-        key_data = json.loads(resp.read().decode("utf-8"))
+    if proc.returncode != 0:
+        print(proc.stderr or proc.stdout, file=sys.stderr)
+        return 1
+    key_data = json.loads(proc.stdout)
 
     public_key = public.PublicKey(key_data["key"].encode("utf-8"), encoding.Base64Encoder())
     sealed_box = public.SealedBox(public_key)
@@ -81,17 +86,23 @@ def main() -> int:
         "key_id": key_data["key_id"],
     }
 
-    put_req = urllib.request.Request(
-        f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/{args.name}",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={**headers, "Content-Type": "application/json"},
-        method="PUT",
+    put_url = f"https://api.github.com/repos/{owner}/{repo}/actions/secrets/{args.name}"
+    proc = subprocess.run(
+        [
+            "curl", "-fsS", "-X", "PUT",
+            "-H", f"Authorization: Bearer {gh_token}",
+            "-H", "Accept: application/vnd.github+json",
+            "-H", "X-GitHub-Api-Version: 2022-11-28",
+            "-H", "Content-Type: application/json",
+            "-d", json.dumps(payload),
+            put_url,
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
     )
-    try:
-        with urllib.request.urlopen(put_req, timeout=60) as resp:
-            resp.read()
-    except urllib.error.HTTPError as exc:
-        print(exc.read().decode("utf-8", errors="replace"), file=sys.stderr)
+    if proc.returncode != 0:
+        print(proc.stderr or proc.stdout, file=sys.stderr)
         return 1
 
     print(f"Set GitHub secret {args.name} on {args.repo}")

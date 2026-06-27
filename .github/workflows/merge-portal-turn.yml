@@ -1,5 +1,8 @@
 name: Merge portal turn
 
+# Instant merge runner — triggered by portal repository_dispatch on each board upload.
+# Requires Pages secrets GITHUB_REPO + GITHUB_MERGE_DISPATCH_TOKEN.
+
 on:
   repository_dispatch:
     types: [merge-portal-turn]
@@ -15,11 +18,17 @@ on:
         default: https://wow-commander-campaign.pages.dev
         type: string
 
+concurrency:
+  group: merge-portal-turn-${{ github.event.client_payload.job_id || inputs.job_id }}
+  cancel-in-progress: false
+
 jobs:
   merge-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      PORTAL_ORIGIN: ${{ github.event.client_payload.portal_origin || inputs.portal_origin }}
     steps:
       - uses: actions/checkout@v4
 
@@ -38,12 +47,39 @@ jobs:
       - name: Install Python deps
         run: python3 -m pip install -r requirements.txt
 
+      - name: Verify runner secrets
+        env:
+          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET || secrets.ORGANIZER_SECRET }}
+        run: |
+          if [ -z "$ORGANIZER_SECRET" ]; then
+            echo "::error::Add repository secret PORTAL_ORGANIZER_SECRET (same value as Pages ORGANIZER_SECRET)"
+            exit 1
+          fi
+          JOB_ID="${{ github.event.client_payload.job_id || inputs.job_id }}"
+          if [ -z "$JOB_ID" ]; then
+            echo "::error::Missing merge job id in dispatch payload"
+            exit 1
+          fi
+          echo "Merge job id: $JOB_ID"
+
+      - name: Load Cloudflare credentials
+        env:
+          ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET || secrets.ORGANIZER_SECRET }}
+        run: |
+          if [ -n "${{ secrets.CLOUDFLARE_API_TOKEN }}" ] && [ -n "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "Using CLOUDFLARE_* from GitHub secrets."
+            echo "CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}" >> "$GITHUB_ENV"
+            echo "CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" >> "$GITHUB_ENV"
+          else
+            echo "Loading Cloudflare credentials from portal /api/merge/runner-env"
+            curl -fsS -H "Authorization: Bearer $ORGANIZER_SECRET" "$PORTAL_ORIGIN/api/merge/runner-env" | python3 -c "import json, os, sys; data=json.load(sys.stdin); token=data.get('cloudflare_api_token'); account=data.get('cloudflare_account_id');
+          assert token and account, 'Portal runner-env missing cloudflare credentials';
+          open(os.environ['GITHUB_ENV'],'a',encoding='utf-8').write(f'CLOUDFLARE_API_TOKEN={token}\nCLOUDFLARE_ACCOUNT_ID={account}\n')"
+          fi
+
       - name: Run merge job
         env:
           ORGANIZER_SECRET: ${{ secrets.PORTAL_ORGANIZER_SECRET || secrets.ORGANIZER_SECRET }}
-          PORTAL_ORIGIN: ${{ github.event.client_payload.portal_origin || inputs.portal_origin }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           JOB_ID="${{ github.event.client_payload.job_id || inputs.job_id }}"
           ORIGIN="${{ github.event.client_payload.portal_origin || inputs.portal_origin }}"
