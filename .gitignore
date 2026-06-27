@@ -11,12 +11,16 @@ venv/
 portal/dist/
 portal/node_modules/
 portal/.tools/
+portal/.deploy-secrets.env
+portal/local_turns/
 build_world_globe.log
 
-# Heavy assets (use GitHub Releases for tiles)
+# Heavy assets — dev build caches (player/ has the consumer copy for git download)
 01-raw-export/maps/
 02-tiles/
 04-edited-exports/
+
+# player/tiles/ is COMMITTED on purpose (Code → Download ZIP for new players)
 
 # Player exports and local turn packages
 exports/*.kmz

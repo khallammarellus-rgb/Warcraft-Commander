@@ -1,0 +1,25 @@
+WoW Commander — new player setup
+================================
+
+Same as Azeroth Explorer: Code → Download ZIP → open one KML.
+
+1. INSTALL GOOGLE EARTH PRO
+   https://www.google.com/earth/versions/
+
+2. DOWNLOAD
+   https://github.com/khallammarellus-rgb/Warcraft-Commander
+   Click Code → Download ZIP
+   Unzip the folder.
+
+   Do NOT use old Releases (player-v3 split zip).
+
+3. OPEN THE MAP
+   File → Open → player/WoW Commander.kml
+   Tick "WOW Commander Alpha (play)" in Places.
+
+4. PORTAL (hosted campaign)
+   https://wow-commander-campaign.pages.dev/games/table-01/
+
+5. OPTIONAL — Python player menu
+   cd player && python3 -m pip install -r requirements.txt
+   Mac: double-click player/scripts/WOW Commander.command

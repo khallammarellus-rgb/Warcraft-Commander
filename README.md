@@ -2,9 +2,38 @@
 
 Interactive tiled globe of Azeroth for **Google Earth Pro** — wargaming, roleplay, and campaign markup.
 
-**Azeroth Explorer** (maps only) is a separate project: `../Azeroth Explorer Project` → [Azeroth-Explorer on GitHub](https://github.com/khallammarellus-rgb/Azeroth-Explorer). Build in Commander, then run **`scripts/Sync Explorer Project.command`**.
+---
+
+## Download and play (new players)
+
+**Same idea as [Azeroth Explorer](https://github.com/khallammarellus-rgb/Azeroth-Explorer):** one zip from GitHub, one KML to open.
+
+1. Open **https://github.com/khallammarellus-rgb/Warcraft-Commander**
+2. Click **Code → Download ZIP**
+3. Unzip → open **`player/WoW Commander.kml`** in Google Earth Pro
+
+Keep `player/kml/`, `player/tiles/`, and `WoW Commander.kml` together.
+
+- **Portal:** [wow-commander-campaign.pages.dev/start/](https://wow-commander-campaign.pages.dev/start/)
+- **Table 01:** [wow-commander-campaign.pages.dev/games/table-01/](https://wow-commander-campaign.pages.dev/games/table-01/)
+
+**Do not** use old Releases (`player-v3` split zip) or hunt for release assets — **Code → Download ZIP** on this repo includes the map tiles in `player/tiles/`.
+
+Python (`pip install -r requirements.txt`) is **optional** — only for the local player menu, not for hosted portal play.
+
+---
+
+## Developers
+
+**Azeroth Explorer** (maps only) is a separate project: [Azeroth-Explorer on GitHub](https://github.com/khallammarellus-rgb/Azeroth-Explorer). Build in Commander, then run **`scripts/Sync Explorer Project.command`**.
 
 Tiles come from ocean-trimmed exports in `04-edited-exports`, anchored to full-grid reference data in `01-raw-export`. The active build variant is `wowcommanderalpha`.
+
+Publish the player install after globe changes:
+
+```bash
+python3 scripts/sync_player_package.py --push
+```
 
 See [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) for deferred items.
 
@@ -116,6 +145,7 @@ Run all commands from the project root.
 | Sanitize board | `python3 scripts/sanitize_campaign_board.py` | Reset theaters for a new game |
 | Export turn KMZ | `python3 scripts/package_wargame_client.py --turn N` | Turn package (markers only) |
 | Package Explorer | `python3 scripts/package_azeroth_explorer.py` | Maps-only release zip |
+| Sync player pack | `python3 scripts/sync_player_package.py --push` | Refresh `player/` + git push tiles |
 | Globe audit | `python3 scripts/audit_globe_performance.py` | NetworkLinks, tile weight, placemarks |
 | Verify setup | `bash scripts/verify_setup.sh` | Check folders and Python |
 | Check images | `python3 scripts/check_images.py` | List PNGs and file sizes |

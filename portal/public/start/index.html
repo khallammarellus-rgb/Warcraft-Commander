@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting started — WoW Commander</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/rules/">Rules</a>
+    <a href="/start/" class="active">Getting started</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <a href="/assistant/">XO Advisor</a>
+  </nav>
+  <main>
+    <h1>Getting started</h1>
+    <p class="subtitle">New player — 3 steps (like Azeroth Explorer)</p>
+
+    <section>
+      <h2>1. Install Google Earth Pro</h2>
+      <p><a href="https://www.google.com/earth/versions/" target="_blank" rel="noopener">Download Google Earth Pro</a> (free).</p>
+    </section>
+
+    <section>
+      <h2>2. Download the map</h2>
+      <ol>
+        <li>Open <a href="https://github.com/khallammarellus-rgb/Warcraft-Commander" target="_blank" rel="noopener">github.com/khallammarellus-rgb/Warcraft-Commander</a></li>
+        <li>Click green <strong>Code</strong> → <strong>Download ZIP</strong></li>
+        <li>Unzip the folder on your computer</li>
+      </ol>
+      <p><strong>Do not</strong> use old GitHub Releases (<code>player-v3</code> split zip) or the automatic <strong>Source code</strong> asset on release pages — use <strong>Code → Download ZIP</strong> on the main repo.</p>
+    </section>
+
+    <section>
+      <h2>3. Open the map</h2>
+      <ol>
+        <li>In Google Earth Pro: <strong>File → Open</strong></li>
+        <li>Select <code>player/WoW Commander.kml</code> inside the unzipped folder</li>
+        <li>Tick <strong>WOW Commander Alpha (play)</strong> in Places</li>
+      </ol>
+      <p>Keep <code>player/kml/</code>, <code>player/tiles/</code>, and <code>WoW Commander.kml</code> together.</p>
+    </section>
+
+    <section>
+      <h2>4. Your table (hosted campaign)</h2>
+      <p>Campaign markers refresh from this portal (~60s). Right-click <strong>Campaign Board</strong> links → <strong>Refresh</strong> after turns update.</p>
+      <ul>
+        <li><a href="/games/table-01/">Table 01</a></li>
+        <li><a href="/games/table-02/">Table 02</a></li>
+        <li><a href="/games/table-03/">Table 03</a></li>
+      </ul>
+      <p>Upload tokens are issued by the organizer (white cell).</p>
+    </section>
+
+    <section>
+      <h2>5. Optional — Python player menu</h2>
+      <p>Only for local setup, sync, or turn export. <strong>Not required</strong> for hosted portal play.</p>
+      <pre><code>cd player
+python3 -m pip install -r requirements.txt</code></pre>
+      <p>Mac: double-click <code>player/scripts/WOW Commander.command</code></p>
+    </section>
+
+    <section>
+      <h2>6. Turn loop</h2>
+      <ul>
+        <li>Edit markers in Google Earth Pro → <strong>save</strong></li>
+        <li>Upload your KMZ on your table page when it is your cell's turn</li>
+        <li>Right-click Campaign Board links → <strong>Refresh</strong> after white cell merges</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. XO tools</h2>
+      <p><a href="/executive-officer/">XO Stand-up</a> — campaign stand-up wizard.</p>
+      <p><a href="/assistant/">XO Advisor</a> — getting started and operation orders. Rules: <a href="/rules/">Rules</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
