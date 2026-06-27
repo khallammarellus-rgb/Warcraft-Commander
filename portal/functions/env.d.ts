@@ -30,4 +30,6 @@ interface Env {
   MERGE_RUNNER_WEBHOOK_URL?: string;
   GITHUB_MERGE_DISPATCH_TOKEN?: string;
   GITHUB_REPO?: string;
+  MERGE_CLOUDFLARE_API_TOKEN?: string;
+  MERGE_CLOUDFLARE_ACCOUNT_ID?: string;
 }

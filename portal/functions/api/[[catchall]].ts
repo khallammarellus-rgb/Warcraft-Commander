@@ -603,6 +603,19 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       const kv = kvOrNull(env);
       if (!kv) return json({ error: "PORTAL_KV not configured" }, 503);
 
+      if (jobId === "runner-env" && method === "GET") {
+        const envMap = env as Record<string, string | undefined>;
+        const cfToken = envMap.MERGE_CLOUDFLARE_API_TOKEN || envMap.CLOUDFLARE_API_TOKEN;
+        const cfAccount = envMap.MERGE_CLOUDFLARE_ACCOUNT_ID || "855414bc6c2032e637d52e2c6ce8076e";
+        if (!cfToken) {
+          return json({ error: "Merge Cloudflare API token not configured on Pages" }, 503);
+        }
+        return json({
+          cloudflare_api_token: cfToken,
+          cloudflare_account_id: cfAccount,
+        });
+      }
+
       if (jobId === "pending" && method === "GET") {
         const jobs = await listPendingJobs(kv);
         return json({ jobs });
