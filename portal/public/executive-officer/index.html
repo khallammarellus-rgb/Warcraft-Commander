@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Executive Officer (XO) — Campaign Stand-Up</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+  <link rel="stylesheet" href="/assets/eo-wizard.css">
+  <link rel="stylesheet" href="/assets/eo-advisor.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/rules/">Rules</a>
+    <a href="/start/">Getting started</a>
+    <a href="/executive-officer/" class="active">XO Stand-up</a>
+    <a href="/assistant/">XO Advisor</a>
+  </nav>
+  <main class="wide">
+    <h1>Executive Officer — XO Stand-up</h1>
+    <p class="eo-subtitle">Campaign stand-up — your XO walks you through every decision. No terminal required.</p>
+    <div class="eo-progress" aria-hidden="true"><span id="eo-progress-bar" style="width:0%"></span></div>
+    <div id="eo-toolbar" class="eo-toolbar" hidden>
+      <button type="button" id="eo-save-btn" class="secondary">Save progress</button>
+      <button type="button" id="eo-clear-btn" class="eo-btn-danger">Clear all fields</button>
+      <span id="eo-save-status" class="eo-save-status" aria-live="polite"></span>
+    </div>
+    <div id="eo-toast" class="eo-toast" role="status" aria-live="polite" hidden></div>
+    <div class="eo-layout">
+      <aside class="eo-brief" aria-live="polite">
+        <p class="eo-rank">Staff · Campaign Setup</p>
+        <p class="eo-name" id="eo-officer-name">XO</p>
+        <p class="eo-text" id="eo-briefing">Standing by, Commander.</p>
+        <span class="eo-phase" id="eo-phase"></span>
+        <p class="eo-track-label" id="eo-track-label">Saved progress</p>
+        <div id="eo-sidebar-track" class="eo-track"></div>
+      </aside>
+      <section class="eo-panel" id="eo-panel">
+        <p class="subtitle">Loading campaign data…</p>
+      </section>
+    </div>
+  </main>
+  <script src="/assets/portal.js"></script>
+  <script src="/assets/eo-wizard.js"></script>
+</body>
+</html>

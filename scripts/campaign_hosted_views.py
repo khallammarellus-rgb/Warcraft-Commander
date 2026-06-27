@@ -76,8 +76,11 @@ def write_hosted_views(
     variant: str = "wowcommanderalpha",
     game_format: str | None = None,
     theaters: list[str] | None = None,
+    subpath: str | None = None,
 ) -> list[Path]:
-    """Write view/{role}/{theater}.kml and campaign/{theater}.kml (master copy) under out_dir."""
+    """Write view/{role}/{theater}.kml and campaign/{theater}.kml under out_dir (optional subpath prefix)."""
+    if subpath:
+        out_dir = out_dir / Path(subpath)
     campaign_dir = campaign_dir_for_variant(project_root, variant)
     written: list[Path] = []
 

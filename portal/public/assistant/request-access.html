@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request assistant access</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/assistant/">XO Advisor</a>
+    <span class="active">Request access</span>
+  </nav>
+  <main>
+    <h1>Request assistant access</h1>
+    <p class="subtitle">XO Advisor is for OPORD and stand-to only — shared table quota. White cell is notified on Discord with approve/deny links.</p>
+    <div id="msg" hidden></div>
+    <form id="req-form">
+      <label for="game">Game</label>
+      <select id="game" name="game_id">
+        <option value="table-01">Table 01</option>
+        <option value="table-02">Table 02</option>
+        <option value="table-03">Table 03</option>
+      </select>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message (optional)</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Submit request</button>
+    </form>
+  </main>
+  <script src="/assets/portal.js"></script>
+  <script>
+    document.getElementById('req-form').addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const body = {
+        game_id: document.getElementById('game').value,
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        message: document.getElementById('message').value.trim(),
+      };
+      try {
+        const data = await apiPost('/api/assistant/request-access', body);
+        showMsg(document.getElementById('msg'), data.message || 'Request submitted', 'ok');
+      } catch (e) {
+        showMsg(document.getElementById('msg'), e.message, 'err');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "_comment": "R2 free tier is 10 GB/month storage. Hard cap below avoids overage charges.",
+  "hard_cap_gb": 9.5,
+  "max_kmz_upload_mb": 8,
+  "max_ghost_aar_kb": 512,
+  "max_adhoc_announce_kb": 256
+}

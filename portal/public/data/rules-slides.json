@@ -1,0 +1,78 @@
+{
+  "presentation_id": "1dzkJsTt4ir9y-wJLGA4Zm-jIzHHsuaIZnjjj-vIOwz4",
+  "title": "WoW Commander Rules",
+  "source_url": "https://docs.google.com/presentation/d/1dzkJsTt4ir9y-wJLGA4Zm-jIzHHsuaIZnjjj-vIOwz4/edit",
+  "slide_count": 14,
+  "slides": [
+    {
+      "file": "/assets/rules-slides/01-warcraft-commander.png",
+      "title": "Warcraft Commander",
+      "pdf_page": 1
+    },
+    {
+      "file": "/assets/rules-slides/02-wargame-turn-quick-reference-guide.png",
+      "title": "Wargame Turn  Quick Reference Guide",
+      "pdf_page": 4
+    },
+    {
+      "file": "/assets/rules-slides/03-wargame-units-quick-reference-guide.png",
+      "title": "Wargame Units Quick Reference Guide",
+      "pdf_page": 5
+    },
+    {
+      "file": "/assets/rules-slides/04-wargame-units-quick-reference-guide-cont.png",
+      "title": "Wargame Units Quick Reference Guide, Cont.",
+      "pdf_page": 6
+    },
+    {
+      "file": "/assets/rules-slides/05-wargame-example.png",
+      "title": "Wargame Example",
+      "pdf_page": 7
+    },
+    {
+      "file": "/assets/rules-slides/06-wargame-full-rules.png",
+      "title": "Wargame Full Rules",
+      "pdf_page": 8
+    },
+    {
+      "file": "/assets/rules-slides/07-wargame-full-rules-continued.png",
+      "title": "Wargame Full Rules Continued",
+      "pdf_page": 9
+    },
+    {
+      "file": "/assets/rules-slides/08-wargame-full-rules-continued.png",
+      "title": "Wargame Full Rules Continued",
+      "pdf_page": 10
+    },
+    {
+      "file": "/assets/rules-slides/09-wargame-full-rules-continued.png",
+      "title": "Wargame Full Rules Continued",
+      "pdf_page": 11
+    },
+    {
+      "file": "/assets/rules-slides/10-wargame-full-rules-continued.png",
+      "title": "Wargame Full Rules Continued",
+      "pdf_page": 12
+    },
+    {
+      "file": "/assets/rules-slides/11-wargame-planning-process.png",
+      "title": "Wargame Planning Process",
+      "pdf_page": 13
+    },
+    {
+      "file": "/assets/rules-slides/12-wargame-planning-process-continued.png",
+      "title": "Wargame Planning Process Continued",
+      "pdf_page": 14
+    },
+    {
+      "file": "/assets/rules-slides/13-wargame-planning-process-continued.png",
+      "title": "Wargame Planning Process Continued",
+      "pdf_page": 15
+    },
+    {
+      "file": "/assets/rules-slides/14-wargame-common-glossary.png",
+      "title": "Wargame Common Glossary",
+      "pdf_page": 16
+    }
+  ]
+}

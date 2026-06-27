@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Table 03</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="index.html">Table 03</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <span class="active">White cell admin</span>
+  </nav>
+
+  <section id="admin-gate" class="admin-gate wide">
+    <h1>White cell — Table 03</h1>
+    <p class="subtitle">Admin console is passcode-protected. Player tokens and campaign controls are not public.</p>
+    <div id="admin-gate-msg" hidden></div>
+    <form id="admin-gate-form" class="admin-gate-form">
+      <label for="admin-passcode">White cell passcode</label>
+      <input type="password" id="admin-passcode" autocomplete="current-password" placeholder="Passcode">
+      <button type="submit">Unlock admin</button>
+    </form>
+  </section>
+
+  <main class="wide" id="admin-app" hidden>
+    <h1>White cell — Table 03</h1>
+    <p class="subtitle" id="admin-status">Loading…</p>
+    <div id="board-refresh-banner" hidden></div>
+    <div id="admin-msg" hidden></div>
+    <input type="hidden" id="org-token" value="">
+
+    <section id="lobby-panel-admin">
+      <h2>XO stand-up lobby</h2>
+      <p class="field-hint">Review each cell’s WarnO and OpOrd after players finish the XO wizard. Use <strong>Reset table lobby</strong> if a table is stuck or needs a do-over.</p>
+      <div id="lobby-detail"><p class="subtitle">Loading lobby…</p></div>
+    </section>
+
+    <section id="token-panel">
+      <h2>Player upload tokens</h2>
+      <p class="field-hint">Blue and Red cells paste these on the game table page to upload turn KMZ files. Give each player only their cell’s token. <strong>Regenerate</strong> revokes old tokens instantly (KV — no redeploy).</p>
+      <div id="token-output"><p class="subtitle">Loading tokens…</p></div>
+      <button type="button" id="token-regenerate" class="secondary">Regenerate tokens</button>
+    </section>
+
+    <div class="split">
+      <section>
+        <h2>Ghost turn (required)</h2>
+        <p class="field-hint">Submit after <strong>Red Cell</strong> uploads their board KMZ for the turn. Honor-system AAR only — casualties, effects, rulings. Does not merge boards; players adjust markers locally.</p>
+        <form id="ghost-form">
+          <textarea id="ghost-aar" placeholder="Casualties, effects, adjudication…"></textarea>
+          <button type="submit">Submit ghost turn AAR</button>
+        </form>
+      </section>
+      <section>
+        <h2>Ad hoc announcement</h2>
+        <p class="field-hint">Post anytime — weather, mid-turn rulings, narrative. Does <strong>not</strong> advance the turn counter. Pings Discord.</p>
+        <form id="announce-form">
+          <textarea id="adhoc-aar" placeholder="Mid-turn ruling, weather, casualties…"></textarea>
+          <button type="submit" class="secondary">Post announcement</button>
+        </form>
+      </section>
+    </div>
+
+    <section>
+      <h2>Campaign lifecycle</h2>
+      <p class="field-hint"><strong>Start</strong> — opens turn uploads (usually auto-starts when both cells finish XO stand-up). <strong>End</strong> — freezes uploads. <strong>Process merge</strong> — queues R2 → merge → redeploy (auto after each board upload when a runner is configured). Fallback: <code>python3 scripts/merge_runner_daemon.py</code> on your machine.</p>
+      <div class="eo-actions">
+        <button type="button" id="lifecycle-start">Start campaign</button>
+        <button type="button" id="lifecycle-end" class="secondary">End campaign</button>
+        <button type="button" id="merge-btn" class="secondary">Process merge / redeploy</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Turn log</h2>
+      <p class="field-hint">Chronological record of board uploads, ghost turns, and proxy uploads for this table.</p>
+      <ul class="timeline" id="admin-timeline"></ul>
+    </section>
+
+    <section id="access-requests">
+      <h2>XO Advisor access requests</h2>
+      <p class="field-hint">Players requesting XO Advisor access are listed here and on Discord with approve/deny links.</p>
+    </section>
+  </main>
+  <script>window.WOWC_GAME_ID = 'table-03';</script>
+  <script src="/assets/portal.js"></script>
+  <script src="/assets/admin-page.js"></script>
+</body>
+</html>

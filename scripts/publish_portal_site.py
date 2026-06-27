@@ -2,18 +2,23 @@
 """
 Build and optionally deploy the Cloudflare Pages campaign portal.
 
-Copies portal/public/ into portal/dist/, then writes role-filtered KML views:
-  dist/campaign/<theater>.kml
-  dist/view/{red-cell,blue-cell,white-cell}/<theater>.kml
+Copies portal/public/ into portal/dist/, writes per-game role-filtered KML views:
+  dist/games/table-01/view/{red-cell,blue-cell,white-cell}/<theater>.kml
+  dist/games/table-01/campaign/<theater>.kml
+
+Legacy flat layout (no --all-games):
+  dist/view/... and dist/campaign/...
 
   python3 scripts/publish_portal_site.py
-  python3 scripts/publish_portal_site.py --deploy
-  python3 scripts/publish_portal_site.py --deploy --project-name my-campaign
+  python3 scripts/publish_portal_site.py --all-games
+  python3 scripts/publish_portal_site.py --game table-01
+  python3 scripts/publish_portal_site.py --deploy --all-games
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import subprocess
@@ -30,9 +35,22 @@ from campaign_deploy import (
 )
 from campaign_hosted_views import write_hosted_views
 from campaign_session import load_session
+from portal_games import game_by_id, load_portal_games, public_games_manifest
+
+
+def _export_eo_wizard_data(project_root: Path) -> None:
+    script = project_root / "scripts" / "export_eo_wizard_data.py"
+    subprocess.run([sys.executable, str(script)], check=True, cwd=project_root)
+
+
+def _export_rules_slides(project_root: Path) -> None:
+    script = project_root / "scripts" / "export_rules_slides.py"
+    subprocess.run([sys.executable, str(script)], check=True, cwd=project_root)
 
 
 def _copy_public(project_root: Path, out_dir: Path) -> int:
+    _export_eo_wizard_data(project_root)
+    _export_rules_slides(project_root)
     public_dir = project_root / "portal" / "public"
     if not public_dir.is_dir():
         raise SystemExit(f"Missing {public_dir}")
@@ -42,16 +60,55 @@ def _copy_public(project_root: Path, out_dir: Path) -> int:
     return len(list(out_dir.rglob("*")))
 
 
+def _write_games_manifest(project_root: Path, out_dir: Path, *, base_url: str = "") -> Path:
+    manifest = public_games_manifest(project_root, base_url=base_url)
+    dest = out_dir / "games.json"
+    dest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    return dest
+
+
 def build_portal_dist(
     project_root: Path,
     *,
     variant: str = "wowcommanderalpha",
     out_dir: Path | None = None,
+    game_ids: list[str] | None = None,
+    all_games: bool = False,
+    base_url: str = "",
 ) -> Path:
     out = out_dir or (project_root / "portal" / "dist")
     out.mkdir(parents=True, exist_ok=True)
 
     _copy_public(project_root, out)
+    _write_games_manifest(project_root, out, base_url=base_url)
+
+    if all_games or game_ids:
+        portal = load_portal_games(project_root)
+        targets = portal.get("games", [])
+        if game_ids:
+            allow = set(game_ids)
+            targets = [g for g in targets if g.get("id") in allow]
+        if not targets:
+            raise SystemExit("No matching games in config/portal_games.json")
+
+        total_written = 0
+        for game in targets:
+            gid = game["id"]
+            g_variant = game.get("variant") or portal.get("default_variant") or variant
+            prefix = game.get("path_prefix", f"games/{gid}")
+            session = load_session(project_root, variant=g_variant)
+            game_format = session.get("game_format") if session else None
+            written = write_hosted_views(
+                project_root,
+                out,
+                variant=g_variant,
+                game_format=game_format,
+                subpath=prefix,
+            )
+            total_written += len(written)
+            print(f"  {gid}: {len(written)} KML file(s) under {out / prefix}")
+        print(f"Wrote {total_written} campaign/view KML file(s) for {len(targets)} game(s)")
+        return out
 
     session = load_session(project_root, variant=variant)
     game_format = session.get("game_format") if session else None
@@ -61,7 +118,7 @@ def build_portal_dist(
         variant=variant,
         game_format=game_format,
     )
-    print(f"Wrote {len(written)} campaign/view KML file(s) under {out}")
+    print(f"Wrote {len(written)} campaign/view KML file(s) under {out} (legacy flat layout)")
     return out
 
 
@@ -167,8 +224,15 @@ def _ensure_hosted_after_deploy(
     variant: str,
     base_url: str,
     deploy_settings: dict,
+    game_id: str | None = None,
 ) -> None:
     """Turn on hosted mode and refresh player KML after a successful Pages deploy."""
+    if game_id:
+        game = game_by_id(project_root, game_id)
+        if game:
+            prefix = str(game.get("path_prefix", "")).strip("/")
+            base_url = f"{base_url.rstrip('/')}/{prefix}"
+
     current_base = deploy_settings.get("campaign_base_url", "")
     current_mode = deploy_settings.get("campaign_deploy_mode", "local")
     if current_mode == "hosted" and current_base == base_url:
@@ -197,14 +261,20 @@ def _ensure_hosted_after_deploy(
         print(f"Patched doc_player.kml → view/{post.get('player_cell')}/ ({post['patched']} link(s))")
 
 
-def _print_deploy_success(base_url: str) -> None:
+def _print_deploy_success(base_url: str, *, game_id: str | None = None) -> None:
     print()
     print("=" * 60)
     print("  DEPLOY SUCCESS")
     print("=" * 60)
     print(f"  Site:     {base_url}")
-    print(f"  Red view: {base_url}/view/red-cell/kalimdor.kml")
-    print(f"  Master:   {base_url}/campaign/kalimdor.kml")
+    if game_id:
+        game_path = f"{base_url.rstrip('/')}/games/{game_id}"
+        print(f"  Game:     {game_path}/")
+        print(f"  Red view: {game_path}/view/red-cell/kalimdor.kml")
+        print(f"  Master:   {game_path}/campaign/kalimdor.kml")
+    else:
+        print(f"  Hub:      {base_url}/")
+        print(f"  Table 01: {base_url}/games/table-01/")
     print()
     print("  In Google Earth Pro: reopen doc_player.kml, then right-click")
     print("  Campaign Board links → Refresh after future deploys.")
@@ -218,20 +288,33 @@ def main() -> int:
     parser.add_argument("--deploy", action="store_true", help="Run wrangler pages deploy after build")
     parser.add_argument("--no-deploy", action="store_true", help="Build only (npm run build)")
     parser.add_argument("--project-name", default=None, help="Cloudflare Pages project name")
+    parser.add_argument("--all-games", action="store_true", help="Build KML for all portal games")
+    parser.add_argument("--game", action="append", dest="games", metavar="ID", help="Build one game (repeatable)")
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parent.parent
     deploy_settings = read_deploy_settings(project_root, variant=args.variant)
 
-    out_dir = build_portal_dist(project_root, variant=args.variant, out_dir=args.out)
+    project = _pages_project_name(project_root, args.project_name)
+    preview_base = deploy_settings.get("campaign_base_url") or production_pages_url(project)
+
+    out_dir = build_portal_dist(
+        project_root,
+        variant=args.variant,
+        out_dir=args.out,
+        game_ids=args.games,
+        all_games=args.all_games,
+        base_url=preview_base if (args.all_games or args.games) else "",
+    )
 
     deploy = args.deploy and not args.no_deploy
     if not deploy:
-        base = deploy_settings.get("campaign_base_url", "")
-        if base:
-            print(f"Preview URLs at: {base.rstrip('/')}/view/red-cell/kalimdor.kml")
+        if args.all_games or args.games:
+            print(f"Preview hub: {preview_base.rstrip('/')}/")
+        elif deploy_settings.get("campaign_base_url"):
+            print(f"Preview URLs at: {deploy_settings['campaign_base_url'].rstrip('/')}/view/red-cell/kalimdor.kml")
         else:
-            print("Built portal/dist only. Deploy with: python3 scripts/publish_portal_site.py --deploy")
+            print("Built portal/dist only. Deploy with: python3 scripts/publish_portal_site.py --deploy --all-games")
         return 0
 
     code, _wrangler_out = deploy_pages(
@@ -240,15 +323,24 @@ def main() -> int:
     if code != 0:
         return code
 
-    project = _pages_project_name(project_root, args.project_name)
     base_url = production_pages_url(project)
-    _ensure_hosted_after_deploy(
-        project_root,
-        variant=args.variant,
-        base_url=base_url,
-        deploy_settings=deploy_settings,
-    )
-    _print_deploy_success(base_url)
+    primary_game = (args.games or [None])[0] if args.games and len(args.games) == 1 else None
+    if args.all_games or args.games:
+        _ensure_hosted_after_deploy(
+            project_root,
+            variant=args.variant,
+            base_url=base_url,
+            deploy_settings=deploy_settings,
+            game_id=primary_game or "table-01",
+        )
+    else:
+        _ensure_hosted_after_deploy(
+            project_root,
+            variant=args.variant,
+            base_url=base_url,
+            deploy_settings=deploy_settings,
+        )
+    _print_deploy_success(base_url, game_id=primary_game if args.games and len(args.games) == 1 else None)
     return 0
 
 

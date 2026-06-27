@@ -1,0 +1,1 @@
+"""WoW Commander player installer wizard — retro desktop walkthrough."""

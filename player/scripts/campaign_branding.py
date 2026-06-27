@@ -8,7 +8,10 @@ DEFAULT_WIDTH = 72
 BRANDING_DIR = "assets/branding"
 
 # Drop a custom logo in assets/branding/ using any of these names (first match wins).
+COMMANDER_LOGO_NAME = "CommanderLogo.png"
+
 CUSTOM_CREST_NAMES = (
+    COMMANDER_LOGO_NAME,
     "crest_custom.png",
     "crest_custom.jpg",
     "crest_custom.jpeg",
@@ -40,6 +43,12 @@ _CREST_RAW = r"""
 
 def branding_dir(project_root: Path) -> Path:
     return project_root / BRANDING_DIR
+
+
+def resolve_commander_logo(project_root: Path) -> Path | None:
+    """Primary app/installer logo (CommanderLogo.png)."""
+    path = branding_dir(project_root) / COMMANDER_LOGO_NAME
+    return path if path.is_file() else resolve_crest_image(project_root)
 
 
 def resolve_crest_image(project_root: Path) -> Path | None:

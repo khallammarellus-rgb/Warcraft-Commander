@@ -117,6 +117,10 @@ def migrate_to_campaign_package(root: ET.Element) -> int:
         return 0
     if _folder_named(document, CAMPAIGN_PACKAGE_NAME) is not None:
         return 0
+    for folder in document.findall(f".//{_kml('Folder')}"):
+        name_el = folder.find(_kml("name"))
+        if name_el is not None and (name_el.text or "") == CAMPAIGN_PACKAGE_NAME:
+            return 0
 
     preserved: list[tuple[str, ET.Element]] = []
     remove: list[ET.Element] = []

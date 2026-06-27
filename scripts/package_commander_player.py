@@ -43,6 +43,11 @@ SKIP_KML_NAMES = frozenset(
 
 PLAYER_SCRIPTS = [
     "WOW Commander.command",
+    "WOW Commander.cmd",
+    "player_install_wizard.py",
+    "package_icon_pack.py",
+    "import_icon_pack.py",
+    "create_app_launcher.py",
     "player_menu.py",
     "setup_campaign.py",
     "open_theater_campaign.py",
@@ -79,6 +84,8 @@ CONFIG_PATHS = [
     "config/subterranean.json",
     "config/misc_islands.json",
     "assets/faction_library",
+    "assets/branding",
+    "assets/player_custom_icons",
 ]
 
 
@@ -179,6 +186,12 @@ def copy_scripts_and_config(project_root: Path, out_dir: Path) -> None:
         src = project_root / "scripts" / name
         if src.is_file():
             shutil.copy2(src, scripts_dest / name)
+    install_pkg = project_root / "scripts" / "player_install"
+    if install_pkg.is_dir():
+        dest_pkg = scripts_dest / "player_install"
+        if dest_pkg.exists():
+            shutil.rmtree(dest_pkg)
+        shutil.copytree(install_pkg, dest_pkg)
 
     for rel in CONFIG_PATHS:
         src = project_root / rel

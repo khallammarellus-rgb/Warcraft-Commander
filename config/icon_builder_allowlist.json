@@ -1,0 +1,4 @@
+{
+  "_comment": "Pptx embedded images to include after extract_pptx_icons.py. Add basenames from assets/icon_library/source/pptx_catalog.json.",
+  "include": []
+}

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:ns1="http://www.google.com/kml/ext/2.2">
   <Document>
     <name>Campaign Live (EDIT HERE)</name>
     <LookAt>
@@ -108,66 +108,6 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
               </Folder>
             </Folder>
             <Folder>
-              <name>blue-cell</name>
-              <description>Blue force — place friendly units and graphics here.</description>
-              <open>0</open>
-              <Folder>
-                <name>Strategic</name>
-                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
-                <open>0</open>
-                <Folder>
-                  <name>Units</name>
-                  <description>WOW-SETUP-SCAFFOLD — Place strategic-tier unit placemarks here.</description>
-                  <open>0</open>
-                </Folder>
-                <Folder>
-                  <name>Operational Graphics</name>
-                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Strategic).</description>
-                  <open>0</open>
-                </Folder>
-              </Folder>
-              <Folder>
-                <name>Operational</name>
-                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
-                <open>0</open>
-                <Folder>
-                  <name>Units</name>
-                  <description>WOW-SETUP-SCAFFOLD — Place operational-tier unit placemarks here.</description>
-                  <open>0</open>
-                  <Placemark>
-                    <name>A Co HQ 150/150</name>
-                    <description>Commander Casual Cmdr, Blue Force. Executive Officer Bolvar Fordragon.
-
-To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Humans. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.</description>
-                    <styleUrl>#faction-humans-icon</styleUrl>
-                    <Point>
-                      <coordinates>143.749600,13.812200,0</coordinates>
-                    </Point>
-                  </Placemark>
-                </Folder>
-                <Folder>
-                  <name>Operational Graphics</name>
-                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Operational).</description>
-                  <open>0</open>
-                </Folder>
-              </Folder>
-              <Folder>
-                <name>Tactical</name>
-                <description>Squad and below — visible below ~500 mi eye altitude.</description>
-                <open>0</open>
-                <Folder>
-                  <name>Units</name>
-                  <description>WOW-SETUP-SCAFFOLD — Place tactical-tier unit placemarks here.</description>
-                  <open>0</open>
-                </Folder>
-                <Folder>
-                  <name>Operational Graphics</name>
-                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Tactical).</description>
-                  <open>0</open>
-                </Folder>
-              </Folder>
-            </Folder>
-            <Folder>
               <name>white-cell</name>
               <description>White cell / referee — adjudication markers and discovered enemy.</description>
               <open>0</open>
@@ -195,6 +135,83 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+              </Folder>
+            </Folder>
+            <Folder>
+              <name>blue-cell</name>
+              <open>0</open>
+              <description>Blue force — place friendly units and graphics here.</description>
+              <Folder>
+                <name>Strategic</name>
+                <description>HQ, regiment, division, army — visible at planet scale (~6000–3000 mi eye altitude).</description>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place strategic-tier unit placemarks here.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Strategic).</description>
+                  <open>0</open>
+                </Folder>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Operational</name>
+                <description>Platoon through battalion — visible at continent scale (~2000–1000 mi).</description>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place operational-tier unit placemarks here.</description>
+                  <Placemark>
+                    <name>A Co HQ 150/150</name>
+                    <description>Commander Casual Cmdr, Blue Force. Executive Officer Bolvar Fordragon.
+
+To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Humans. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.</description>
+                    <styleUrl>#faction-humans-icon</styleUrl>
+                    <Point>
+                      <coordinates>143.7496,13.8122,0</coordinates>
+                    </Point>
+                  </Placemark>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Operational).</description>
+                  <open>0</open>
+                </Folder>
+                <open>0</open>
+              </Folder>
+              <Folder>
+                <name>Tactical</name>
+                <open>0</open>
+                <description>Squad and below — visible below ~500 mi eye altitude.</description>
+                <Folder>
+                  <name>Units</name>
+                  <description>WOW-SETUP-SCAFFOLD — Place tactical-tier unit placemarks here.</description>
+                  <open>0</open>
+                </Folder>
+                <Folder>
+                  <name>Operational Graphics</name>
+                  <description>WOW-SETUP-SCAFFOLD — Boundaries, axes, phase lines, and other graphics (Tactical).</description>
+                  <open>0</open>
+                </Folder>
+                <Placemark>
+                  <name>test</name>
+                  <LookAt>
+                    <longitude>-175.0784</longitude>
+                    <latitude>21.15590000000002</latitude>
+                    <altitude>0</altitude>
+                    <heading>-7.951386703658792e-16</heading>
+                    <tilt>0</tilt>
+                    <range>48280320.00000001</range>
+                    <ns1:altitudeMode>relativeToSeaFloor</ns1:altitudeMode>
+                  </LookAt>
+                  <styleUrl>#m_ylw-pushpin</styleUrl>
+                  <Point>
+                    <ns1:drawOrder>1</ns1:drawOrder>
+                    <coordinates>-175.0784,21.1559,0</coordinates>
+                  </Point>
+                </Placemark>
               </Folder>
             </Folder>
           </Folder>

@@ -21,6 +21,26 @@ PAGES_PROJECT = "wow-commander-campaign"
 CF_ACCOUNT_ID = "855414bc6c2032e637d52e2c6ce8076e"
 
 
+def _wrangler_env(portal_dir: Path) -> dict[str, str]:
+    """Wrangler is a Node script — ensure bundled portal Node is on PATH."""
+    env = dict(os.environ)
+    bundled_bin = portal_dir / ".tools" / "node" / "bin"
+    if bundled_bin.is_dir():
+        env["PATH"] = f"{bundled_bin}:{env.get('PATH', '')}"
+    return env
+
+
+def _validate_github_token(token: str, *, label: str) -> str | None:
+    value = (token or "").strip()
+    if not value:
+        return f"Missing {label}."
+    if "YOUR_TOKEN" in value.upper() or value.endswith("_HERE"):
+        return f"{label} looks like a placeholder — paste your real PAT (ghp_… or github_pat_…)."
+    if not (value.startswith("ghp_") or value.startswith("github_pat_") or value.startswith("gho_")):
+        return f"{label} should start with ghp_, github_pat_, or gho_."
+    return None
+
+
 def _load_deploy_secrets(project_root: Path) -> dict[str, str]:
     path = project_root / "portal" / ".deploy-secrets.env"
     if not path.is_file():
@@ -54,10 +74,17 @@ def _put_pages_secret(portal_dir: Path, name: str, value: str) -> bool:
         input=value.encode("utf-8"),
         capture_output=True,
         text=False,
+        env=_wrangler_env(portal_dir),
     )
     if proc.returncode != 0:
         err = (proc.stderr or proc.stdout or b"").decode("utf-8", errors="replace")
         print(f"Failed to set {name}: {err}", file=sys.stderr)
+        if "node: No such file" in err or "env: node" in err:
+            print(
+                "Tip: install Node or use the bundled copy — "
+                f"export PATH=\"{portal_dir / '.tools' / 'node' / 'bin'}:$PATH\"",
+                file=sys.stderr,
+            )
         return False
     print(f"Set Pages secret {name}")
     return True
@@ -114,14 +141,24 @@ def main() -> int:
     secrets = _load_deploy_secrets(project_root)
     organizer = secrets.get("ORGANIZER_SECRET", "")
 
-    ok = _put_pages_secret(portal_dir, "GITHUB_REPO", GITHUB_REPO)
-    if args.github_dispatch_token:
-        ok = _put_pages_secret(portal_dir, "GITHUB_MERGE_DISPATCH_TOKEN", args.github_dispatch_token) and ok
+    dispatch_token = (args.github_dispatch_token or "").strip()
+    dispatch_err = _validate_github_token(dispatch_token, label="--github-dispatch-token") if dispatch_token else None
+    if dispatch_err:
+        print(dispatch_err, file=sys.stderr)
+        ok = False
+    else:
+        ok = True
+
+    if ok:
+        ok = _put_pages_secret(portal_dir, "GITHUB_REPO", GITHUB_REPO)
+        if dispatch_token:
+            ok = _put_pages_secret(portal_dir, "GITHUB_MERGE_DISPATCH_TOKEN", dispatch_token) and ok
 
     if args.sync_github_secrets:
         gh_token = (args.github_admin_token or "").strip()
-        if not gh_token:
-            print("Pass --github-admin-token or set GITHUB_ADMIN_TOKEN to sync GitHub secrets", file=sys.stderr)
+        admin_err = _validate_github_token(gh_token, label="--github-admin-token")
+        if admin_err:
+            print(admin_err, file=sys.stderr)
             ok = False
         else:
             ok = _sync_github_secrets(project_root, gh_token) and ok
@@ -159,11 +196,13 @@ def main() -> int:
         print("  open 'scripts/Start Merge Daemon.command'")
         print()
 
-    if args.github_dispatch_token:
+    if dispatch_token and not dispatch_err and ok:
         print("Instant dispatch: GITHUB_MERGE_DISPATCH_TOKEN set on Pages.")
+    elif dispatch_token and dispatch_err:
+        print("Instant dispatch: not configured — fix the PAT and re-run.")
     else:
         print("Instant dispatch: create a GitHub PAT (repo scope) and run:")
-        print("  python3 scripts/configure_merge_automation.py --github-dispatch-token ghp_...")
+        print("  python3 scripts/configure_merge_automation.py --github-dispatch-token <your-PAT>")
         print("Poll workflow works without the PAT.")
 
     return 0 if ok else 1

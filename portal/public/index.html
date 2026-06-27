@@ -3,104 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WoW Commander — Campaign Board</title>
-  <style>
-    :root {
-      --bg: #0f1419;
-      --panel: #1a2332;
-      --text: #e8ecf1;
-      --muted: #8b9cb3;
-      --accent: #c9a227;
-      --link: #6eb5ff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    main {
-      max-width: 42rem;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
-    }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 0 0 0.25rem;
-      color: var(--accent);
-    }
-    .subtitle { color: var(--muted); margin: 0 0 1.5rem; font-size: 0.95rem; }
-    section {
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1rem;
-    }
-    h2 { font-size: 1rem; margin: 0 0 0.75rem; }
-    p { margin: 0 0 0.75rem; }
-    p:last-child { margin-bottom: 0; }
-    code, pre {
-      font-family: ui-monospace, "SF Mono", Menlo, monospace;
-      font-size: 0.85rem;
-    }
-    code {
-      background: #0a0e14;
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
-    }
-    pre {
-      background: #0a0e14;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      margin: 0.5rem 0 0;
-    }
-    a { color: var(--link); }
-    ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
-    li { margin-bottom: 0.35rem; }
-  </style>
+  <title>WoW Commander — Campaign Portal</title>
+  <link rel="stylesheet" href="/assets/portal.css">
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="/" class="active">Hub</a>
+    <a href="/rules/">Rules</a>
+    <a href="/start/">Getting started</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <a href="/assistant/">XO Advisor</a>
+  </nav>
   <main>
     <h1>WoW Commander Alpha</h1>
-    <p class="subtitle">Hosted campaign board (Cloudflare Pages)</p>
+    <p class="subtitle">Hosted campaign portal — three tables, turn sync, Discord notifications</p>
 
     <section>
-      <h2>Players — Google Earth Pro</h2>
-      <p>
-        Open your local <strong>doc_player.kml</strong> in Google Earth Pro.
-        Campaign Board NetworkLinks refresh from this site automatically when hosted mode is enabled.
-      </p>
-      <p>Role-filtered views (blind play):</p>
-      <pre>view/red-cell/&lt;theater&gt;.kml
-view/blue-cell/&lt;theater&gt;.kml
-view/white-cell/&lt;theater&gt;.kml</pre>
-      <p>Example: <code>view/red-cell/kalimdor.kml</code></p>
+      <h2>Live wargames</h2>
+      <div class="grid-3" id="game-cards">
+        <p class="subtitle">Loading games…</p>
+      </div>
     </section>
 
     <section>
-      <h2>Organizer — publish turns</h2>
-      <ol>
-        <li>Sync local campaign: <code>python3 scripts/sync_campaign_live.py --push</code></li>
-        <li>Build + deploy: <code>python3 scripts/publish_portal_site.py --deploy</code></li>
-        <li>Players right-click Campaign Board links → Refresh in GEP</li>
-      </ol>
-      <p>Master (unfiltered) copies for adjudication:</p>
-      <pre>campaign/&lt;theater&gt;.kml</pre>
+      <h2>Quick links</h2>
+      <ul>
+        <li><a href="/start/">Install Google Earth Pro and open your player pack</a></li>
+        <li><a href="/tools/icon-builder/">Unit Icon Builder — custom military unit markers</a></li>
+        <li><a href="/rules/">Rules, turn phases, and combat</a></li>
+        <li><a href="/executive-officer/">XO Stand-up — campaign stand-up wizard</a></li>
+        <li><a href="/assistant/">XO Advisor — OPORD &amp; stand-to only (shared quota; use your own AI for depth)</a></li>
+      </ul>
     </section>
 
     <section>
-      <h2>Submit a turn (GitHub)</h2>
-      <p>
-        Upload your turn <code>.kmz</code> to the game repo under
-        <code>submissions/&lt;your-cell&gt;/</code> via the GitHub web UI.
-        A GitHub Action merges your cell into the master board and redeploys this site.
-      </p>
-      <p>See <code>templates/game-repo/README.md</code> in the project for webhook and repo setup.</p>
+      <h2>Turn sequence</h2>
+      <p>Each turn: <strong>Blue Cell</strong> board upload → <strong>Red Cell</strong> board upload → <strong>White Cell ghost AAR</strong> (honor-system adjudication, no board merge) → next turn.</p>
     </section>
   </main>
+  <script src="/assets/portal.js"></script>
+  <script>
+    Promise.all([fetchGamesManifest(), fetchAllLobbies()])
+      .then(([m, lobbyRes]) => renderHubGameCards(m, lobbyRes.lobbies))
+      .catch(() => {
+        document.getElementById('game-cards').innerHTML =
+          '<a class="game-card" href="/games/table-01/"><h2>Table 01</h2></a>' +
+          '<a class="game-card" href="/games/table-02/"><h2>Table 02</h2></a>' +
+          '<a class="game-card" href="/games/table-03/"><h2>Table 03</h2></a>';
+      });
+  </script>
 </body>
 </html>

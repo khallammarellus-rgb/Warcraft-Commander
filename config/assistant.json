@@ -1,0 +1,11 @@
+{
+  "model": "gemini-1.5-flash",
+  "max_message_chars": 4000,
+  "max_output_tokens": 2048,
+  "rate_limits": {
+    "player_per_day": 30,
+    "organizer_per_day": 100,
+    "unauthenticated": 0
+  },
+  "modes": ["rules", "opord", "tactical_tasks", "turn_help", "order_polish"]
+}

@@ -1,0 +1,32 @@
+How to publish the WoW Commander player pack on GitHub Releases
+================================================================
+
+CAN PLAYERS USE "Source code (zip)"?
+  No. That snapshot has no 02-tiles/ map imagery.
+
+WHAT TO UPLOAD
+  /Users/kurt/WoW Commander Alpha Project/exports/wowcommander-player-v3_2026-06-26.zip
+  exports/wowcommander-player-v3_2026-06-26-parts/  (all .zip + .zNN parts + HOW_TO_JOIN.txt)
+
+GitHub allows up to 2 GB per file — this pack is split at 1800 MB.
+
+STEPS
+  1. Build: python3 scripts/package_player_release.py --split-mb 1800
+  2. GitHub → khallammarellus-rgb/Warcraft-Commander → Releases → Draft a new release
+  3. Tag: player-vv3   Title: WoW Commander player pack vv3
+  4. Attach the zip (and all split parts if used) under Assets
+  5. At the TOP of the release description, paste:
+
+     >>> DOWNLOAD: wowcommander-player-v3_2026-06-26.zip (+ parts if split) <<<
+     Do NOT download "Source code (zip)".
+
+  6. Publish
+
+PORTAL
+  /start/ links to config/player_release.json → github_releases_url
+
+WHAT PLAYERS DO
+  1. Download assets from the release (not Source code)
+  2. Join parts if split, then unzip
+  3. Open 03-kml/wowcommanderalpha/doc_player.kml in Google Earth Pro
+  4. Open table page: https://wow-commander-campaign.pages.dev/games/table-01/

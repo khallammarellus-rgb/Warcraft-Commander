@@ -4,6 +4,7 @@ Configure local vs hosted campaign deploy mode in config/globe.json.
 
   python3 scripts/configure_hosted_campaign.py --mode local
   python3 scripts/configure_hosted_campaign.py --mode hosted --url https://example.com/wowcommander
+  python3 scripts/configure_hosted_campaign.py --mode hosted --url https://example.com --game table-01
   python3 scripts/configure_hosted_campaign.py --mode hosted --url https://example.com/wowcommander --rebuild
 """
 
@@ -15,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from portal_games import game_by_id
 from campaign_deploy import (
     DEFAULT_VARIANT,
     apply_hosted_post_setup,
@@ -37,6 +39,11 @@ def main() -> int:
         help="HTTPS base URL for hosted mode (no trailing slash)",
     )
     parser.add_argument("--variant", default=DEFAULT_VARIANT)
+    parser.add_argument(
+        "--game",
+        default=None,
+        help="Portal game id (table-01) — appends path_prefix to --url for hosted KML",
+    )
     parser.add_argument("--rebuild", action="store_true", help="Rebuild doc.kml after writing config")
     parser.add_argument("--show", action="store_true", help="Print current deploy settings and exit")
     args = parser.parse_args()
@@ -55,12 +62,22 @@ def main() -> int:
     if not args.mode:
         parser.error("Provide --mode local|hosted or use --show")
 
+    base_url = args.url.strip().rstrip("/")
+    if args.game and base_url:
+        game = game_by_id(project_root, args.game)
+        if not game:
+            print(f"Unknown game id: {args.game}", file=sys.stderr)
+            return 1
+        prefix = str(game.get("path_prefix", "")).strip("/")
+        if prefix:
+            base_url = f"{base_url}/{prefix}"
+
     if args.rebuild:
         result = apply_session_deploy(
             project_root,
             {
                 "campaign_deploy_mode": args.mode,
-                "campaign_base_url": args.url,
+                "campaign_base_url": base_url,
             },
             variant=args.variant,
             rebuild=True,
@@ -70,7 +87,7 @@ def main() -> int:
             project_root,
             variant=args.variant,
             deploy_mode=args.mode,
-            base_url=args.url,
+            base_url=base_url,
         )
 
     print(f"campaign_deploy_mode:  {result['campaign_deploy_mode']}")

@@ -43,6 +43,6 @@ if [[ ! -d portal/node_modules ]]; then
   (cd portal && npm install) || exit 1
 fi
 
-python3 scripts/publish_portal_site.py --deploy
+python3 scripts/publish_portal_site.py --deploy --all-games
 echo ""
 read -n 1 -s -r -p "Press any key to close..."

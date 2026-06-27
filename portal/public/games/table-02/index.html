@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table 02 — WoW Commander</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/rules/">Rules</a>
+    <a href="/start/">Getting started</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <a href="/assistant/">XO Advisor</a>
+    <a href="admin.html">White cell admin</a>
+  </nav>
+  <main class="wide">
+    <h1>Table 02</h1>
+    <p class="subtitle">Campaign02 — hosted board + turn uploads</p>
+
+    <section class="lobby-section">
+      <h2>Stand-up lobby</h2>
+      <div id="lobby-panel"><p class="subtitle">Loading…</p></div>
+    </section>
+
+    <div id="board-refresh-banner" hidden></div>
+
+    <section>
+      <h2>Current turn</h2>
+      <p><span id="status-pill" class="status-pill blue">…</span> <span id="status-label">Loading…</span></p>
+      <p id="merge-status" class="merge-status-line" hidden></p>
+    </section>
+    <div class="split">
+      <section>
+        <h2>Upload turn (board)</h2>
+        <div id="form-msg" hidden></div>
+        <form id="upload-form">
+          <label for="upload-cell">Your cell</label>
+          <select id="upload-cell" name="cell">
+            <option value="blue-cell">Blue cell</option>
+            <option value="red-cell">Red cell</option>
+            <option value="white-cell">White cell (organizer)</option>
+          </select>
+          <label for="upload-token">Upload token</label>
+          <input type="password" id="upload-token" name="token" autocomplete="off">
+          <label><input type="checkbox" id="proxy-upload"> White cell proxy upload</label>
+          <label for="turn-file">Turn KMZ</label>
+          <input type="file" id="turn-file" name="file" accept=".kmz,.kml">
+          <button type="submit">Submit turn</button>
+        </form>
+      </section>
+      <section>
+        <h2>Turn log</h2>
+        <ul class="timeline" id="timeline"></ul>
+        <p><a href="/executive-officer/?game=table-02">XO Stand-up</a> · <a href="/assistant/?game=table-02">XO Advisor</a> · <a href="admin.html">White cell admin</a></p>
+      </section>
+    </div>
+  </main>
+  <script>window.WOWC_GAME_ID = 'table-02';</script>
+  <script src="/assets/portal.js"></script>
+  <script src="/assets/game-page.js"></script>
+</body>
+</html>

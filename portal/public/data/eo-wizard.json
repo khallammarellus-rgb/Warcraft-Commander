@@ -1,0 +1,322 @@
+{
+  "theaters": [
+    {
+      "id": "kalimdor",
+      "label": "Kalimdor"
+    },
+    {
+      "id": "eastern_kingdoms",
+      "label": "Eastern Kingdoms"
+    },
+    {
+      "id": "northrend",
+      "label": "Northrend"
+    },
+    {
+      "id": "pandaria",
+      "label": "Pandaria"
+    },
+    {
+      "id": "broken_isles",
+      "label": "Broken Isles"
+    },
+    {
+      "id": "dragon_isles",
+      "label": "Dragon Isles"
+    },
+    {
+      "id": "maelstrom",
+      "label": "The Maelstrom"
+    },
+    {
+      "id": "kul_tiras",
+      "label": "Kul Tiras"
+    },
+    {
+      "id": "zandalar",
+      "label": "Zandalar"
+    },
+    {
+      "id": "khaz_algar",
+      "label": "Khaz Algar"
+    }
+  ],
+  "force_sizes": [
+    "platoon",
+    "company",
+    "battalion",
+    "regiment",
+    "division",
+    "army"
+  ],
+  "force_specs": {
+    "platoon": {
+      "strength": 40,
+      "tier": "Operational",
+      "preview": "Platoon \u2192 1stPlt HQ 40/40 (Operational tier)"
+    },
+    "company": {
+      "strength": 150,
+      "tier": "Operational",
+      "preview": "Company \u2192 A Co HQ 150/150 (Operational tier)"
+    },
+    "battalion": {
+      "strength": 1000,
+      "tier": "Operational",
+      "preview": "Battalion \u2192 1stBn HQ 1000/1000 (Operational tier)"
+    },
+    "regiment": {
+      "strength": 3000,
+      "tier": "Strategic",
+      "preview": "Regiment \u2192 1stRegt HQ 3000/3000 (Strategic tier)"
+    },
+    "division": {
+      "strength": 9000,
+      "tier": "Strategic",
+      "preview": "Division \u2192 1stDiv HQ 9000/9000 (Strategic tier)"
+    },
+    "army": {
+      "strength": 20000,
+      "tier": "Strategic",
+      "preview": "Army \u2192 Your Force HQ 20000/20000 (Strategic tier)"
+    }
+  },
+  "factions_by_category": {
+    "Alliance": [
+      {
+        "id": "draenei_lightforged",
+        "label": "Draenei / Lightforged"
+      },
+      {
+        "id": "dwarves",
+        "label": "Dwarves"
+      },
+      {
+        "id": "worgen_gilneans",
+        "label": "Gilneans (Worgen)"
+      },
+      {
+        "id": "gnomes_mechagnome",
+        "label": "Gnomes / Mechagnome"
+      },
+      {
+        "id": "humans",
+        "label": "Humans"
+      },
+      {
+        "id": "kul_tiran",
+        "label": "Kul Tiran"
+      },
+      {
+        "id": "night_elves",
+        "label": "Night Elves"
+      },
+      {
+        "id": "void_elves",
+        "label": "Void Elves"
+      }
+    ],
+    "Horde": [
+      {
+        "id": "blood_elf",
+        "label": "Blood Elf"
+      },
+      {
+        "id": "forsaken",
+        "label": "Forsaken"
+      },
+      {
+        "id": "goblin",
+        "label": "Goblin"
+      },
+      {
+        "id": "nightborne",
+        "label": "Nightborne"
+      },
+      {
+        "id": "orc_maghar",
+        "label": "Orc / Mag'har"
+      },
+      {
+        "id": "tauren_highmountain",
+        "label": "Tauren / Highmountain"
+      },
+      {
+        "id": "troll_zandalari",
+        "label": "Troll / Zandalari"
+      },
+      {
+        "id": "vulpera",
+        "label": "Vulpera"
+      }
+    ],
+    "Antagonist": [
+      {
+        "id": "demons",
+        "label": "Demons"
+      },
+      {
+        "id": "eldritch",
+        "label": "Eldritch"
+      },
+      {
+        "id": "naga",
+        "label": "Naga"
+      },
+      {
+        "id": "nerubians",
+        "label": "Nerubians"
+      },
+      {
+        "id": "scourge",
+        "label": "Scourge"
+      },
+      {
+        "id": "twilight_cult",
+        "label": "Twilight Cult"
+      }
+    ],
+    "Neutral": [
+      {
+        "id": "dracthyr",
+        "label": "Dracthyr"
+      },
+      {
+        "id": "dragonkin",
+        "label": "Dragonkin"
+      },
+      {
+        "id": "earthen",
+        "label": "Earthen"
+      },
+      {
+        "id": "elementals",
+        "label": "Elementals"
+      },
+      {
+        "id": "haranir",
+        "label": "Haranir"
+      },
+      {
+        "id": "pandaren",
+        "label": "Pandaren"
+      },
+      {
+        "id": "pirates",
+        "label": "Pirates"
+      }
+    ]
+  },
+  "executive_officers": {
+    "draenei_lightforged": "Executive Officer Yrel",
+    "dwarves": "Executive Officer Muradin Bronzebeard",
+    "worgen_gilneans": "Executive Officer Genn Greymane",
+    "gnomes_mechagnome": "Executive Officer Gelbin Mekkatorque",
+    "humans": "Executive Officer Bolvar Fordragon",
+    "kul_tiran": "Executive Officer Katherine Proudmoore",
+    "night_elves": "Executive Officer Tyrande Whisperwind",
+    "void_elves": "Executive Officer Alleria Windrunner",
+    "blood_elf": "Executive Officer Lor'themar Theron",
+    "forsaken": "Executive Officer Nathanos Blightcaller",
+    "goblin": "Executive Officer Trade Prince Gallywix",
+    "nightborne": "Executive Officer Thalyssra",
+    "orc_maghar": "Executive Officer Eitrigg",
+    "tauren_highmountain": "Executive Officer Baine Bloodhoof",
+    "troll_zandalari": "Executive Officer Rokhan",
+    "vulpera": "Executive Officer Nisha",
+    "demons": "Executive Officer Mannoroth",
+    "eldritch": "Executive Officer Vol'jaz",
+    "naga": "Executive Officer Lady Naz'jar",
+    "nerubians": "Executive Officer Anub'arak",
+    "scourge": "Executive Officer Kel'Thuzad",
+    "twilight_cult": "Executive Officer Cho'gall",
+    "dracthyr": "Executive Officer Scalecommander Emberthal",
+    "dragonkin": "Executive Officer Kalecgos",
+    "earthen": "Executive Officer Speaker Brinthe",
+    "elementals": "Executive Officer Ragnaros",
+    "haranir": "Executive Officer Haranir Quartermaster",
+    "pandaren": "Executive Officer Chen Stormstout",
+    "pirates": "Executive Officer Fleet Master Seahorn"
+  },
+  "games": [
+    {
+      "id": "table-01",
+      "label": "Table 01",
+      "campaign_id": "Campaign01",
+      "path_prefix": "games/table-01",
+      "first_mover": "blue-cell",
+      "campaign_base_url": "https://wow-commander-campaign.pages.dev/games/table-01"
+    },
+    {
+      "id": "table-02",
+      "label": "Table 02",
+      "campaign_id": "Campaign02",
+      "path_prefix": "games/table-02",
+      "first_mover": "blue-cell",
+      "campaign_base_url": "https://wow-commander-campaign.pages.dev/games/table-02"
+    },
+    {
+      "id": "table-03",
+      "label": "Table 03",
+      "campaign_id": "Campaign03",
+      "path_prefix": "games/table-03",
+      "first_mover": "blue-cell",
+      "campaign_base_url": "https://wow-commander-campaign.pages.dev/games/table-03"
+    }
+  ],
+  "briefings": {
+    "welcome": "Commander \u2014 I am your Executive Officer. Together we will stand up your campaign on the Azeroth battle map. Answer each question; I will handle the rest.",
+    "knowledge_level": "EXPERIENCE LEVEL\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u00b7 Tactician \u2014 your Executive Officer guides you paragraph-by-paragraph.\n\u00b7 Casual \u2014 simpler flow; you may skip the OPORD or let AI draft one for you.",
+    "opord_mode": "OPERATION ORDER APPROACH\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u00b7 Skip OPORD \u2014 jump straight into the fight; no orders required now.\n\u00b7 Use AI \u2014 your Executive Officer drafts a five-paragraph OPORD here on the portal.",
+    "tutorial": "EXECUTIVE OFFICER BRIEFING\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n1. OPEN THE CAMPAIGN\n   Double-click scripts/Open Campaign Editor.command\n   Edit in Campaign Live (EDIT HERE) \u2192 save in Google Earth Pro.\n\n2. SYNC YOUR MARKERS\n   After saving: scripts/Sync Campaign Board.command\n   (or: python3 scripts/sync_campaign_live.py --push)\n\n3. EXPORT YOUR TURN\n   scripts/Export Turn.command with your cell role\n   (red-cell or blue-cell) for blind play.\n\n4. WHITE-CELL / DISCORD\n   Screenshot your initial force laydown to white-cell always.\n   Message white-cell for adjudication when recon or combat reveals something.\n\n5. TURN PHASES\n   Offensive: recon \u2192 move \u2192 attack (move and attack may be simultaneous)\n   Defensive: recon \u2192 move \u2192 reinforce\n\n6. COMBAT\n   Attacker rolls 1dN where N = attacking force count.\n   Example: 50 vs 100 \u2192 attacker rolls 1d50 damage.\n   White-cell may modify rolls.\n\n7. DAMAGE TRACKING\n   Record damage in the placemark name via Properties.\n   Delete the marker when the unit is destroyed.\n\nContact white-cell on Discord for further guidance.",
+    "xo_briefing_web": "XO BRIEFING\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n1. OPEN THE CAMPAIGN\n   Open your player pack doc_player.kml in Google Earth Pro.\n   Edit markers in Campaign Live (EDIT HERE), then save in Google Earth Pro.\n\n2. SYNC YOUR BOARD\n   Hosted: right-click Campaign Board NetworkLinks \u2192 Refresh (~60s).\n   Local: run Sync Campaign Board after saving in GEP.\n\n3. SUBMIT YOUR TURN\n   When it is your cell's turn, upload your KMZ on your table page on this portal.\n   Use the upload token white-cell issued you.\n\n4. WHITE CELL & DISCORD\n   Screenshot your initial laydown to white-cell.\n   Message white-cell when recon or combat reveals something.\n\n5. TURN PHASES\n   Offensive: recon \u2192 move \u2192 attack (move and attack may be simultaneous)\n   Defensive: recon \u2192 move \u2192 reinforce\n\n6. COMBAT\n   Attacker rolls 1dN where N = attacking force count.\n   White-cell may modify rolls.\n\n7. DAMAGE TRACKING\n   Record damage in the placemark name. Delete the marker when destroyed.\n\nContact white-cell on Discord for further guidance.",
+    "warn_o_ai": "WARN O FROM WHITE-CELL (optional)\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nPaste the Warn O (warning order) from white-cell / higher headquarters.\n\nThis will be included at the top of the AI prompt on the next step when you\ncopy it. Leave empty if you do not have a Warn O yet.",
+    "warn_o_tactician": "WARN O FROM WHITE-CELL (optional)\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nPaste the Warn O (warning order) from white-cell / higher headquarters.\n\nYour Executive Officer will guide you through each OPORD paragraph next.\nIf you paste a Warn O here, it will stay visible as a reference pane while\nyou draft each section. Leave empty if you do not have a Warn O yet.",
+    "tactician_intro": "EXECUTIVE OFFICER \u2014 OPERATION ORDER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nCommander, I will walk you through each paragraph of your operation order.\nUse the Warn O from higher (if provided) as reference on the left while\nyou draft each section on the right.\n\nWork one section at a time. Confirm when each paragraph is ready."
+  },
+  "tactician_sections": [
+    {
+      "step_id": "opord_orientation",
+      "title": "1 \u2014 Orientation",
+      "paragraph_name": "Orientation",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nOrientation orients the reader to the area and time.\n\nIn the most basic sense, state:\n  \u00b7 Where the fight is (area of operations)\n  \u00b7 When it takes place (time zone / date-time group)\n  \u00b7 Who the key friendly and enemy forces are at a glance\n\nKeep it short \u2014 a few sentences that frame the battlespace.",
+      "skeleton": "Orientation\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nArea of operations:\n\nTime zone / date-time group:\n\nKey friendly forces:\n\nKey enemy forces:\n"
+    },
+    {
+      "step_id": "opord_situation",
+      "title": "2 \u2014 Situation",
+      "paragraph_name": "Situation",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nSituation describes factors that affect your mission \u2014 enemy,\nfriendlies, terrain, and civilians. Use the Warn O reference\non the left if white-cell issued one.\n\nCover each item below. Delete prompt lines you do not need.",
+      "skeleton": "Situation\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nEnemy:\n  Size:\n  Location:\n\nAdjacent units:\n\nCivil considerations:\n\nFriendly unit HQ location:\n\nAll friendly units under command:\n"
+    },
+    {
+      "step_id": "opord_mission",
+      "title": "3 \u2014 Mission",
+      "paragraph_name": "Mission",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nMission is the task and purpose \u2014 who, what, when, where, why.\n\nWrite a clear two-sentence mission statement:\n  \u00b7 Sentence 1 \u2014 the task (what you will do)\n  \u00b7 Sentence 2 \u2014 the purpose (why it matters)",
+      "skeleton": "Mission\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nTask:\n\nPurpose:\n\n(Combine into one two-sentence mission statement below)\n\nMission statement:\n"
+    },
+    {
+      "step_id": "opord_execution",
+      "title": "4 \u2014 Execution",
+      "paragraph_name": "Execution",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nExecution is how you will accomplish the mission.\n\nInclude:\n  \u00b7 Commander's intent \u2014 purpose, method, endstate\n  \u00b7 Tactical tasks for each unit one echelon down\n    (platoons if you command a company, squads if platoon, etc.)",
+      "skeleton": "Execution\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nCommander's intent:\n  Purpose:\n  Method:\n  Endstate:\n\nTactical tasks (subordinate units):\n  Unit 1:\n  Unit 2:\n  Unit 3:\n"
+    },
+    {
+      "step_id": "opord_admin",
+      "title": "5 \u2014 Administration & Logistics",
+      "paragraph_name": "Administration & Logistics",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nAdministration and logistics covers sustainment of your force.\n\nDescribe in roleplay terms:\n  \u00b7 Equipment brought to the fight\n  \u00b7 Vehicles (if any)\n  \u00b7 Medical aid / healers available\n\nWhen you confirm, the wizard appends a Gameplay Admin block\nwith turn rules, Google Earth workflow, and command scripts.",
+      "skeleton": "Administration & Logistics\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nEquipment:\n\nVehicles:\n\nMedical aid:\n"
+    },
+    {
+      "step_id": "opord_command",
+      "title": "6 \u2014 Command & Signal",
+      "paragraph_name": "Command & Signal",
+      "briefing": "EXECUTIVE OFFICER\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nCommand and signal identifies who commands whom and how\nforces communicate.\n\nIn roleplay terms, address:\n  \u00b7 Higher command (who you report to)\n  \u00b7 Whether reinforcements can be requested\n  \u00b7 How forces communicate on the battlefield\n\nWhen you confirm, the wizard appends a Gameplay Signal block\ncovering Discord coordination and turn submission.",
+      "skeleton": "Command & Signal\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nHigher command:\n\nReinforcements:\n\nCommunication (roleplay):\n"
+    }
+  ],
+  "hosted_portal_base": "https://wow-commander-campaign.pages.dev"
+}

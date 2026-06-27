@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XO Advisor — WoW Commander</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+  <link rel="stylesheet" href="/assets/eo-advisor.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/rules/">Rules</a>
+    <a href="/start/">Getting started</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <a href="/assistant/" class="active">XO Advisor</a>
+    <a href="/assistant/request-access.html">Request access</a>
+  </nav>
+  <main class="wide">
+    <h1>XO Advisor</h1>
+    <p class="subtitle">Staff assistant for operation orders and your first-turn stand-to — not a general chatbot.</p>
+
+    <section id="login-gate">
+      <h2>Authenticate</h2>
+      <div id="auth-msg" hidden></div>
+      <label for="auth-game">Game</label>
+      <select id="auth-game">
+        <option value="table-01">Table 01</option>
+        <option value="table-02">Table 02</option>
+        <option value="table-03">Table 03</option>
+      </select>
+      <label for="auth-cell">Cell</label>
+      <select id="auth-cell">
+        <option value="blue-cell">Blue cell</option>
+        <option value="red-cell">Red cell</option>
+        <option value="white-cell">White cell</option>
+      </select>
+      <label for="auth-secret">Upload token or assistant password</label>
+      <input type="password" id="auth-secret" autocomplete="off">
+      <button type="button" id="auth-btn">Enter staff channel</button>
+    </section>
+
+    <div id="advisor-app" class="eo-advisor-layout" hidden>
+      <aside class="eo-scope-panel">
+        <h2>Mission scope</h2>
+        <ul>
+          <li>Getting started — Google Earth Pro, player pack, portal, turns</li>
+          <li>Operation order drafting and polish</li>
+          <li>Tactical tasks for your OPORD</li>
+          <li class="muted-out">Open-ended rules tutoring</li>
+          <li class="muted-out">Lore Q&amp;A and general chat</li>
+        </ul>
+
+        <div class="eo-limit-banner">
+          <strong>Shared request limit.</strong> This portal uses a free-tier AI quota (~15 requests/minute for the entire table).
+          Please do <em>not</em> spam questions. One focused request at a time.
+          For numerous or follow-up questions, use your own assistant:
+        </div>
+
+        <div class="eo-external-ai">
+          <h3>Your own AI (recommended for depth)</h3>
+          <div class="eo-external-links">
+            <a href="https://grok.com" target="_blank" rel="noopener">Grok</a>
+            <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a>
+            <a href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a>
+            <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+          </div>
+          <p class="subtitle" style="margin-top:0.5rem">Point them at <a href="/rules/">Rules</a> and your Warn O. Full campaign setup: <a href="/executive-officer/">XO stand-up</a> wizard.</p>
+        </div>
+      </aside>
+
+      <section class="eo-workspace">
+        <p class="eo-not-chat">Select a mission below — this is a task board, not a conversation lounge.</p>
+
+        <div class="eo-mission-grid">
+          <button type="button" class="eo-mission" data-mission="getting_started">
+            <span class="mission-title">① Getting started briefing</span>
+            <span class="mission-desc">One-time stand-to for new commanders</span>
+          </button>
+          <button type="button" class="eo-mission" data-mission="opord">
+            <span class="mission-title">② Draft operation order</span>
+            <span class="mission-desc">Five-paragraph OPORD from your inputs</span>
+          </button>
+          <button type="button" class="eo-mission" data-mission="tactical_tasks">
+            <span class="mission-title">③ Tactical tasks</span>
+            <span class="mission-desc">Execution paragraph — subordinate tasks</span>
+          </button>
+          <button type="button" class="eo-mission" data-mission="order_polish">
+            <span class="mission-title">④ Polish orders</span>
+            <span class="mission-desc">Tighten wording on text you already wrote</span>
+          </button>
+        </div>
+
+        <div class="eo-workspace-header">
+          <h2 id="workspace-title">Mission</h2>
+          <span class="eo-cooldown" id="eo-cooldown"></span>
+        </div>
+        <div id="workspace-msg" hidden></div>
+        <div class="chat-log" id="chat-log"></div>
+        <textarea id="chat-input" rows="4"></textarea>
+        <button type="button" id="chat-send">Submit to XO</button>
+      </section>
+    </div>
+  </main>
+  <script src="/assets/portal.js"></script>
+  <script src="/assets/assistant-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules — WoW Commander</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">Hub</a>
+    <a href="/rules/" class="active">Rules</a>
+    <a href="/start/">Getting started</a>
+    <a href="/executive-officer/">XO Stand-up</a>
+    <a href="/assistant/">XO Advisor</a>
+  </nav>
+  <main class="wide">
+    <h1>Rules &amp; reference</h1>
+    <p class="subtitle">Text summary for accessibility — full illustrated deck below.</p>
+
+    <section class="rules-text" aria-labelledby="rules-turns-heading">
+      <h2 id="rules-turns-heading">Turns and phases</h2>
+      <p>Each wargame <strong>turn</strong> is one complete cycle of planning and execution on the campaign board in Google Earth Pro. Within a turn, cells move through <strong>offensive</strong> and <strong>defensive</strong> phases as described in the rules deck:</p>
+      <ul>
+        <li><strong>Offensive phase:</strong> recon → move → attack (move and attack may occur at the same time).</li>
+        <li><strong>Defensive phase:</strong> recon → move → reinforce.</li>
+      </ul>
+      <p>Combat uses dice proportional to force size (for example, a 50-troop element attacking might roll 1d50). White cell may adjust rolls. Record damage in placemark properties; remove markers when a unit is destroyed.</p>
+    </section>
+
+    <section class="rules-text" aria-labelledby="rules-hosted-heading">
+      <h2 id="rules-hosted-heading">Hosted portal turn sequence</h2>
+      <p>On this portal, turns are <strong>gated</strong> so only the active cell uploads a board file at each step. The standard order is:</p>
+      <ol>
+        <li><strong>Blue Cell</strong> — exports and uploads a turn KMZ to the game table page.</li>
+        <li><strong>Red Cell</strong> — exports and uploads a turn KMZ after Blue has submitted.</li>
+        <li><strong>White Cell ghost turn</strong> — see below.</li>
+        <li><strong>Turn number advances</strong> — Blue Cell is active again for the next turn.</li>
+      </ol>
+      <p>Players edit markers in Google Earth Pro under their cell’s campaign folders, then package and upload when the portal shows it is their turn. Blind-play modes filter what each cell sees in hosted <code>view/</code> KML links.</p>
+    </section>
+
+    <section class="rules-text" aria-labelledby="rules-ghost-heading">
+      <h2 id="rules-ghost-heading">White cell ghost turn (required)</h2>
+      <p>After <strong>Red Cell</strong> submits for a turn, <strong>White Cell</strong> posts a <strong>ghost turn</strong> — an After Action Report on the table admin page. This is the honor-system adjudication step.</p>
+      <ul>
+        <li>Describe casualties, effects, weather, rulings, and anything both sides must apply before the next turn.</li>
+        <li>The portal does <strong>not</strong> automatically merge boards or move markers; players implement outcomes locally in Google Earth Pro.</li>
+        <li>White cell may have already influenced combat during the turn via Discord; the ghost turn is the formal written record that closes the turn.</li>
+        <li>When the ghost turn is posted, the campaign advances to the next turn number and Blue Cell may upload again.</li>
+      </ul>
+      <p>Screenshot initial force laydown and send to white cell. Message white cell on Discord when recon or combat reveals something that needs a ruling during play.</p>
+    </section>
+
+    <section class="rules-text" aria-labelledby="rules-adhoc-heading">
+      <h2 id="rules-adhoc-heading">Ad hoc injects (anytime)</h2>
+      <p>White cell may post an <strong>ad hoc announcement</strong> at <strong>any time</strong> — mid-turn or between turns. Use these for:</p>
+      <ul>
+        <li>Weather or battlefield effects</li>
+        <li>Sudden casualties or equipment failures</li>
+        <li>Narrative events, intelligence updates, or referee rulings</li>
+        <li>Clarifications that do not require a full ghost turn</li>
+      </ul>
+      <p><strong>Ad hoc posts do not advance the turn counter</strong> and do not replace a ghost turn. They are “injects” into the live game. Players should check Discord and the portal when white cell signals an update.</p>
+    </section>
+
+    <section class="rules-text" aria-labelledby="rules-blind-heading">
+      <h2 id="rules-blind-heading">Blind play</h2>
+      <p>Google Earth cannot password-lock folders. Security relies on role-filtered hosted views and turn exports so opponents do not receive hidden unit data. White cell uses discovered-marker folders when a referee reveal is required.</p>
+    </section>
+
+    <section class="rules-deck" aria-labelledby="rules-deck-heading">
+      <h2 id="rules-deck-heading">Illustrated rules deck</h2>
+      <p class="field-hint">14 slides (Age of Conquest intro pages omitted). Scroll sideways, use the arrows, or press ← →. Images are hosted on this site — not loaded from Google directly.</p>
+      <div class="rules-deck-toolbar">
+        <button type="button" id="rules-prev" class="secondary">← Previous</button>
+        <span id="rules-slide-counter" class="rules-slide-counter">Slide 1</span>
+        <button type="button" id="rules-next" class="secondary">Next →</button>
+        <a id="rules-source-link" href="#" target="_blank" rel="noopener" class="rules-open-deck">Open in Google Slides</a>
+      </div>
+      <div id="rules-slides-viewport" class="rules-slides-viewport">
+        <div id="rules-slides-track" class="rules-slides-track"></div>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/rules-page.js"></script>
+</body>
+</html>

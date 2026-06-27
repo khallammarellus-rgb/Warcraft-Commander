@@ -6,6 +6,7 @@ Includes scripts, config, KML entry points, map tiles (02-tiles), and assets
 needed to play locally. Excludes raw exports (01-raw-export, 04-edited-exports).
 
   python3 scripts/package_player_release.py
+  python3 scripts/package_player_release.py --split-mb 1800
   python3 scripts/package_player_release.py --out exports/wowcommander-player-v3.zip
 """
 
@@ -22,6 +23,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from build_kml_superoverlay import merge_variant_config
 from globe_placement import load_globe_config
+from package_azeroth_explorer import split_zip_for_upload
+
+COMMANDER_REPO = "khallammarellus-rgb/Warcraft-Commander"
+DEFAULT_SPLIT_MB = 1800
 
 DEFAULT_VARIANT = "wowcommanderalpha"
 
@@ -156,18 +161,28 @@ def package_release(project_root: Path, output: Path) -> dict:
     }
 
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for path in files:
+        total = len(files)
+        for index, path in enumerate(files, start=1):
             arcname = path.relative_to(project_root).as_posix()
-            zf.write(path, arcname)
+            compress = zipfile.ZIP_STORED if path.suffix.lower() == ".png" else zipfile.ZIP_DEFLATED
+            zf.write(path, arcname, compress_type=compress)
+            if index % 2000 == 0 or index == total:
+                print(f"  Packed {index}/{total} files…", flush=True)
+        getting_started = project_root / "docs" / "PLAYER_GETTING_STARTED.txt"
+        if getting_started.is_file():
+            zf.write(getting_started, "GETTING_STARTED.txt")
         zf.writestr(
             "PLAYER_RELEASE_README.txt",
             (
                 "WoW Commander Alpha — player pack\n"
                 "================================\n\n"
-                "1. Unzip anywhere (keep folder structure).\n"
-                "2. Install Python deps: pip install -r requirements.txt\n"
-                "3. Double-click scripts/WOW Commander.command\n"
-                "4. Open doc_player.kml in Google Earth Pro when prompted\n\n"
+                "Full setup: read GETTING_STARTED.txt in this folder.\n\n"
+                "Quick start:\n"
+                "1. Join split parts if needed (see HOW_TO_JOIN.txt).\n"
+                "2. Unzip anywhere (keep folder structure).\n"
+                "3. python3 -m pip install -r requirements.txt\n"
+                "4. Open 03-kml/wowcommanderalpha/doc_player.kml in Google Earth Pro\n"
+                "5. Portal: https://wow-commander-campaign.pages.dev/start/\n\n"
                 f"Packaged: {date.today().isoformat()}\n"
                 f"Globe: {manifest['globe_version']}\n"
             ),
@@ -177,19 +192,157 @@ def package_release(project_root: Path, output: Path) -> dict:
     return {"output": output, **manifest}
 
 
+def _write_player_release_config(project_root: Path, result: dict, *, split_mb: int | None) -> Path:
+    output: Path = result["output"]
+    version = result["globe_version"]
+    tag = f"player-{version}"
+    cfg = {
+        "github_repo": COMMANDER_REPO,
+        "github_releases_url": f"https://github.com/{COMMANDER_REPO}/releases/tag/{tag}",
+        "release_tag": tag,
+        "asset_zip": output.name,
+        "packaged_at": date.today().isoformat(),
+        "globe_version": version,
+        "file_count": result["file_count"],
+        "tile_files": result["tile_files"],
+        "split_mb": split_mb,
+        "player_entry": "03-kml/wowcommanderalpha/doc_player.kml",
+    }
+    if split_mb:
+        cfg["parts_dir"] = f"exports/{output.stem}-parts"
+    path = project_root / "config" / "player_release.json"
+    path.write_text(json.dumps(cfg, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
+def _write_upload_notes(project_root: Path, result: dict, *, split_mb: int | None) -> Path:
+    output: Path = result["output"]
+    version = result["globe_version"]
+    tag = f"player-{version}"
+    releases_url = f"https://github.com/{COMMANDER_REPO}/releases"
+    lines = [
+        "How to publish the WoW Commander player pack on GitHub Releases",
+        "================================================================",
+        "",
+        "CAN PLAYERS USE \"Source code (zip)\"?",
+        "  No. That snapshot has no 02-tiles/ map imagery.",
+        "",
+        "WHAT TO UPLOAD",
+        f"  {output}",
+    ]
+    if split_mb:
+        lines.extend(
+            [
+                f"  exports/{output.stem}-parts/  (all .zip + .zNN parts + HOW_TO_JOIN.txt)",
+                "",
+                f"GitHub allows up to 2 GB per file — this pack is split at {split_mb} MB.",
+            ]
+        )
+    else:
+        lines.append("  GitHub allows up to 2 GB per uploaded file.")
+    lines.extend(
+        [
+            "",
+            "STEPS",
+            "  1. Build: python3 scripts/package_player_release.py --split-mb 1800",
+            f"  2. GitHub → {COMMANDER_REPO} → Releases → Draft a new release",
+            f"  3. Tag: {tag}   Title: WoW Commander player pack v{version}",
+            "  4. Attach the zip (and all split parts if used) under Assets",
+            "  5. At the TOP of the release description, paste:",
+            "",
+            f"     >>> DOWNLOAD: {output.name} (+ parts if split) <<<",
+            '     Do NOT download "Source code (zip)".',
+            "",
+            "  6. Publish",
+            "",
+            "PORTAL",
+            "  /start/ links to config/player_release.json → github_releases_url",
+            "",
+            "WHAT PLAYERS DO",
+            "  1. Download assets from the release (not Source code)",
+            "  2. Join parts if split, then unzip",
+            "  3. Open 03-kml/wowcommanderalpha/doc_player.kml in Google Earth Pro",
+            f"  4. Open table page: https://wow-commander-campaign.pages.dev/games/table-01/",
+            "",
+        ]
+    )
+    path = project_root / "exports" / "PLAYER_RELEASE_UPLOAD.txt"
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Package player release zip for GitHub")
     parser.add_argument("--out", type=Path, default=None)
+    parser.add_argument(
+        "--split-mb",
+        type=int,
+        default=DEFAULT_SPLIT_MB,
+        help=f"Split zip into N-MB parts for GitHub (0 = single file). Default: {DEFAULT_SPLIT_MB}",
+    )
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parent.parent
     output = args.out or _default_output(project_root)
+    split_mb = None if not args.split_mb or args.split_mb <= 0 else args.split_mb
+
+    print(f"Packaging player release → {output.name}")
     result = package_release(project_root, output)
     print(f"Wrote {result['output']} ({result['file_count']} files)")
     if result.get("tiles_included"):
         print(f"  Includes {result['tile_files']} tile files under 02-tiles/")
     else:
         print("  Warning: no 02-tiles/ found — run build_world_globe.py first")
+        return 1
+
+    split_parts: list[Path] = []
+    if split_mb:
+        print(f"Splitting for GitHub upload ({split_mb} MB parts)…")
+        split_parts = split_zip_for_upload(output, split_mb)
+        parts_dir = output.parent / f"{output.stem}-parts"
+        (parts_dir / "DOWNLOAD.txt").write_text(
+            f"""WoW Commander — what to download from GitHub
+
+DO NOT download "Source code (zip)" or "Source code (tar.gz)".
+Those are developer snapshots without map tiles.
+
+DO download every file under ASSETS on the release page:
+  {output.name}
+  {output.stem}.z01, .z02, … (all parts)
+  HOW_TO_JOIN.txt
+
+Then follow HOW_TO_JOIN.txt to join and unzip the player pack.
+""",
+            encoding="utf-8",
+        )
+        (parts_dir / "HOW_TO_JOIN.txt").write_text(
+            f"""WoW Commander — join split zip parts
+
+Download every ASSET from the GitHub release (not "Source code"):
+  {output.name}
+  {output.stem}.z01, .z02, … (all parts)
+
+Put them in one folder, then:
+
+Mac Terminal (from that folder):
+  zip -FF {output.name} --out {output.stem}-joined.zip
+  unzip {output.stem}-joined.zip
+
+Windows (7-Zip):
+  Select all part files → 7-Zip → Extract Here
+
+Open 03-kml/wowcommanderalpha/doc_player.kml in Google Earth Pro.
+Keep 02-tiles/, 03-kml/, scripts/, and config/ together.
+""",
+            encoding="utf-8",
+        )
+        print(f"  Parts: {len([p for p in split_parts if p.suffix != '.txt'])} files in {parts_dir}")
+
+    cfg_path = _write_player_release_config(project_root, result, split_mb=split_mb)
+    notes_path = _write_upload_notes(project_root, result, split_mb=split_mb)
+    print(f"  Config: {cfg_path.relative_to(project_root)}")
+    print(f"  Upload notes: {notes_path.relative_to(project_root)}")
+    print(f"  Publish at: https://github.com/{COMMANDER_REPO}/releases")
     return 0
 
 

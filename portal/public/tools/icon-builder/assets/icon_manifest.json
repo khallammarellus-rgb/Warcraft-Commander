@@ -1,0 +1,1483 @@
+{
+  "version": 1,
+  "artboard": 512,
+  "export_sizes": [
+    64,
+    128,
+    256
+  ],
+  "player_custom_icons_path": "assets/player_custom_icons/",
+  "defaults": {
+    "fill": "#80ffff",
+    "border": "#000000",
+    "shape_id": "friendly_generic_rectangle",
+    "identifier_id": "infantry"
+  },
+  "shapes": [
+    {
+      "id": "friendly_generic_rectangle",
+      "label": "Friendly Generic Rectangle",
+      "file": "shapes/friendly_generic_rectangle.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 259,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "enemy_generic_diamond",
+      "label": "Enemy Generic Diamond",
+      "file": "shapes/enemy_generic_diamond.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 511,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "triangle",
+      "label": "Triangle",
+      "file": "shapes/triangle.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 511,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "circle",
+      "label": "Circle",
+      "file": "shapes/circle.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "banner",
+      "label": "Banner",
+      "file": "shapes/banner.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 334,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "column",
+      "label": "Column",
+      "file": "shapes/column.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 480,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "decagon",
+      "label": "Decagon",
+      "file": "shapes/decagon.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 487,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "elongated_diamond",
+      "label": "Elongated Diamond",
+      "file": "shapes/elongated_diamond.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 347,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "flag",
+      "label": "Flag",
+      "file": "shapes/flag.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 304,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "hexagon",
+      "label": "Hexagon",
+      "file": "shapes/hexagon.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 444,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "home_plate",
+      "label": "Home Plate",
+      "file": "shapes/home_plate.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 390,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "monolith",
+      "label": "Monolith",
+      "file": "shapes/monolith.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 296,
+      "height": 511,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "mountain",
+      "label": "Mountain",
+      "file": "shapes/mountain.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 323,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "pentagon",
+      "label": "Pentagon",
+      "file": "shapes/pentagon.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 511,
+      "height": 486,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "rhombus",
+      "label": "Rhombus",
+      "file": "shapes/rhombus.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 219,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "square_square",
+      "label": "Square Square",
+      "file": "shapes/square_square.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 510,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "star",
+      "label": "Star",
+      "file": "shapes/star.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "track",
+      "label": "Track",
+      "file": "shapes/track.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 512,
+      "height": 258,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    },
+    {
+      "id": "vertical_penant",
+      "label": "Vertical Penant",
+      "file": "shapes/vertical_penant.png",
+      "category": "shapes",
+      "tintable": true,
+      "width": 330,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    }
+  ],
+  "identifiers": [
+    {
+      "id": "archers_riflemen",
+      "label": "Archers:Riflemen",
+      "file": "identifiers/archers_riflemen.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 152,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "cavalry",
+      "label": "Cavalry",
+      "file": "identifiers/cavalry.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 480,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "engineers",
+      "label": "Engineers",
+      "file": "identifiers/engineers.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 511,
+      "height": 398,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "force_reconnaisance",
+      "label": "Force Reconnaisance",
+      "file": "identifiers/force_reconnaisance.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 107,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "heavy_artillery",
+      "label": "Heavy Artillery",
+      "file": "identifiers/heavy_artillery.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 290,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "heavy_infantry",
+      "label": "Heavy Infantry",
+      "file": "identifiers/heavy_infantry.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 512,
+      "height": 299,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "hulk",
+      "label": "Hulk",
+      "file": "identifiers/hulk.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 512,
+      "height": 349,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "infantry",
+      "label": "Infantry",
+      "file": "identifiers/infantry.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 511,
+      "height": 299,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "light_artillery",
+      "label": "Light Artillery",
+      "file": "identifiers/light_artillery.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 288,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "logistics",
+      "label": "Logistics",
+      "file": "identifiers/logistics.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 512,
+      "height": 455,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "medium_artillery",
+      "label": "Medium Artillery",
+      "file": "identifiers/medium_artillery.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 290,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "medium_infantry",
+      "label": "Medium Infantry",
+      "file": "identifiers/medium_infantry.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 511,
+      "height": 299,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "naval_ship",
+      "label": "Naval Ship",
+      "file": "identifiers/naval_ship.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 440,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "reconnaissance",
+      "label": "Reconnaissance",
+      "file": "identifiers/reconnaissance.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 272,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "spies",
+      "label": "Spies",
+      "file": "identifiers/spies.png",
+      "category": "identifiers",
+      "tintable": true,
+      "width": 512,
+      "height": 511,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    }
+  ],
+  "addons": [
+    {
+      "id": "mercenary",
+      "label": "Mercenary",
+      "file": "addons/mercenary.png",
+      "category": "addons",
+      "tintable": true,
+      "width": 512,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape_preserve_white"
+    },
+    {
+      "id": "text_banner_add_on",
+      "label": "Text Banner Add On",
+      "file": "addons/text_banner_add_on.png",
+      "category": "addons",
+      "tintable": true,
+      "width": 512,
+      "height": 121,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape",
+      "text_editable": true
+    },
+    {
+      "id": "hq_flag_add_on",
+      "label": "HQ Flag Add On",
+      "file": "addons/hq_flag_add_on.png",
+      "category": "addons",
+      "tintable": true,
+      "width": 512,
+      "height": 302,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "shape"
+    }
+  ],
+  "custom_features": [
+    {
+      "id": "eye",
+      "label": "Eye",
+      "file": "custom_features/eye.png",
+      "category": "custom_features",
+      "tintable": true,
+      "width": 512,
+      "height": 270,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "moon",
+      "label": "Moon",
+      "file": "custom_features/moon.png",
+      "category": "custom_features",
+      "tintable": true,
+      "width": 427,
+      "height": 512,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "nature",
+      "label": "Nature",
+      "file": "custom_features/nature.png",
+      "category": "custom_features",
+      "tintable": true,
+      "width": 512,
+      "height": 320,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    },
+    {
+      "id": "viking_helmet",
+      "label": "Viking Helmet",
+      "file": "custom_features/viking_helmet.png",
+      "category": "custom_features",
+      "tintable": true,
+      "width": 512,
+      "height": 316,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": [],
+      "tint_mode": "border"
+    }
+  ],
+  "classes": [
+    {
+      "id": "paladin",
+      "label": "Warrior",
+      "file": "classes/paladin.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 128,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "mage",
+      "label": "Mage",
+      "file": "classes/mage.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 128,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "rogue",
+      "label": "Rogue",
+      "file": "classes/rogue.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 128,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "druid",
+      "label": "Druid",
+      "file": "classes/druid.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "hunter",
+      "label": "Hunter",
+      "file": "classes/hunter.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 128,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "warlock",
+      "label": "Shaman",
+      "file": "classes/warlock.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 128,
+      "height": 127,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "monk",
+      "label": "Priest",
+      "file": "classes/monk.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "priest",
+      "label": "Warlock",
+      "file": "classes/priest.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 127,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "evoker",
+      "label": "Paladin",
+      "file": "classes/evoker.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 127,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "demon_hunter",
+      "label": "Death Knight",
+      "file": "classes/demon_hunter.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "death_knight",
+      "label": "Demon Hunter",
+      "file": "classes/death_knight.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 128,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    },
+    {
+      "id": "warrior",
+      "label": "Monk",
+      "file": "classes/warrior.png",
+      "category": "classes",
+      "tintable": true,
+      "width": 127,
+      "height": 127,
+      "default": {
+        "x": 422,
+        "y": 90,
+        "scale": 0.55,
+        "rotation": 0
+      },
+      "tags": [
+        "wow_class"
+      ],
+      "tint_mode": "border"
+    }
+  ],
+  "tactical_ops": [
+    {
+      "id": "ambush",
+      "label": "Ambush",
+      "file": "tactical_ops/ambush.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 511,
+      "height": 336,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "attack_by_fire",
+      "label": "Attack by Fire",
+      "file": "tactical_ops/attack_by_fire.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 350,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "axis_of_air_assault",
+      "label": "Axis of Air Assault",
+      "file": "tactical_ops/axis_of_air_assault.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 206,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "axis_of_attack",
+      "label": "Axis of Attack",
+      "file": "tactical_ops/axis_of_attack.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 283,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "axis_of_portal_assault",
+      "label": "Axis of Portal Assault",
+      "file": "tactical_ops/axis_of_portal_assault.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 278,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "axis_of_support",
+      "label": "Axis of Support",
+      "file": "tactical_ops/axis_of_support.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 250,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "block",
+      "label": "Block",
+      "file": "tactical_ops/block.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 363,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "breach",
+      "label": "Breach",
+      "file": "tactical_ops/breach.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 370,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "bypass",
+      "label": "Bypass",
+      "file": "tactical_ops/bypass.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 395,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "cannalize",
+      "label": "Cannalize",
+      "file": "tactical_ops/cannalize.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 511,
+      "height": 362,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "clear",
+      "label": "Clear",
+      "file": "tactical_ops/clear.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 344,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "contain",
+      "label": "Contain",
+      "file": "tactical_ops/contain.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 416,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "counterattack",
+      "label": "Counterattack",
+      "file": "tactical_ops/counterattack.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 283,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "cover",
+      "label": "Cover",
+      "file": "tactical_ops/cover.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 294,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "delay",
+      "label": "Delay",
+      "file": "tactical_ops/delay.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 302,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "destroy",
+      "label": "Destroy",
+      "file": "tactical_ops/destroy.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 435,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "disrupt",
+      "label": "Disrupt",
+      "file": "tactical_ops/disrupt.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 338,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "fix",
+      "label": "Fix",
+      "file": "tactical_ops/fix.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 289,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "follow_and_assume",
+      "label": "Follow and Assume",
+      "file": "tactical_ops/follow_and_assume.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 285,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "guard",
+      "label": "Guard",
+      "file": "tactical_ops/guard.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 294,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "hasty_withdrawal",
+      "label": "Hasty Withdrawal",
+      "file": "tactical_ops/hasty_withdrawal.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 365,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "interdict",
+      "label": "Interdict",
+      "file": "tactical_ops/interdict.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 299,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "isolate",
+      "label": "Isolate",
+      "file": "tactical_ops/isolate.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 389,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "neutralize",
+      "label": "Neutralize",
+      "file": "tactical_ops/neutralize.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 368,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "occupy",
+      "label": "Occupy",
+      "file": "tactical_ops/occupy.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 404,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "penetrate",
+      "label": "Penetrate",
+      "file": "tactical_ops/penetrate.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 511,
+      "height": 279,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.751,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "relief_in_place",
+      "label": "Relief in Place",
+      "file": "tactical_ops/relief_in_place.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 272,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "retain",
+      "label": "Retain",
+      "file": "tactical_ops/retain.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 333,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "screen",
+      "label": "Screen",
+      "file": "tactical_ops/screen.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 294,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "secure",
+      "label": "Secure",
+      "file": "tactical_ops/secure.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 328,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "seizure",
+      "label": "Seizure",
+      "file": "tactical_ops/seizure.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 414,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "support_by_fire",
+      "label": "Support by Fire",
+      "file": "tactical_ops/support_by_fire.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 377,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "withdraw_under_pressue",
+      "label": "Withdraw Under Pressue",
+      "file": "tactical_ops/withdraw_under_pressue.png",
+      "category": "tactical_ops",
+      "tintable": false,
+      "width": 512,
+      "height": 245,
+      "default": {
+        "x": 256,
+        "y": 276,
+        "scale": 0.75,
+        "rotation": 0
+      },
+      "tags": []
+    }
+  ],
+  "pptx_curated": []
+}

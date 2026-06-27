@@ -1,0 +1,35 @@
+{
+  "portal_label": "WoW Commander Campaign Portal",
+  "default_variant": "wowcommanderalpha",
+  "games": [
+    {
+      "id": "table-01",
+      "label": "Table 01",
+      "campaign_id": "Campaign01",
+      "path_prefix": "games/table-01",
+      "first_mover": "blue-cell",
+      "variant": "wowcommanderalpha",
+      "discord_webhook_secret": "DISCORD_WEBHOOK_URL_TABLE_01",
+      "discord_turns_webhook_secret": "DISCORD_WEBHOOK_URL_TURNS",
+      "discord_admin_webhook_secret": "DISCORD_WEBHOOK_URL_ADMIN"
+    },
+    {
+      "id": "table-02",
+      "label": "Table 02",
+      "campaign_id": "Campaign02",
+      "path_prefix": "games/table-02",
+      "first_mover": "blue-cell",
+      "variant": "wowcommanderalpha",
+      "discord_webhook_secret": "DISCORD_WEBHOOK_URL_TABLE_02"
+    },
+    {
+      "id": "table-03",
+      "label": "Table 03",
+      "campaign_id": "Campaign03",
+      "path_prefix": "games/table-03",
+      "first_mover": "blue-cell",
+      "variant": "wowcommanderalpha",
+      "discord_webhook_secret": "DISCORD_WEBHOOK_URL_TABLE_03"
+    }
+  ]
+}

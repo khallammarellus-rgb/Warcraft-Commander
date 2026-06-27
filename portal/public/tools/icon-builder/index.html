@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unit Icon Builder — WoW Commander</title>
+  <link rel="stylesheet" href="icon-builder.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a href="/">← Hub</a>
+      <strong>Unit Icon Builder</strong>
+      <div class="tabs">
+        <button type="button" class="tab active" data-view="compose">Compose unit icon</button>
+        <button type="button" class="tab" data-view="mass">Mass Icon Builder</button>
+        <button type="button" class="tab" data-view="tactical">Tactical graphics</button>
+      </div>
+    </header>
+
+    <div class="compose-view" id="compose-view">
+      <div class="workspace">
+        <aside class="panel">
+          <div class="panel-head">
+            <h2>Assets</h2>
+            <div class="view-toggle">
+              <button type="button" class="view-btn active" id="view-list" title="List view">List</button>
+              <button type="button" class="view-btn" id="view-gallery" title="Gallery view">Gallery</button>
+            </div>
+          </div>
+          <div class="cat-tabs" id="cat-tabs"></div>
+          <div class="asset-list list-mode" id="asset-picker"></div>
+          <p class="hint">One shape at a time — pick a new shape to replace it. Other layers stack on top.</p>
+        </aside>
+
+        <main class="canvas-wrap">
+          <div class="canvas-stage-wrap">
+            <div id="stage-container"></div>
+            <div class="draw-toolbox" id="draw-toolbox">
+              <span class="draw-toolbox-label">Draw</span>
+              <button type="button" class="draw-tool active" data-draw-tool="select" title="Select / move">↖</button>
+              <button type="button" class="draw-tool" data-draw-tool="line" title="Line (hold Shift for level)">─</button>
+              <button type="button" class="draw-tool" data-draw-tool="curve" title="Curved line">⌒</button>
+              <button type="button" class="draw-tool" data-draw-tool="circle" title="Circle">○</button>
+              <button type="button" class="draw-tool" data-draw-tool="triangle" title="Triangle">△</button>
+              <label class="draw-ctrl" title="Stroke color">
+                Color <input type="color" id="draw-color" value="#000000">
+              </label>
+              <label class="draw-ctrl" title="Stroke thickness (points)">
+                Pt
+                <select id="draw-stroke-pt">
+                  <option value="0.5">0.5</option>
+                  <option value="1">1</option>
+                  <option value="1.5">1.5</option>
+                  <option value="2" selected>2</option>
+                  <option value="2.25">2.25</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="6">6</option>
+                  <option value="8">8</option>
+                </select>
+              </label>
+              <label class="curve-control hidden" id="curve-control" title="Curve bend">
+                Bend <input type="range" id="curve-bend" min="-100" max="100" value="35">
+              </label>
+            </div>
+          </div>
+          <div class="toolbar">
+            <label>Fill <input type="color" id="fill-color" value="#80ffff" title="Shape interior and add-ons"></label>
+            <label>Border <input type="color" id="border-color" value="#000000" title="Shape outline, identifiers, WoW class, and custom"></label>
+            <div class="banner-controls hidden" id="banner-controls">
+              <label>Banner text <input type="text" id="banner-text" placeholder="Unit name" maxlength="48"></label>
+              <label>Pt size <input type="number" id="banner-font-size" min="8" max="120" value="28" style="width:4rem"></label>
+              <label class="banner-bold-label"><input type="checkbox" id="banner-bold"> Bold</label>
+            </div>
+            <label>Export size
+              <select id="export-size">
+                <option value="64">64 px</option>
+                <option value="128" selected>128 px</option>
+                <option value="256">256 px</option>
+              </select>
+            </label>
+            <input type="text" id="export-name" placeholder="my-unit" style="width:120px">
+            <button type="button" class="btn btn-success" id="btn-export">Download PNG</button>
+            <button type="button" class="btn btn-ghost" id="btn-clear">Clear canvas</button>
+          </div>
+          <p class="hint" style="text-align:center;max-width:560px">
+            Preview uses a white backdrop so black outlines are visible. Exported PNG stays <strong>transparent</strong>.
+            Identifiers use authored defaults. Select one, then use <strong>Layer resize</strong> (right panel) —
+            <strong>Free</strong> shows side handles for elongating. Mercenary pins left; HQ flag top-right. Save into
+            <code>player/assets/player_custom_icons/</code> — placemark icon:
+            <code>assets/player_custom_icons/your-file.png</code>
+          </p>
+        </main>
+
+        <aside class="panel panel-right">
+          <h2>Layers</h2>
+          <div class="resize-mode-controls hidden" id="resize-mode-controls">
+            <span class="resize-mode-label">Layer resize</span>
+            <button type="button" class="resize-mode-btn active" data-resize-mode="proportional" title="Corner handles, locked aspect">Proportional</button>
+            <button type="button" class="resize-mode-btn" data-resize-mode="free" title="Side handles stretch one axis; corners stretch freely">Free</button>
+          </div>
+          <p class="resize-mode-hint hidden" id="resize-mode-hint">Free mode: drag the <strong>side</strong> handles to elongate; corners resize freely.</p>
+          <div class="layer-list" id="layer-list"></div>
+          <p class="hint">Top of list = drawn on top. Select a layer to move it.</p>
+          <div class="history-section">
+            <h2>Recent icons</h2>
+            <div class="history-list" id="history-list"></div>
+            <p class="hint">Last 5 exports saved in this browser. Click to restore.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="mass-view hidden" id="mass-view">
+      <div class="mass-layout">
+        <aside class="panel mass-panel">
+          <h2>Package settings</h2>
+          <label class="mass-field">Shape
+            <select id="mass-shape"></select>
+          </label>
+          <label class="mass-field">Fill
+            <input type="color" id="mass-fill-color" value="#80ffff">
+          </label>
+          <label class="mass-field">Border
+            <input type="color" id="mass-border-color" value="#000000">
+          </label>
+          <label class="mass-field">Export size
+            <select id="mass-export-size">
+              <option value="64">64 px</option>
+              <option value="128" selected>128 px</option>
+              <option value="256">256 px</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn-success mass-export-btn" id="btn-mass-export">Download icon package (ZIP)</button>
+          <p class="hint" id="mass-export-status"></p>
+          <p class="hint">
+            Exports every identifier and WoW class at authored defaults; mercenary (left) and HQ flag (top-right)
+            add-ons are glued outside the shape. Tactical graphics export as-is. Files use generic names like
+            <code>infantry.png</code>.
+          </p>
+        </aside>
+        <main class="mass-preview-wrap">
+          <h2>Preview</h2>
+          <p class="hint">Friendly rectangle + infantry (same default as Compose).</p>
+          <div class="mass-preview-box">
+            <img id="mass-preview" alt="Package preview">
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="tactical-view" id="tactical-view">
+      <p class="hint" style="padding:1rem 1rem 0">
+        Mission task graphics — download as-is for Operational Graphics folders. No composer.
+      </p>
+      <div class="tactical-grid" id="tactical-grid"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/konva@9.3.6/konva.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="icon-builder.js"></script>
+</body>
+</html>

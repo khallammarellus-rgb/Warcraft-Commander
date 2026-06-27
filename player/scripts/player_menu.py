@@ -64,6 +64,9 @@ def _print_header(project_root: Path) -> None:
     print("  5  What should I do next?")
     print("  6  How to play (full instructions)")
     print("  —")
+    print("  i  Install wizard (extract, shortcuts, system check)")
+    print("  p  Package icon pack (share with opponent)")
+    print("  m  Import icon pack")
     print("  o  Organizer tools (reset board, hosted mode, …)")
     print("  q  Quit")
     print("=" * 60)
@@ -146,6 +149,26 @@ def _action_instructions() -> int:
     return _run([sys.executable, str(SCRIPTS / "package_wargame_client.py"), "--instructions"])
 
 
+def _action_install_wizard() -> int:
+    return _run([sys.executable, str(SCRIPTS / "player_install_wizard.py")])
+
+
+def _action_package_icons() -> int:
+    cell = input("Cell label for filename (e.g. blue-cell, Enter=shared): ").strip()
+    cmd = [sys.executable, str(SCRIPTS / "package_icon_pack.py")]
+    if cell:
+        cmd.extend(["--cell", cell])
+    return _run(cmd)
+
+
+def _action_import_icons() -> int:
+    path = input("Path to icon-pack .zip: ").strip()
+    if not path:
+        print("Cancelled.")
+        return 1
+    return _run([sys.executable, str(SCRIPTS / "import_icon_pack.py"), "--zip", path])
+
+
 def _organizer_menu() -> None:
     while True:
         print()
@@ -207,6 +230,9 @@ ACTIONS = {
     "export": _action_export,
     "guide": lambda: (_print_play_guide(PROJECT_ROOT), 0)[1],
     "instructions": _action_instructions,
+    "install": _action_install_wizard,
+    "package-icons": _action_package_icons,
+    "import-icons": _action_import_icons,
     "organizer": lambda: (_organizer_menu(), 0)[1],
 }
 
@@ -246,10 +272,19 @@ def _interactive_loop() -> int:
         elif choice == "6":
             _action_instructions()
             _pause()
+        elif choice in ("i", "install"):
+            _action_install_wizard()
+            _pause()
+        elif choice in ("p", "icons", "package-icons"):
+            _action_package_icons()
+            _pause()
+        elif choice == "m":
+            _action_import_icons()
+            _pause()
         elif choice in ("o", "org", "organizer"):
             _organizer_menu()
         else:
-            print("Pick 1–6, o for organizer, or q to quit.")
+            print("Pick 1–6, i/p/m, o for organizer, or q to quit.")
 
 
 def main() -> int:
