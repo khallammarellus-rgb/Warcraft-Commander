@@ -37,7 +37,7 @@
       "campaign_regions": true,
       "campaign_places_mode": "live_edit",
       "campaign_deploy_mode": "hosted",
-      "campaign_base_url": "https://wow-commander-campaign.pages.dev",
+      "campaign_base_url": "https://wow-commander-campaign.pages.dev/games/table-01",
       "campaign_include_secondary_islands": true,
       "campaign_include_minor_isles": true,
       "campaign_refresh_mode": "interval",
