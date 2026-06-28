@@ -3,36 +3,86 @@
   <Document>
     <name>Outland</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>Outland z0 0/0</name>
-      <drawOrder>76</drawOrder>
+      <name>Outland silhouette</name>
+      <drawOrder>50</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>46.04420000</north>
-          <south>27.14420000</south>
-          <east>32.21115000</east>
-          <west>8.67085000</west>
+          <north>36.61630000</north>
+          <south>-11.38370000</south>
+          <east>41.41772600</east>
+          <west>-7.76992600</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>150</minLodPixels>
-          <maxLodPixels>2546</maxLodPixels>
+          <minLodPixels>93</minLodPixels>
+          <maxLodPixels>398</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/outland/0/0/0.png</href>
+        <href>../../../02-tiles/outland/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>46.04420000</north>
-        <south>27.14420000</south>
-        <east>32.21115000</east>
-        <west>8.67085000</west>
+        <north>36.61630000</north>
+        <south>-11.38370000</south>
+        <east>41.41772600</east>
+        <west>-7.76992600</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Outland planet</name>
+      <drawOrder>51</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>36.61630000</north>
+          <south>-11.38370000</south>
+          <east>41.41772600</east>
+          <west>-7.76992600</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>356</minLodPixels>
+          <maxLodPixels>887</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/outland/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>36.61630000</north>
+        <south>-11.38370000</south>
+        <east>41.41772600</east>
+        <west>-7.76992600</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Outland theater</name>
+      <drawOrder>52</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>36.61630000</north>
+          <south>-11.38370000</south>
+          <east>41.41772600</east>
+          <west>-7.76992600</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1783</minLodPixels>
+          <maxLodPixels>5324</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/outland/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>36.61630000</north>
+        <south>-11.38370000</south>
+        <east>41.41772600</east>
+        <west>-7.76992600</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

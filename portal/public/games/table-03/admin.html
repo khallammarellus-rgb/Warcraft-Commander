@@ -11,7 +11,6 @@
     <a href="/">Hub</a>
     <a href="index.html">Table 03</a>
     <a href="/executive-officer/">XO Stand-up</a>
-    <span class="active">White cell admin</span>
   </nav>
 
   <section id="admin-gate" class="admin-gate wide">
@@ -40,7 +39,7 @@
 
     <section id="token-panel">
       <h2>Player upload tokens</h2>
-      <p class="field-hint">Blue and Red cells paste these on the game table page to upload turn KMZ files. Give each player only their cell’s token. <strong>Regenerate</strong> revokes old tokens instantly (KV — no redeploy).</p>
+      <p class="field-hint">Blue and Red cells paste these on the game table page to upload turn KMZ files. The XOai password (or your admin passcode) unlocks <a href="/assistant/">XOai</a>. Use <strong>Copy</strong> beside each token. <strong>Regenerate</strong> revokes old tokens instantly (KV — no redeploy).</p>
       <div id="token-output"><p class="subtitle">Loading tokens…</p></div>
       <button type="button" id="token-regenerate" class="secondary">Regenerate tokens</button>
     </section>
@@ -48,17 +47,17 @@
     <div class="split">
       <section>
         <h2>Ghost turn (required)</h2>
-        <p class="field-hint">Submit after <strong>Red Cell</strong> uploads their board KMZ for the turn. Honor-system AAR only — casualties, effects, rulings. Does not merge boards; players adjust markers locally.</p>
+        <p class="field-hint">Submit after <strong>Red Cell</strong> uploads their board KMZ. Set <strong>reason</strong>, <strong>tactical rationale</strong>, roll <strong>nDn</strong> dice as needed (log stays with the report), then publish. Does not merge boards.</p>
         <form id="ghost-form">
-          <textarea id="ghost-aar" placeholder="Casualties, effects, adjudication…"></textarea>
+          <textarea id="ghost-aar" placeholder="Additional casualties, effects, outcome notes…"></textarea>
           <button type="submit">Submit ghost turn AAR</button>
         </form>
       </section>
       <section>
         <h2>Ad hoc announcement</h2>
-        <p class="field-hint">Post anytime — weather, mid-turn rulings, narrative. Does <strong>not</strong> advance the turn counter. Pings Discord.</p>
+        <p class="field-hint">Post anytime — weather, mid-turn rulings, narrative. Same dice + rationale fields as ghost turn. Does <strong>not</strong> advance the turn counter. Pings Discord.</p>
         <form id="announce-form">
-          <textarea id="adhoc-aar" placeholder="Mid-turn ruling, weather, casualties…"></textarea>
+          <textarea id="adhoc-aar" placeholder="Additional ruling details…"></textarea>
           <button type="submit" class="secondary">Post announcement</button>
         </form>
       </section>
@@ -66,9 +65,10 @@
 
     <section>
       <h2>Campaign lifecycle</h2>
-      <p class="field-hint"><strong>Start</strong> — opens turn uploads (usually auto-starts when both cells finish XO stand-up). <strong>End</strong> — freezes uploads and can purge hosted unit icons (and optionally turn archives) from R2. <strong>Process merge</strong> — queues R2 → merge → redeploy (auto after each board upload when a runner is configured). Fallback: <code>python3 scripts/merge_runner_daemon.py</code> on your machine.</p>
+      <p class="field-hint"><strong>Do not click Start during an active game</strong> — it can desync whose turn it is. Campaigns <strong>auto-start</strong> when Red cell finalizes XO stand-up. <strong>End</strong> — freezes uploads and can purge hosted unit icons (and optionally turn archives) from R2. <strong>Process merge</strong> — queues R2 → merge → redeploy (auto after each board upload when a runner is configured). Fallback: <code>python3 scripts/merge_runner_daemon.py</code> on your machine.</p>
+      <p class="subtitle" id="lifecycle-start-hint"></p>
       <div class="eo-actions">
-        <button type="button" id="lifecycle-start">Start campaign</button>
+        <button type="button" id="lifecycle-start" class="secondary">Start campaign (recovery only)</button>
         <button type="button" id="lifecycle-end" class="secondary">End campaign</button>
         <button type="button" id="merge-btn" class="secondary">Process merge / redeploy</button>
       </div>

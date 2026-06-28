@@ -17,24 +17,24 @@
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>16.16220000</north>
-          <south>13.46220000</south>
-          <east>146.44782000</east>
-          <west>145.05138000</west>
+          <north>22.59720000</north>
+          <south>20.39720000</south>
+          <east>145.89972100</east>
+          <west>144.71747900</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>288</maxLodPixels>
+          <maxLodPixels>235</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/firelands/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>16.16220000</north>
-        <south>13.46220000</south>
-        <east>146.44782000</east>
-        <west>145.05138000</west>
+        <north>22.59720000</north>
+        <south>20.39720000</south>
+        <east>145.89972100</east>
+        <west>144.71747900</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

@@ -3,36 +3,86 @@
   <Document>
     <name>Shadowlands</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>Shadowlands z0 0/0</name>
-      <drawOrder>40</drawOrder>
+      <name>Shadowlands silhouette</name>
+      <drawOrder>52</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>86.04190000</north>
-          <south>59.04190000</south>
-          <east>25.20588000</east>
-          <west>-34.19248000</west>
+          <north>20.37130000</north>
+          <south>-27.62870000</south>
+          <east>115.11812900</east>
+          <west>69.77007100</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>379</minLodPixels>
-          <maxLodPixels>6433</maxLodPixels>
+          <minLodPixels>91</minLodPixels>
+          <maxLodPixels>389</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/shadowlands/0/0/0.png</href>
+        <href>../../../02-tiles/shadowlands/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>86.04190000</north>
-        <south>59.04190000</south>
-        <east>25.20588000</east>
-        <west>-34.19248000</west>
+        <north>20.37130000</north>
+        <south>-27.62870000</south>
+        <east>115.11812900</east>
+        <west>69.77007100</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Shadowlands planet</name>
+      <drawOrder>53</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>20.37130000</north>
+          <south>-27.62870000</south>
+          <east>115.11812900</east>
+          <west>69.77007100</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>348</minLodPixels>
+          <maxLodPixels>865</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/shadowlands/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>20.37130000</north>
+        <south>-27.62870000</south>
+        <east>115.11812900</east>
+        <west>69.77007100</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Shadowlands theater</name>
+      <drawOrder>54</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>20.37130000</north>
+          <south>-27.62870000</south>
+          <east>115.11812900</east>
+          <west>69.77007100</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>1740</minLodPixels>
+          <maxLodPixels>5196</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/shadowlands/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>20.37130000</north>
+        <south>-27.62870000</south>
+        <east>115.11812900</east>
+        <west>69.77007100</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

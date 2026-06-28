@@ -70,11 +70,21 @@
           <name>redcell-discovered</name>
           <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
           <open>0</open>
+          <Folder>
+            <name>auto</name>
+            <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+            <open>1</open>
+          </Folder>
         </Folder>
         <Folder>
           <name>bluecell-discovered</name>
           <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
           <open>0</open>
+          <Folder>
+            <name>auto</name>
+            <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+            <open>1</open>
+          </Folder>
         </Folder>
       </Folder>
     </Folder>

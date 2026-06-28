@@ -62,6 +62,47 @@ def check_google_earth() -> dict:
     }
 
 
+def check_expansion_packs(root: Path | None, project_root: Path | None = None) -> dict:
+    if not root:
+        return {
+            "id": "expansions",
+            "label": "Expansion packs",
+            "ok": False,
+            "detail": "No install folder — cannot scan Subterranean / Other Worlds",
+            "blocking": False,
+        }
+    try:
+        from player_install.expansions import check_expansion_packs, format_expansion_summary
+
+        rows = check_expansion_packs(root, project_root)
+        if not rows:
+            return {
+                "id": "expansions",
+                "label": "Expansion packs",
+                "ok": True,
+                "detail": "No expansion manifest in config",
+                "blocking": False,
+            }
+        installed = sum(1 for r in rows if r["installed"])
+        detail = format_expansion_summary(rows)
+        return {
+            "id": "expansions",
+            "label": "Expansion packs",
+            "ok": installed == len(rows),
+            "detail": detail,
+            "blocking": False,
+            "rows": rows,
+        }
+    except Exception as exc:
+        return {
+            "id": "expansions",
+            "label": "Expansion packs",
+            "ok": False,
+            "detail": f"Scan failed: {exc}",
+            "blocking": False,
+        }
+
+
 def check_install_layout(root: Path | None) -> dict:
     if not root:
         return {

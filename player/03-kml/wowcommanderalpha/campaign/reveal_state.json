@@ -1,0 +1,8 @@
+{
+  "turn": 0,
+  "positions": {},
+  "reveals": {
+    "red_sees_blue": [],
+    "blue_sees_red": []
+  }
+}

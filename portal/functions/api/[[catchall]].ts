@@ -18,7 +18,7 @@ import {
   loadLatestCellSession,
   loadOrCreatePortalTokens,
   regeneratePortalTokens,
-  tokenSummary,
+  fullTokenSummary,
   type EoDraftPayload,
 } from "../lib/eo_wizard_api";
 import type { WizardAnswers } from "../lib/eo_session";
@@ -36,9 +36,13 @@ import {
   type EoLobbyFinalizeEvent,
   type EoTableLobby,
 } from "../lib/eo_lobby";
+import { composeAarMarkdown, discordFieldsForAar, parseAarRequest } from "../lib/aar_compose";
 import { discordNotify, type DiscordPayload } from "../lib/discord";
 import { gameFromManifest, loadGamesManifest } from "../lib/games";
 import { geminiChat, checkAssistantRateLimit } from "../lib/assistant";
+import { xoaiCoach, xoaiDigest, xoaiQuery, checkXoaiRateLimit } from "../lib/xoai";
+import type { DigestEntry } from "../lib/xoai_types";
+import { handleDiscordInteraction, verifyDiscordSignature } from "../lib/discord_interactions";
 import {
   initialState,
   stateKey,
@@ -49,6 +53,7 @@ import {
   canAcceptGhost,
   advanceAfterBoardUpload,
   advanceAfterGhost,
+  reconcileTurnState,
   type TurnState,
   type TurnLogEntry,
   type Cell,
@@ -100,8 +105,10 @@ async function loadState(env: Env, gameId: string, campaignId: string): Promise<
   const kv = kvOrNull(env);
   if (!kv) return initialState(campaignId);
   const raw = await kv.get(stateKey(gameId));
-  if (raw) return JSON.parse(raw) as TurnState;
-  return initialState(campaignId);
+  const state = raw ? (JSON.parse(raw) as TurnState) : initialState(campaignId);
+  const { state: reconciled, changed } = reconcileTurnState(state);
+  if (changed) await saveState(env, gameId, reconciled);
+  return reconciled;
 }
 
 async function saveState(env: Env, gameId: string, state: TurnState): Promise<void> {
@@ -469,14 +476,17 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       if (action === "ghost-turn" && method === "POST") {
         const token = extractBearer(request);
         if (!validateWhiteCell(env, token)) return json({ error: "Unauthorized" }, 401);
-        const body = ((await request.json()) as { body?: string }).body?.trim();
-        if (!body) return json({ error: "Missing AAR body" }, 400);
+        const rawBody = await request.json();
+        const parsed = parseAarRequest(rawBody);
+        if (!parsed.ok) return json({ error: parsed.error }, 400);
+        const aar = parsed.data;
+        const markdown = composeAarMarkdown(aar);
 
         const state = await loadState(env, gameId, game.campaign_id);
         const check = canAcceptGhost(state);
         if (!check.ok) return json({ error: check.error }, 409);
 
-        const bodyBytes = new TextEncoder().encode(body).length;
+        const bodyBytes = new TextEncoder().encode(markdown).length;
         if (bodyBytes > MAX_GHOST_AAR_BYTES) {
           return json({ error: `AAR too large. Max ${formatBytes(MAX_GHOST_AAR_BYTES)}.` }, 413);
         }
@@ -488,7 +498,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         const filename = canonicalGhostName(game.campaign_id, state.turn);
         const key = archiveKey(gameId, filename);
         if (!env.TURNS_BUCKET) return json({ error: "R2 not configured" }, 503);
-        await env.TURNS_BUCKET.put(key, body, {
+        await env.TURNS_BUCKET.put(key, markdown, {
           httpMetadata: { contentType: "text/markdown" },
         });
         await addStorageUsage(kvGhost, bodyBytes);
@@ -500,14 +510,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           canonical_name: filename,
           uploaded_at: new Date().toISOString(),
           uploaded_by: "white-cell" as const,
-          body_excerpt: body.slice(0, 280),
+          body_excerpt: aar.reason.slice(0, 280),
         };
         const next = advanceAfterGhost({ ...state, history: [...state.history, entry] });
         await saveState(env, gameId, next);
 
         await discordNotify(env, gameId, "turn.ghost_complete", {
-          title: `Turn ${state.turn} adjudicated — Blue Cell next (Turn ${next.turn})`,
-          description: body.slice(0, 500),
+          title: `Turn ${state.turn} ghost AAR — ${aar.reason}`,
+          description: aar.tactical_rationale.slice(0, 500),
+          fields: discordFieldsForAar(aar),
           url: `${origin(request, env)}/games/${gameId}/`,
         });
 
@@ -517,11 +528,14 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       if (action === "announce" && method === "POST") {
         const token = extractBearer(request);
         if (!validateWhiteCell(env, token)) return json({ error: "Unauthorized" }, 401);
-        const body = ((await request.json()) as { body?: string }).body?.trim();
-        if (!body) return json({ error: "Missing announcement" }, 400);
+        const rawBody = await request.json();
+        const parsed = parseAarRequest(rawBody);
+        if (!parsed.ok) return json({ error: parsed.error }, 400);
+        const aar = parsed.data;
+        const markdown = composeAarMarkdown(aar);
 
         const state = await loadState(env, gameId, game.campaign_id);
-        const announceBytes = new TextEncoder().encode(body).length;
+        const announceBytes = new TextEncoder().encode(markdown).length;
         if (announceBytes > MAX_ADHOC_ANNOUNCE_BYTES) {
           return json({ error: `Announcement too large. Max ${formatBytes(MAX_ADHOC_ANNOUNCE_BYTES)}.` }, 413);
         }
@@ -533,7 +547,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         const stamp = new Date().toISOString().replace(/[:.]/g, "-");
         const key = `games/${gameId}/announcements/${stamp}.md`;
         if (!env.TURNS_BUCKET) return json({ error: "R2 not configured" }, 503);
-        await env.TURNS_BUCKET.put(key, body, { httpMetadata: { contentType: "text/markdown" } });
+        await env.TURNS_BUCKET.put(key, markdown, { httpMetadata: { contentType: "text/markdown" } });
         await addStorageUsage(kvAnn, announceBytes);
 
         const entry = {
@@ -541,14 +555,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           turn: state.turn,
           uploaded_at: new Date().toISOString(),
           uploaded_by: "white-cell" as const,
-          body_excerpt: body.slice(0, 280),
+          body_excerpt: aar.reason.slice(0, 280),
         };
         state.history = [...state.history, entry];
         await saveState(env, gameId, state);
 
         await discordNotify(env, gameId, "aar.adhoc", {
-          title: `Ad hoc AAR — ${game.label}`,
-          description: body.slice(0, 500),
+          title: `Ad hoc AAR — ${aar.reason}`,
+          description: aar.tactical_rationale.slice(0, 500),
+          fields: discordFieldsForAar(aar),
         });
 
         return json({ ok: true, state });
@@ -566,10 +581,44 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         const state = await loadState(env, gameId, game.campaign_id);
 
         if (actionName === "start") {
+          if (state.status === "active") {
+            return json(
+              {
+                error:
+                  "Campaign is already active — do not use Start again (it can desync turn order). " +
+                  "Games auto-start when both cells finish XO stand-up.",
+              },
+              409,
+            );
+          }
+          if (state.status === "ended") {
+            return json(
+              { error: "Campaign has ended. Reset the table lobby or use another table for a new game." },
+              409,
+            );
+          }
+          const kvLifecycle = kvOrNull(env);
+          if (kvLifecycle) {
+            const lobby = await loadLobby(kvLifecycle, gameId);
+            if (lobby.status !== "both_ready" && lobby.status !== "active") {
+              return json(
+                {
+                  error:
+                    "Both cells must finish XO stand-up first. The campaign auto-starts when Red cell finalizes — manual Start is not needed.",
+                },
+                409,
+              );
+            }
+          }
           state.status = "active";
-          state.turn = 1;
-          state.active_cell = "blue-cell";
-          state.phase = "board";
+          if (!state.history.some((h) => h.type === "board_upload")) {
+            state.turn = 1;
+            state.active_cell = "blue-cell";
+            state.phase = "board";
+          } else {
+            const { state: reconciled } = reconcileTurnState(state);
+            Object.assign(state, reconciled);
+          }
           await saveState(env, gameId, state);
           await discordNotify(env, gameId, "game.started", {
             title: `Campaign started — ${game.label}`,
@@ -740,6 +789,140 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         const job = await loadMergeJob(kv, jobId);
         if (!job) return json({ error: "Job not found" }, 404);
         return json({ job });
+      }
+    }
+
+    if (parts[0] === "discord" && parts[1] === "interactions" && method === "POST") {
+      const sig = request.headers.get("X-Signature-Ed25519") || "";
+      const ts = request.headers.get("X-Signature-Timestamp") || "";
+      const bodyText = await request.text();
+      const pubKey = env.DISCORD_PUBLIC_KEY;
+      if (!pubKey || !(await verifyDiscordSignature(pubKey, sig, ts, bodyText))) {
+        return json({ error: "Invalid signature" }, 401);
+      }
+      const kvDiscord = kvOrNull(env);
+      return handleDiscordInteraction(env, bodyText, kvDiscord, origin(request, env));
+    }
+
+    if (parts[0] === "xoai") {
+      const sub = parts[1] || "";
+
+      if (sub === "query" && method === "POST") {
+        const body = (await request.json()) as {
+          game_id?: string;
+          collection?: string;
+          message?: string;
+          token?: string;
+          cell?: Cell;
+          password?: string;
+        };
+        const gameId = body.game_id || "table-01";
+        const kvX = kvOrNull(env);
+        const role = await validateAssistantAuth(env, gameId, body, kvX);
+        if (!role) return json({ error: "Unauthorized — token or password required" }, 401);
+
+        const collection = (body.collection || "rules").toLowerCase();
+        if (collection !== "tactics" && collection !== "lore" && collection !== "rules") {
+          return json({ error: "collection must be tactics, lore, or rules" }, 400);
+        }
+        if (!body.message?.trim()) return json({ error: "message required" }, 400);
+
+        const limit = role === "organizer" ? 100 : 30;
+        const sessionId = `${role}:${gameId}:${body.cell || "guest"}:query`;
+        if (!kvX) return json({ error: "PORTAL_KV not configured" }, 503);
+        const allowed = await checkXoaiRateLimit(kvX, sessionId, limit);
+        if (!allowed) return json({ error: "Daily XOai limit reached" }, 429);
+
+        const result = await xoaiQuery({
+          env,
+          collection,
+          message: body.message,
+          gameId,
+          kv: kvX,
+          origin: origin(request, env),
+        });
+        return json(result);
+      }
+
+      if (sub === "digest" && method === "POST") {
+        const body = (await request.json()) as {
+          game_id?: string;
+          token?: string;
+          cell?: Cell;
+          password?: string;
+          entries?: DigestEntry[];
+        };
+        const gameId = body.game_id || "table-01";
+        const kvDig = kvOrNull(env);
+        const role = await validateAssistantAuth(env, gameId, body, kvDig);
+        if (!role) return json({ error: "Unauthorized — token or password required" }, 401);
+        if (!body.entries?.length) return json({ error: "entries required" }, 400);
+
+        const limit = role === "organizer" ? 100 : 30;
+        const sessionId = `${role}:${gameId}:${body.cell || "guest"}:query`;
+        if (!kvDig) return json({ error: "PORTAL_KV not configured" }, 503);
+        const allowed = await checkXoaiRateLimit(kvDig, sessionId, limit);
+        if (!allowed) return json({ error: "Daily XOai limit reached" }, 429);
+
+        const result = await xoaiDigest(env, body.entries.slice(-40));
+        return json(result);
+      }
+
+      if (sub === "coach" && method === "POST") {
+        const body = (await request.json()) as {
+          game_id?: string;
+          message?: string;
+          player_notes?: string;
+          token?: string;
+          cell?: Cell;
+          password?: string;
+          kml_xml?: string;
+          kmz_base64?: string;
+          game_format?: string;
+        };
+        const gameId = body.game_id || "table-01";
+        const kvCoach = kvOrNull(env);
+        const role = await validateAssistantAuth(env, gameId, body, kvCoach);
+        if (!role) return json({ error: "Unauthorized — token or password required" }, 401);
+
+        const viewer = body.cell || "blue-cell";
+        if (viewer !== "blue-cell" && viewer !== "red-cell" && viewer !== "white-cell") {
+          return json({ error: "cell must be blue-cell, red-cell, or white-cell" }, 400);
+        }
+        if (!body.message?.trim()) return json({ error: "message required" }, 400);
+
+        const limit = role === "organizer" ? 100 : 30;
+        const sessionId = `${role}:${gameId}:${viewer}:coach`;
+        if (!kvCoach) return json({ error: "PORTAL_KV not configured" }, 503);
+        const allowed = await checkXoaiRateLimit(kvCoach, sessionId, limit);
+        if (!allowed) return json({ error: "Daily XOai coach limit reached" }, 429);
+
+        const result = await xoaiCoach({
+          env,
+          kv: kvCoach,
+          gameId,
+          origin: origin(request, env),
+          viewer,
+          message: body.message,
+          playerNotes: body.player_notes,
+          kmlXml: body.kml_xml,
+          kmzBase64: body.kmz_base64,
+          gameFormatOverride: body.game_format,
+        });
+        return json(result);
+      }
+
+      if (sub === "session" && method === "GET") {
+        const gameId = url.searchParams.get("game_id") || "table-01";
+        const token = url.searchParams.get("token") || extractBearer(request);
+        const cell = (url.searchParams.get("cell") || "blue-cell") as Cell;
+        const kvSess = kvOrNull(env);
+        const role = await validateAssistantAuth(env, gameId, { token, cell }, kvSess);
+        if (!role) return json({ error: "Unauthorized" }, 401);
+        if (!kvSess) return json({ error: "PORTAL_KV not configured" }, 503);
+        const { loadGameFormat } = await import("../lib/xoai");
+        const game_format = await loadGameFormat(kvSess, gameId);
+        return json({ game_id: gameId, game_format, cell });
       }
     }
 
@@ -933,6 +1116,23 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           const portalTokens = await loadOrCreatePortalTokens(kvEo, gameId, env);
           const uploadToken = portalTokens[cell as "blue-cell" | "red-cell"] || "";
 
+          const blueLatest = await loadLatestCellSession(kvEo, gameId, "blue-cell");
+          const redLatest = await loadLatestCellSession(kvEo, gameId, "red-cell");
+          const setupBundle: CampaignSetupBundle = {
+            game_id: gameId,
+            registered_at: new Date().toISOString(),
+            blue_session: blueLatest?.session ?? null,
+            red_session: redLatest?.session ?? null,
+            matchup: lobby.matchup,
+            note: "XOai reads game_format from this bundle for blind-aware coach.",
+            game_format:
+              (body.game_format as string) ||
+              (blueLatest?.session?.game_format as string) ||
+              (redLatest?.session?.game_format as string) ||
+              "double-blind",
+          };
+          await kvEo.put(campaignSetupKey(gameId), JSON.stringify(setupBundle));
+
           const portalOrigin = origin(request, env);
           const summary = cell === "blue-cell" ? lobby.blue! : lobby.red!;
           const discordEvent = mapEoEventToDiscord(event);
@@ -1003,8 +1203,10 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         return json({
           game_id: gameId,
           source: stored ? "kv" : "env",
-          tokens: tokenSummary(tokens),
-          hint: "Regenerate to issue new tokens instantly — no redeploy required.",
+          tokens: fullTokenSummary(tokens),
+          hint:
+            "Use Copy beside each token. Blue/Red tokens upload turns; XOai password works for assistant access. " +
+            "White cell may also use this admin passcode on XOai. Regenerate revokes old tokens instantly.",
         });
       }
 

@@ -17,24 +17,24 @@
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>36.95340000</north>
-          <south>35.33340000</south>
-          <east>-164.92105000</east>
-          <west>-166.92715000</west>
+          <north>37.04340000</north>
+          <south>35.24340000</south>
+          <east>-164.80960900</east>
+          <west>-167.03859100</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>215</maxLodPixels>
+          <maxLodPixels>238</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/helheim/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>36.95340000</north>
-        <south>35.33340000</south>
-        <east>-164.92105000</east>
-        <west>-166.92715000</west>
+        <north>37.04340000</north>
+        <south>35.24340000</south>
+        <east>-164.80960900</east>
+        <west>-167.03859100</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

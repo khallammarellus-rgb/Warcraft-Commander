@@ -1,0 +1,27 @@
+WoW Commander — Windows quick fixes
+===================================
+
+VIEW THE MAP (no Python needed)
+  Double-click:  player\Open Map.cmd
+  Or open:       player\WoW Commander.kml  in Google Earth Pro
+
+  Do NOT open 03-kml\wowcommanderalpha\doc.kml — wrong layout, red X boxes.
+
+RED X BOXES ON THE GLOBE
+  1. Use player\WoW Commander.kml (or Open Map.cmd), not doc.kml.
+  2. Keep player\kml, player\tiles, and WoW Commander.kml in the same player\ folder.
+  3. Unzip the full GitHub repo ZIP (Code → Download ZIP), not an old split release.
+  4. Campaign Board links: right-click the folder → Refresh after portal turns update.
+
+PYTHON / WIZARD ERRORS ("Microsoft Store", python not found)
+  1. Install Python 3.10+ from https://www.python.org/downloads/
+     Check "Add python.exe to PATH" on the installer first screen.
+  2. Turn OFF Windows app execution aliases:
+     Settings → Apps → Advanced app settings → App execution aliases
+     Disable python.exe and python3.exe (they point to the Store).
+  3. Open a NEW Command Prompt and run:  py -3 --version
+  4. Launch wizard:  player\scripts\WOW Commander.cmd
+
+HOSTED PORTAL (turn uploads)
+  https://wow-commander-campaign.pages.dev/games/table-01/
+  Use the upload token from XO stand-up. Upload only on your turn.

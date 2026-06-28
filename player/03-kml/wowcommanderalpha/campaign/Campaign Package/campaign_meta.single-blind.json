@@ -1,5 +1,14 @@
 {
   "game_format": "single-blind",
-  "reveal_radius_km": 1.0,
+  "reveal_radius_km": 5.0,
+  "scout_radius_km": 10.0,
+  "scout_keywords": [
+    "scout",
+    "recon",
+    "reconnaissance",
+    "pathfinder",
+    "sniper",
+    "spy"
+  ],
   "reveal_persistent": true
 }

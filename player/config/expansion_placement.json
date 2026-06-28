@@ -1,0 +1,41 @@
+{
+  "_comment": "MGRS centers + footprint sizes for Subterranean and Other Worlds. Run: python3 scripts/apply_expansion_placement.py",
+  "footprint_references": {
+    "jamaica": { "max_span_deg": 3 },
+    "aruba": { "max_span_deg": 2.2 },
+    "haiti": { "max_span_deg": 2.7 },
+    "us": { "span_lat_deg": 46 },
+    "south_america": { "span_lat_deg": 64 },
+    "antarctica": { "max_span_deg": 16 },
+    "madagascar": { "max_span_deg": 8 },
+    "khaz_algar": { "max_span_deg": 16 },
+    "other_world_zone": { "span_lat_deg": 16 },
+    "draenor": { "size_reference": "draenor", "relative_size": 1.0 }
+  },
+  "separation_pairs": [
+    ["blackrock_mountain", "blackrock_depths"]
+  ],
+  "subterranean": {
+    "undermine": { "mgrs": "59NPF2477764586", "footprint": "jamaica" },
+    "zaralek_caverns": { "mgrs": "06TVM8801140254", "footprint": "jamaica" },
+    "blackrock_depths": { "mgrs": "09PVS9930027651", "footprint": "aruba" },
+    "blackrock_mountain": { "mgrs": "09PWS6379659411", "footprint": "aruba" },
+    "gnomeregan": { "mgrs": "08QQF8788978254", "footprint": "aruba" },
+    "harandar": { "mgrs": "10SFH0772674627", "footprint": "haiti" },
+    "molten_core": { "mgrs": "09PWR3710888939", "footprint": "aruba" },
+    "uldaman": { "mgrs": "10QCD2363468206", "footprint": "aruba" },
+    "firelands": { "mgrs": "55QCD2478378124", "footprint": "aruba" },
+    "subsurface_khaz_algar": { "mgrs": "57LVL8774932071", "footprint": "khaz_algar" },
+    "deepholm": { "mgrs": "01QGD0884298275", "footprint": "jamaica" },
+    "ulduar": { "mgrs": "59WMU0094917649", "footprint": "jamaica" }
+  },
+  "other_worlds": {
+    "draenor": { "mgrs": "21LVD4717820999", "footprint": "south_america", "relative_size": 0.75 },
+    "shadowlands": { "mgrs": "46MDA3826898899", "footprint": "south_america", "relative_size": 0.75 },
+    "zereth_mortis": { "mgrs": "44RMR2469716684", "footprint": "other_world_zone" },
+    "voidstorm": { "mgrs": "28GEA2786853476", "footprint": "other_world_zone" },
+    "outland": { "mgrs": "33PXP9811295397", "footprint": "south_america", "relative_size": 1.0, "_note": "size tracks draenor via size_reference — do not stack relative_size" },
+    "karesh": { "mgrs": "31JFJ5383779313", "footprint": "other_world_zone" },
+    "mardum": { "mgrs": "26SLD3238100496", "footprint": "other_world_zone" }
+  }
+}

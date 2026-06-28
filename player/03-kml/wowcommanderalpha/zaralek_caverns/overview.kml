@@ -12,29 +12,29 @@
     </LookAt>
     <GroundOverlay>
       <name>Zaralek Caverns z0 0/0</name>
-      <drawOrder>146</drawOrder>
+      <drawOrder>147</drawOrder>
       <altitude>-1600.0</altitude>
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>43.08890000</north>
-          <south>39.84890000</south>
-          <east>-145.90600000</east>
-          <west>-149.86960000</west>
+          <north>43.13179500</north>
+          <south>40.69640500</south>
+          <east>-145.64460000</east>
+          <west>-148.64460000</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>426</maxLodPixels>
+          <maxLodPixels>322</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/zaralek_caverns/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>43.08890000</north>
-        <south>39.84890000</south>
-        <east>-145.90600000</east>
-        <west>-149.86960000</west>
+        <north>43.13179500</north>
+        <south>40.69640500</south>
+        <east>-145.64460000</east>
+        <west>-148.64460000</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

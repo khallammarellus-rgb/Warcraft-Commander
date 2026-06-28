@@ -37,7 +37,7 @@
       "campaign_regions": true,
       "campaign_places_mode": "live_edit",
       "campaign_deploy_mode": "hosted",
-      "campaign_base_url": "https://wow-commander-campaign.pages.dev/games/table-01",
+      "campaign_base_url": "https://wow-commander-campaign.pages.dev",
       "campaign_include_secondary_islands": true,
       "campaign_include_minor_isles": true,
       "campaign_refresh_mode": "interval",
@@ -73,7 +73,9 @@
   },
   "raw_export_root": "01-raw-export",
   "subterranean_defaults": {
-    "draw_order_base": 50
+    "draw_order_base": 50,
+    "surface_hide_miles": 75,
+    "reveal_miles": 75
   },
   "viewpoints": {
     "description": "Quick View bookmarks in GEP Places (planet + strategic). NetworkLink LOD uses lazy_links below.",
@@ -265,6 +267,63 @@
       },
       "misc_northrendbg": {
         "max_span_deg": 3
+      },
+      "undermine": {
+        "max_span_deg": 3.0
+      },
+      "zaralek_caverns": {
+        "max_span_deg": 3.0
+      },
+      "blackrock_depths": {
+        "max_span_deg": 2.2
+      },
+      "blackrock_mountain": {
+        "max_span_deg": 2.2
+      },
+      "gnomeregan": {
+        "max_span_deg": 2.2
+      },
+      "harandar": {
+        "max_span_deg": 2.7
+      },
+      "molten_core": {
+        "max_span_deg": 2.2
+      },
+      "uldaman": {
+        "max_span_deg": 2.2
+      },
+      "firelands": {
+        "max_span_deg": 2.2
+      },
+      "subsurface_khaz_algar": {
+        "max_span_deg": 16.0
+      },
+      "deepholm": {
+        "max_span_deg": 3.0
+      },
+      "ulduar": {
+        "max_span_deg": 3.0
+      },
+      "draenor": {
+        "span_lat_deg": 48.0
+      },
+      "shadowlands": {
+        "span_lat_deg": 48.0
+      },
+      "zereth_mortis": {
+        "span_lat_deg": 16.0
+      },
+      "voidstorm": {
+        "span_lat_deg": 16.0
+      },
+      "karesh": {
+        "span_lat_deg": 16.0
+      },
+      "mardum": {
+        "span_lat_deg": 16.0
+      },
+      "outland": {
+        "span_lat_deg": 64.0
       }
     },
     "mgrs_edges": {},
@@ -285,14 +344,13 @@
       "founders_point": "07NGF1585606135",
       "kezan": "59NPH0141949949",
       "nazjatar": "02QQH5909340282",
-      "outland": "34SDF5000050000",
-      "draenor": "36LTJ5000050000",
-      "shadowlands": "30VVF5000050000",
-      "emerald_dream": "33NUJ5000050000",
-      "zereth_mortis": "35LQJ5000050000",
-      "mardum": "34NFG5000050000",
-      "karesh": "35NPF5000050000",
-      "voidstorm": "38MQT5000050000",
+      "outland": "33PXP9811295397",
+      "draenor": "21LVD4717820999",
+      "shadowlands": "46MDA3826898899",
+      "zereth_mortis": "44RMR2469716684",
+      "mardum": "26SLD3238100496",
+      "karesh": "31JFJ5383779313",
+      "voidstorm": "28GEA2786853476",
       "tol_barad": "07QGC2846462031",
       "misc_crestfall": "59QND5744225203",
       "misc_islands_panderan_farm": "05LJH8360837330",
@@ -310,7 +368,19 @@
       "misc_navalbattlescenario": "05PMP0048978753",
       "misc_darkmoonfaire": "11MMT0381497848",
       "misc_exilesreach": "06PVQ2290736240",
-      "misc_northrendbg": "60UUB2830583573"
+      "misc_northrendbg": "60UUB2830583573",
+      "undermine": "59NPF2477764586",
+      "zaralek_caverns": "06TVM8801140254",
+      "blackrock_depths": "09PVS9930027651",
+      "blackrock_mountain": "09PWS6379659411",
+      "gnomeregan": "08QQF8788978254",
+      "harandar": "10SFH0772674627",
+      "molten_core": "09PWR3710888939",
+      "uldaman": "10QCD2363468206",
+      "firelands": "55QCD2478378124",
+      "subsurface_khaz_algar": "57LVL8774932071",
+      "deepholm": "01QGD0884298275",
+      "ulduar": "59WMU0094917649"
     },
     "size_multipliers_note": "Applied once to earth_placement \u2014 same bounds for z0 overview AND detail tiles (not compounded per zoom level). Large multipliers inflate planet-view silhouettes; use overview_visibility_max_miles to limit when per-region z0 appears.",
     "size_multipliers": {
@@ -329,13 +399,18 @@
       "northrend": 20
     },
     "offsets": {},
+    "other_worlds_overview_tiers": {
+      "visible_from_miles": 38000,
+      "visible_until_miles": 10000,
+      "silhouette_until_miles": 10000,
+      "_comment": "NetworkLink preload band for opposite hemisphere \u2014 matches Pacific vignette planet scale (~30k mi)"
+    },
     "opposite_hemisphere": {
       "description": "Extra-world zones on the far side of the globe from the Azeroth Pacific cluster. Nudge MGRS in mgrs_centers, then run apply_geographic_placements.py",
       "ids": [
         "outland",
         "draenor",
         "shadowlands",
-        "emerald_dream",
         "zereth_mortis",
         "mardum",
         "karesh",
@@ -373,7 +448,46 @@
       "misc_darkmoonfaire",
       "misc_exilesreach",
       "misc_northrendbg"
-    ]
+    ],
+    "separation_pairs": [
+      [
+        "blackrock_mountain",
+        "blackrock_depths"
+      ]
+    ],
+    "expansion_footprint_references": {
+      "jamaica": {
+        "max_span_deg": 3
+      },
+      "aruba": {
+        "max_span_deg": 2.2
+      },
+      "haiti": {
+        "max_span_deg": 2.7
+      },
+      "us": {
+        "span_lat_deg": 46
+      },
+      "antarctica": {
+        "max_span_deg": 16
+      },
+      "madagascar": {
+        "max_span_deg": 8
+      },
+      "khaz_algar": {
+        "max_span_deg": 16
+      },
+      "draenor": {
+        "size_reference": "draenor",
+        "relative_size": 1.0
+      },
+      "south_america": {
+        "span_lat_deg": 64
+      },
+      "other_world_zone": {
+        "span_lat_deg": 16
+      }
+    }
   },
   "zoom_transition": {
     "description": "Overview PNG tiers (planet + theatre). Detail pyramids disabled for testing.",
@@ -1294,16 +1408,19 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 not part of Azeroth archipelago. Enable after MINIMAP export + MGRS placement.",
       "earth_placement": {
-        "center_lon": 20.441,
-        "center_lat": 36.5942,
-        "span_lon": 30.2661,
-        "span_lat": 24.3,
-        "west": 5.30795,
-        "south": 24.4442,
-        "east": 35.57405,
-        "north": 48.7442,
-        "source": "MGRS 34SDF5000050000 (span-shrunk)"
-      }
+        "center_lon": 16.8239,
+        "center_lat": 12.6163,
+        "span_lon": 49.1877,
+        "span_lat": 48.0,
+        "west": -7.769926,
+        "south": -11.3837,
+        "east": 41.417726,
+        "north": 36.6163,
+        "source": "MGRS 33PXP9811295397 (target footprint) (\u00d71.0 of draenor)"
+      },
+      "size_reference": "draenor",
+      "relative_size": 1.0,
+      "expansion_footprint": "south_america"
     },
     {
       "id": "draenor",
@@ -1315,16 +1432,18 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 not part of Azeroth archipelago.",
       "earth_placement": {
-        "center_lon": 30.6761,
-        "center_lat": -14.9129,
-        "span_lon": 28.1951,
-        "span_lat": 24.3,
-        "west": 16.578545,
-        "south": -27.0629,
-        "east": 44.773655,
-        "north": -2.7629,
-        "source": "MGRS 36LTJ5000050000 (span-shrunk)"
-      }
+        "center_lon": -57.4918,
+        "center_lat": -15.1864,
+        "span_lon": 58.0264,
+        "span_lat": 48.0,
+        "west": -86.504978,
+        "south": -39.1864,
+        "east": -28.478622,
+        "north": 8.8136,
+        "source": "MGRS 21LVD4717820999 (target footprint)"
+      },
+      "expansion_footprint": "south_america",
+      "relative_size": 0.75
     },
     {
       "id": "shadowlands",
@@ -1336,37 +1455,18 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 not part of Azeroth archipelago.",
       "earth_placement": {
-        "center_lon": -4.4933,
-        "center_lat": 72.5419,
-        "span_lon": 76.3693,
-        "span_lat": 24.3,
-        "west": -42.67796,
-        "south": 60.3919,
-        "east": 33.69136,
-        "north": 84.6919,
-        "source": "MGRS 30VVF5000050000 (span-shrunk)"
-      }
-    },
-    {
-      "id": "emerald_dream",
-      "label": "Emerald Dream",
-      "layer_type": "minimap",
-      "wow_map": "emeralddream",
-      "input": "04-edited-exports/maps/emerald_dream/minimap",
-      "enabled": false,
-      "hemisphere": "opposite",
-      "notes": "Opposite hemisphere \u2014 verify wow.export map name (may be emeralddream).",
-      "earth_placement": {
-        "center_lon": 13.64,
-        "center_lat": 7.6876,
-        "span_lon": 29.7217,
-        "span_lat": 20.25,
-        "west": -1.220845,
-        "south": -2.4374,
-        "east": 28.500845,
-        "north": 17.8126,
-        "source": "MGRS 33NUJ5000050000 (span-shrunk)"
-      }
+        "center_lon": 92.4441,
+        "center_lat": -3.6287,
+        "span_lon": 45.3481,
+        "span_lat": 48.0,
+        "west": 69.770071,
+        "south": -27.6287,
+        "east": 115.118129,
+        "north": 20.3713,
+        "source": "MGRS 46MDA3826898899 (target footprint)"
+      },
+      "expansion_footprint": "south_america",
+      "relative_size": 0.75
     },
     {
       "id": "zereth_mortis",
@@ -1378,16 +1478,17 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 Shadowlands epilogue zone; verify wow.export map name.",
       "earth_placement": {
-        "center_lon": 29.2834,
-        "center_lat": -10.3951,
-        "span_lon": 19.2154,
-        "span_lat": 18.9,
-        "west": 19.67572,
-        "south": -19.8451,
-        "east": 38.89108,
-        "north": -0.9451,
-        "source": "MGRS 35LQJ5000050000 (span-shrunk)"
-      }
+        "center_lon": 80.2392,
+        "center_lat": 27.271,
+        "span_lon": 18.0008,
+        "span_lat": 16.0,
+        "west": 71.238799,
+        "south": 19.271,
+        "east": 89.239601,
+        "north": 35.271,
+        "source": "MGRS 44RMR2469716684 (target footprint)"
+      },
+      "expansion_footprint": "other_world_zone"
     },
     {
       "id": "mardum",
@@ -1399,16 +1500,17 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 Legion DH starting zone; verify wow.export map name.",
       "earth_placement": {
-        "center_lon": 22.3483,
-        "center_lat": 1.3567,
-        "span_lon": 15.1242,
-        "span_lat": 10.8,
-        "west": 14.786185,
-        "south": -4.0433,
-        "east": 29.910415,
-        "north": 6.7567,
-        "source": "MGRS 34NFG5000050000 (span-shrunk)"
-      }
+        "center_lon": -28.8221,
+        "center_lat": 34.3322,
+        "span_lon": 27.1258,
+        "span_lat": 16.0,
+        "west": -42.38501,
+        "south": 26.3322,
+        "east": -15.25919,
+        "north": 42.3322,
+        "source": "MGRS 26SLD3238100496 (target footprint)"
+      },
+      "expansion_footprint": "other_world_zone"
     },
     {
       "id": "karesh",
@@ -1420,16 +1522,17 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 verify wow.export map name.",
       "earth_placement": {
-        "center_lon": 28.353,
-        "center_lat": 4.9745,
-        "span_lon": 20.5524,
-        "span_lat": 18.9,
-        "west": 18.0768,
-        "south": -4.4755,
-        "east": 38.6292,
-        "north": 14.4245,
-        "source": "MGRS 35NPF5000050000 (span-shrunk)"
-      }
+        "center_lon": 4.5675,
+        "center_lat": -28.203,
+        "span_lon": 19.6684,
+        "span_lat": 16.0,
+        "west": -5.266695,
+        "south": -36.203,
+        "east": 14.401695,
+        "north": -20.203,
+        "source": "MGRS 31JFJ5383779313 (target footprint)"
+      },
+      "expansion_footprint": "other_world_zone"
     },
     {
       "id": "voidstorm",
@@ -1441,16 +1544,17 @@
       "hemisphere": "opposite",
       "notes": "Opposite hemisphere \u2014 verify wow.export map name.",
       "earth_placement": {
-        "center_lon": 47.2618,
-        "center_lat": -6.7799,
-        "span_lon": 19.0331,
-        "span_lat": 18.9,
-        "west": 37.745245,
-        "south": -16.2299,
-        "east": 56.778355,
-        "north": 2.6701,
-        "source": "MGRS 38MQT5000050000 (span-shrunk)"
-      }
+        "center_lon": -14.6727,
+        "center_lat": -40.1686,
+        "span_lon": 20.9383,
+        "span_lat": 16.0,
+        "west": -25.141854,
+        "south": -48.1686,
+        "east": -4.203546,
+        "north": -32.1686,
+        "source": "MGRS 28GEA2786853476 (target footprint)"
+      },
+      "expansion_footprint": "other_world_zone"
     },
     {
       "id": "misc_isleofconquest",
@@ -2062,16 +2166,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -129.4957,
-        "center_lat": 15.2029,
-        "span_lon": 2.9206,
-        "span_lat": 3.15,
-        "west": -130.956005,
-        "south": 13.6279,
-        "east": -128.035395,
-        "north": 16.7779,
-        "source": "Offset [-1.0, +1.2]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -121.7627,
+        "center_lat": 38.6136,
+        "span_lon": 2.7,
+        "span_lat": 2.3579,
+        "west": -123.1127,
+        "south": 37.434647,
+        "east": -120.4127,
+        "north": 39.792553,
+        "source": "MGRS 10SFH0772674627 (target footprint)"
+      },
+      "expansion_footprint": "haiti"
     },
     {
       "id": "firelands",
@@ -2092,16 +2197,17 @@
       },
       "notes": "Subterranean under kalimdor",
       "earth_placement": {
-        "center_lon": 145.7496,
-        "center_lat": 14.8122,
-        "span_lon": 1.3964,
-        "span_lat": 2.7,
-        "west": 145.05138,
-        "south": 13.4622,
-        "east": 146.44782,
-        "north": 16.1622,
-        "source": "Offset [+2.0, +1.0]\u00b0 from kalimdor (span-shrunk)"
-      }
+        "center_lon": 145.3086,
+        "center_lat": 21.4972,
+        "span_lon": 1.1822,
+        "span_lat": 2.2,
+        "west": 144.717479,
+        "south": 20.3972,
+        "east": 145.899721,
+        "north": 22.5972,
+        "source": "MGRS 55QCD2478378124 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     },
     {
       "id": "ulduar",
@@ -2122,16 +2228,17 @@
       },
       "notes": "Subterranean under northrend",
       "earth_placement": {
-        "center_lon": 170.2185,
-        "center_lat": 59.9789,
-        "span_lon": 2.6983,
-        "span_lat": 2.43,
-        "west": 168.869355,
-        "south": 58.7639,
-        "east": 171.567645,
-        "north": 61.1939,
-        "source": "Offset [+1.5, +1.2]\u00b0 from northrend (span-shrunk)"
-      }
+        "center_lon": 168.3478,
+        "center_lat": 70.4449,
+        "span_lon": 3.0,
+        "span_lat": 1.8075,
+        "west": 166.8478,
+        "south": 69.541174,
+        "east": 169.8478,
+        "north": 71.348626,
+        "source": "MGRS 59WMU0094917649 (target footprint)"
+      },
+      "expansion_footprint": "jamaica"
     },
     {
       "id": "helheim",
@@ -2154,13 +2261,13 @@
       "earth_placement": {
         "center_lon": -165.9241,
         "center_lat": 36.1434,
-        "span_lon": 2.0061,
-        "span_lat": 1.62,
-        "west": -166.92715,
-        "south": 35.3334,
-        "east": -164.92105,
-        "north": 36.9534,
-        "source": "Offset [+1.8, -1.0]\u00b0 from broken_isles (span-shrunk)"
+        "span_lon": 2.229,
+        "span_lat": 1.8,
+        "west": -167.038591,
+        "south": 35.2434,
+        "east": -164.809609,
+        "north": 37.0434,
+        "source": "Offset [+1.8, -1.0]\u00b0 from broken_isles"
       }
     },
     {
@@ -2182,16 +2289,17 @@
       },
       "notes": "Subterranean under dragon_isles",
       "earth_placement": {
-        "center_lon": -147.8878,
-        "center_lat": 41.4689,
-        "span_lon": 3.9636,
-        "span_lat": 3.24,
-        "west": -149.8696,
-        "south": 39.8489,
-        "east": -145.906,
-        "north": 43.0889,
-        "source": "Offset [-1.5, -1.2]\u00b0 from dragon_isles (span-shrunk)"
-      }
+        "center_lon": -147.1446,
+        "center_lat": 41.9141,
+        "span_lon": 3.0,
+        "span_lat": 2.4354,
+        "west": -148.6446,
+        "south": 40.696405,
+        "east": -145.6446,
+        "north": 43.131795,
+        "source": "MGRS 06TVM8801140254 (target footprint)"
+      },
+      "expansion_footprint": "jamaica"
     },
     {
       "id": "subsurface_khaz_algar",
@@ -2212,46 +2320,17 @@
       },
       "notes": "Subterranean under khaz_algar",
       "earth_placement": {
-        "center_lon": 159.7552,
-        "center_lat": -8.9026,
-        "span_lon": 3.587,
-        "span_lat": 3.78,
-        "west": 157.961725,
-        "south": -10.7926,
-        "east": 161.548675,
-        "north": -7.0126,
-        "source": "Offset [+0.0, +0.0]\u00b0 from khaz_algar (span-shrunk)"
-      }
-    },
-    {
-      "id": "the_awakening_machine",
-      "label": "The Awakening Machine",
-      "layer_type": "subterranean",
-      "wow_map": "the_awakening_machine",
-      "input": "04-edited-exports/maps/subterranean/khaz_algar/the_awakening_machine/minimap",
-      "enabled": true,
-      "parent_region": "khaz_algar",
-      "offset_deg": [
-        1.0,
-        0.6
-      ],
-      "size_scale": 0.05,
-      "subterranean": {
-        "depth_m": -1700,
-        "default_visible": false
+        "center_lon": 158.8886,
+        "center_lat": -8.7565,
+        "span_lon": 15.1769,
+        "span_lat": 16.0,
+        "west": 151.300151,
+        "south": -16.7565,
+        "east": 166.477049,
+        "north": -0.7565,
+        "source": "MGRS 57LVL8774932071 (target footprint)"
       },
-      "notes": "Subterranean under khaz_algar",
-      "earth_placement": {
-        "center_lon": 160.7552,
-        "center_lat": -8.3026,
-        "span_lon": 2.7286,
-        "span_lat": 1.35,
-        "west": 159.39089,
-        "south": -8.9776,
-        "east": 162.11951,
-        "north": -7.6276,
-        "source": "Offset [+1.0, +0.6]\u00b0 from khaz_algar (span-shrunk)"
-      }
+      "expansion_footprint": "khaz_algar"
     },
     {
       "id": "undermine",
@@ -2272,16 +2351,17 @@
       },
       "notes": "Subterranean under khaz_algar",
       "earth_placement": {
-        "center_lon": 160.4552,
-        "center_lat": -9.7026,
-        "span_lon": 1.9175,
-        "span_lat": 1.89,
-        "west": 159.496475,
-        "south": -10.6476,
-        "east": 161.413925,
-        "north": -8.7576,
-        "source": "Offset [+0.7, -0.8]\u00b0 from khaz_algar (span-shrunk)"
-      }
+        "center_lon": 172.1257,
+        "center_lat": 5.1069,
+        "span_lon": 3.0,
+        "span_lat": 2.9881,
+        "west": 170.6257,
+        "south": 3.612854,
+        "east": 173.6257,
+        "north": 6.600946,
+        "source": "MGRS 59NPF2477764586 (target footprint)"
+      },
+      "expansion_footprint": "jamaica"
     },
     {
       "id": "deepholm",
@@ -2302,16 +2382,17 @@
       },
       "notes": "Subterranean under maelstrom",
       "earth_placement": {
-        "center_lon": -175.0784,
-        "center_lat": 21.1559,
-        "span_lon": 3.4742,
-        "span_lat": 3.24,
-        "west": -176.81549,
-        "south": 19.5359,
-        "east": -173.34131,
-        "north": 22.7759,
-        "source": "Offset [+0.0, +0.0]\u00b0 from maelstrom (span-shrunk)"
-      }
+        "center_lon": -174.9816,
+        "center_lat": 21.6756,
+        "span_lon": 3.0,
+        "span_lat": 2.7879,
+        "west": -176.4816,
+        "south": 20.281665,
+        "east": -173.4816,
+        "north": 23.069535,
+        "source": "MGRS 01QGD0884298275 (target footprint)"
+      },
+      "expansion_footprint": "jamaica"
     },
     {
       "id": "sepulcher_of_the_first_ones",
@@ -2332,15 +2413,15 @@
       },
       "notes": "Subterranean under zereth_mortis",
       "earth_placement": {
-        "center_lon": 30.2834,
-        "center_lat": -10.9951,
-        "span_lon": 2.5147,
-        "span_lat": 2.16,
-        "west": 29.026055,
-        "south": -12.0751,
-        "east": 31.540745,
-        "north": -9.9151,
-        "source": "Offset [+1.0, -0.6]\u00b0 from zereth_mortis (span-shrunk)"
+        "center_lon": 81.2392,
+        "center_lat": 26.671,
+        "span_lon": 3.0695,
+        "span_lat": 2.4,
+        "west": 79.704475,
+        "south": 25.471,
+        "east": 82.773925,
+        "north": 27.871,
+        "source": "Offset [+1.0, -0.6]\u00b0 from zereth_mortis"
       }
     },
     {
@@ -2362,16 +2443,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -126.9957,
-        "center_lat": 14.8029,
-        "span_lon": 1.7377,
-        "span_lat": 1.68,
-        "west": -127.86454,
-        "south": 13.9629,
-        "east": -126.12686,
-        "north": 15.6429,
-        "source": "Offset [+1.5, +0.8]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -128.6558,
+        "center_lat": 14.3724,
+        "span_lon": 2.2,
+        "span_lat": 2.1311,
+        "west": -129.7558,
+        "south": 13.306827,
+        "east": -127.5558,
+        "north": 15.437973,
+        "source": "MGRS 09PWR3710888939 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     },
     {
       "id": "blackrock_mountain",
@@ -2392,16 +2474,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -127.9957,
-        "center_lat": 14.3029,
-        "span_lon": 1.7338,
-        "span_lat": 1.68,
-        "west": -128.86258,
-        "south": 13.4629,
-        "east": -127.12882,
-        "north": 15.1429,
-        "source": "Offset [+0.5, +0.3]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -128.4066,
+        "center_lat": 15.009,
+        "span_lon": 2.2,
+        "span_lat": 2.1249,
+        "west": -129.5066,
+        "south": 13.946526,
+        "east": -127.3066,
+        "north": 16.071474,
+        "source": "MGRS 09PWS6379659411 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     },
     {
       "id": "blackrock_depths",
@@ -2422,16 +2505,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -127.6957,
-        "center_lat": 14.5029,
-        "span_lon": 1.7353,
-        "span_lat": 1.68,
-        "west": -128.56335,
-        "south": 13.6629,
-        "east": -126.82805,
-        "north": 15.3429,
-        "source": "Offset [+0.8, +0.5]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -129.0065,
+        "center_lat": 14.7227,
+        "span_lon": 2.2,
+        "span_lat": 2.1278,
+        "west": -130.1065,
+        "south": 13.658816,
+        "east": -127.9065,
+        "north": 15.786584,
+        "source": "MGRS 09PVS9930027651 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     },
     {
       "id": "gnomeregan",
@@ -2452,16 +2536,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -129.6957,
-        "center_lat": 14.4029,
-        "span_lon": 1.7345,
-        "span_lat": 1.68,
-        "west": -130.562965,
-        "south": 13.5629,
-        "east": -128.828435,
-        "north": 15.2429,
-        "source": "Offset [-1.2, +0.4]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -132.2692,
+        "center_lat": 18.776,
+        "span_lon": 2.2,
+        "span_lat": 2.0829,
+        "west": -133.3692,
+        "south": 17.734537,
+        "east": -131.1692,
+        "north": 19.817463,
+        "source": "MGRS 08QQF8788978254 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     },
     {
       "id": "uldaman",
@@ -2482,16 +2567,17 @@
       },
       "notes": "Subterranean under eastern_kingdoms",
       "earth_placement": {
-        "center_lon": -130.4957,
-        "center_lat": 13.5029,
-        "span_lon": 1.7277,
-        "span_lat": 1.68,
-        "west": -131.35957,
-        "south": 12.6629,
-        "east": -129.63183,
-        "north": 14.3429,
-        "source": "Offset [-2.0, -0.5]\u00b0 from eastern_kingdoms (span-shrunk)"
-      }
+        "center_lon": -124.6558,
+        "center_lat": 16.8907,
+        "span_lon": 2.2,
+        "span_lat": 2.1051,
+        "west": -125.7558,
+        "south": 15.838153,
+        "east": -123.5558,
+        "north": 17.943247,
+        "source": "MGRS 10QCD2363468206 (target footprint)"
+      },
+      "expansion_footprint": "aruba"
     }
   ],
   "reserved_poles": {

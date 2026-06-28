@@ -16,9 +16,10 @@ from campaign_visibility import (
     effective_format,
     filter_campaign_root,
     load_campaign_meta,
-    load_reveal_state,
     merge_discovered_into_opponent_view,
+    refresh_reveals_for_document,
     viewer_sees_everything,
+    write_kml_root,
 )
 from campaign_icons import rewrite_icon_hrefs_to_portal
 from package_wargame_client import campaign_dir_for_variant
@@ -47,8 +48,10 @@ def filter_theater_kml_for_viewer(
     campaign_dir: Path,
     viewer: str | None,
     game_format: str | None = None,
+    turn: int | None = None,
+    save_master: bool = False,
 ) -> str:
-    """Build filtered KML XML for one theater and viewer role (no reveal-state mutation)."""
+    """Build filtered KML XML for one theater and viewer role."""
     meta = load_campaign_meta(campaign_dir)
     fmt = game_format or meta.get("game_format", "no-blind")
     if fmt not in GAME_FORMATS:
@@ -59,7 +62,16 @@ def filter_theater_kml_for_viewer(
     strip_tier_folder_regions(root)
     inject_placemark_tier_regions(root)
 
-    state = load_reveal_state(campaign_dir)
+    effective_turn = turn if turn is not None else int(meta.get("turn", 0))
+    state = refresh_reveals_for_document(
+        root,
+        campaign_dir=campaign_dir,
+        turn=effective_turn,
+        meta=meta,
+    )
+    if save_master:
+        write_kml_root(path, root)
+
     fmt = effective_format(fmt, viewer)
     filtered = filter_campaign_root(root, viewer=viewer, game_format=fmt, state=state)
     if viewer in VIEWER_ROLES and not viewer_sees_everything(fmt, viewer):
@@ -101,6 +113,13 @@ def write_hosted_views(
         return xml
 
     for path in paths:
+        filter_theater_kml_for_viewer(
+            path,
+            campaign_dir=campaign_dir,
+            viewer=None,
+            game_format=game_format,
+            save_master=True,
+        )
         dest = master_dir / path.name
         xml = _maybe_rewrite_icons(path.read_text(encoding="utf-8"))
         dest.write_text(xml, encoding="utf-8")
@@ -115,6 +134,7 @@ def write_hosted_views(
                 campaign_dir=campaign_dir,
                 viewer=role,
                 game_format=game_format,
+                save_master=False,
             )
             xml = _maybe_rewrite_icons(xml)
             dest = role_dir / path.name

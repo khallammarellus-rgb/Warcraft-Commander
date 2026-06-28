@@ -98,6 +98,12 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                     <Point>
                       <coordinates>143.749600,13.812200,0</coordinates>
                     </Point>
+                    <Region>
+                      <Lod>
+                        <minLodPixels>500</minLodPixels>
+                        <maxLodPixels>3000</maxLodPixels>
+                      </Lod>
+                    </Region>
                   </Placemark>
                 </Folder>
               </Folder>
@@ -130,11 +136,55 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                  <Placemark>
+                    <name>A Co HQ 150/150</name>
+                    <description>Commander Casual Cmdr, Blue Force. Executive Officer Bolvar Fordragon.
+
+To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Humans. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.
+wowcmd:source_key=blue-cell/Operational/Units/A Co HQ 150/150</description>
+                    <styleUrl>#faction-humans-icon</styleUrl>
+                    <Point>
+                      <coordinates>143.7496,13.8122,0</coordinates>
+                    </Point>
+                    <Region>
+                      <Lod>
+                        <minLodPixels>500</minLodPixels>
+                        <maxLodPixels>3000</maxLodPixels>
+                      </Lod>
+                    </Region>
+                  </Placemark>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                  <Placemark>
+                    <name>1stBn HQ 1000/1000</name>
+                    <description>Commander Test Commander, Test Host. Executive Officer Nathanos Blightcaller.
+
+To add subordinate units: right-click your cell folder → Add → Placemark. Copy icon style from Unit palettes → Forsaken. Track strength in the placemark name (e.g. 2nd Sqd 30/30). Delete the marker when destroyed.
+wowcmd:source_key=red-cell/Operational/1stBn/1stBn HQ 1000/1000</description>
+                    <styleUrl>#faction-forsaken-icon</styleUrl>
+                    <Point>
+                      <coordinates>143.749600,13.812200,0</coordinates>
+                    </Point>
+                    <Region>
+                      <Lod>
+                        <minLodPixels>500</minLodPixels>
+                        <maxLodPixels>3000</maxLodPixels>
+                      </Lod>
+                    </Region>
+                  </Placemark>
+                </Folder>
               </Folder>
             </Folder>
             <Folder>
@@ -171,6 +221,12 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                     <Point>
                       <coordinates>143.7496,13.8122,0</coordinates>
                     </Point>
+                    <Region>
+                      <Lod>
+                        <minLodPixels>500</minLodPixels>
+                        <maxLodPixels>3000</maxLodPixels>
+                      </Lod>
+                    </Region>
                   </Placemark>
                   <open>0</open>
                 </Folder>
@@ -211,6 +267,12 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                     <ns1:drawOrder>1</ns1:drawOrder>
                     <coordinates>-175.0784,21.1559,0</coordinates>
                   </Point>
+                  <Region>
+                    <Lod>
+                      <minLodPixels>6000</minLodPixels>
+                      <maxLodPixels>-1</maxLodPixels>
+                    </Lod>
+                  </Region>
                 </Placemark>
               </Folder>
             </Folder>
@@ -301,11 +363,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -396,11 +468,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -487,11 +569,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -578,11 +670,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -669,11 +771,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -760,11 +872,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -856,11 +978,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -950,11 +1082,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1041,11 +1183,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1136,11 +1288,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1227,11 +1389,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1323,11 +1495,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -1421,11 +1603,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1512,11 +1704,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1608,11 +1810,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -1702,11 +1914,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1797,11 +2019,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1888,11 +2120,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -1984,11 +2226,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -2078,11 +2330,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -2173,11 +2435,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -2264,11 +2536,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -2360,11 +2642,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -2463,11 +2755,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -2566,11 +2868,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -2664,11 +2976,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -2760,11 +3082,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -2858,11 +3190,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -2949,11 +3291,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -3045,11 +3397,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                 <name>redcell-discovered</name>
                 <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
               <Folder>
                 <name>bluecell-discovered</name>
                 <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                 <open>0</open>
+                <Folder>
+                  <name>auto</name>
+                  <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                  <open>0</open>
+                </Folder>
               </Folder>
             </Folder>
           </Folder>
@@ -3139,11 +3501,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -3230,11 +3602,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>
@@ -3325,11 +3707,21 @@ To add subordinate units: right-click your cell folder → Add → Placemark. Co
                   <name>redcell-discovered</name>
                   <description>Enemy markers red-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
                 <Folder>
                   <name>bluecell-discovered</name>
                   <description>Enemy markers blue-cell is allowed to see (referee reveal).</description>
                   <open>0</open>
+                  <Folder>
+                    <name>auto</name>
+                    <description>System-managed proximity/scout reveals — refreshed each turn. Place manual referee copies in the parent folder, not here.</description>
+                    <open>0</open>
+                  </Folder>
                 </Folder>
               </Folder>
             </Folder>

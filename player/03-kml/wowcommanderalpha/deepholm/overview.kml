@@ -12,29 +12,29 @@
     </LookAt>
     <GroundOverlay>
       <name>Deepholm z0 0/0</name>
-      <drawOrder>146</drawOrder>
+      <drawOrder>147</drawOrder>
       <altitude>-3000.0</altitude>
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>22.77590000</north>
-          <south>19.53590000</south>
-          <east>-173.34131000</east>
-          <west>-176.81549000</west>
+          <north>23.06953500</north>
+          <south>20.28166500</south>
+          <east>-173.48160000</east>
+          <west>-176.48160000</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>372</maxLodPixels>
+          <maxLodPixels>322</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/deepholm/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>22.77590000</north>
-        <south>19.53590000</south>
-        <east>-173.34131000</east>
-        <west>-176.81549000</west>
+        <north>23.06953500</north>
+        <south>20.28166500</south>
+        <east>-173.48160000</east>
+        <west>-176.48160000</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

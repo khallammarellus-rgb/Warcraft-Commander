@@ -159,7 +159,7 @@ def append_opposite_quick_view_bookmarks(
 
     folder = make_folder(
         parent,
-        "Other worlds (Quick View)",
+        "Other Worlds (Quick View)",
         open_default=0,
         description="Double-click to fly to extra-world zones on the far side of the globe.",
     )

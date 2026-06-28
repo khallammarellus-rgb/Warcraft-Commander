@@ -3,36 +3,86 @@
   <Document>
     <name>Draenor</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>Draenor z0 0/0</name>
-      <drawOrder>78</drawOrder>
+      <name>Draenor silhouette</name>
+      <drawOrder>41</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>-5.46290000</north>
-          <south>-24.36290000</south>
-          <east>41.64086500</east>
-          <west>19.71133500</west>
+          <north>8.81360000</north>
+          <south>-39.18640000</south>
+          <east>-28.47862200</east>
+          <west>-86.50497800</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>140</minLodPixels>
-          <maxLodPixels>2374</maxLodPixels>
+          <minLodPixels>110</minLodPixels>
+          <maxLodPixels>470</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/draenor/0/0/0.png</href>
+        <href>../../../02-tiles/draenor/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>-5.46290000</north>
-        <south>-24.36290000</south>
-        <east>41.64086500</east>
-        <west>19.71133500</west>
+        <north>8.81360000</north>
+        <south>-39.18640000</south>
+        <east>-28.47862200</east>
+        <west>-86.50497800</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Draenor planet</name>
+      <drawOrder>42</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>8.81360000</north>
+          <south>-39.18640000</south>
+          <east>-28.47862200</east>
+          <west>-86.50497800</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>420</minLodPixels>
+          <maxLodPixels>1047</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/draenor/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>8.81360000</north>
+        <south>-39.18640000</south>
+        <east>-28.47862200</east>
+        <west>-86.50497800</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Draenor theater</name>
+      <drawOrder>43</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>8.81360000</north>
+          <south>-39.18640000</south>
+          <east>-28.47862200</east>
+          <west>-86.50497800</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>2104</minLodPixels>
+          <maxLodPixels>6283</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/draenor/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>8.81360000</north>
+        <south>-39.18640000</south>
+        <east>-28.47862200</east>
+        <west>-86.50497800</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

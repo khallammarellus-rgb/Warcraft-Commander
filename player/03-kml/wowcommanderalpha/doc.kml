@@ -32,7 +32,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/kalimdor.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/kalimdor.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -55,7 +55,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/razorwind_shores.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/razorwind_shores.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -79,7 +79,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_crestfall.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_crestfall.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -99,7 +99,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands10.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands10.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -119,7 +119,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands801.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands801.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -139,7 +139,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands802.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands802.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -159,7 +159,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_rymoore.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_rymoore.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -184,7 +184,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/eastern_kingdoms.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/eastern_kingdoms.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -207,7 +207,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/founders_point.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/founders_point.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -227,7 +227,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/tol_barad.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/tol_barad.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -251,7 +251,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_scenarioislandstutorial.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_scenarioislandstutorial.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -271,7 +271,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_darkmoonfaire.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_darkmoonfaire.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -296,7 +296,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/northrend.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/northrend.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -323,7 +323,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands01.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands01.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -343,7 +343,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_northrendbg.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_northrendbg.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -368,7 +368,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/pandaria.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/pandaria.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -391,7 +391,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/wandering_isle.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/wandering_isle.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -415,7 +415,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands_panderan_farm.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands_panderan_farm.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -435,7 +435,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_moguisland.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_moguisland.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -460,7 +460,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/broken_isles.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/broken_isles.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -483,7 +483,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/nazjatar.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/nazjatar.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -507,7 +507,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands22.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands22.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -527,7 +527,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_isleofconquest.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_isleofconquest.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -552,7 +552,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/dragon_isles.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/dragon_isles.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -584,7 +584,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/maelstrom.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/maelstrom.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -616,7 +616,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/kul_tiras.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/kul_tiras.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -643,7 +643,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_necromancyisland.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_necromancyisland.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -668,7 +668,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/zandalar.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/zandalar.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -695,7 +695,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_navalbattlescenario.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_navalbattlescenario.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -715,7 +715,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_exilesreach.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_exilesreach.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -740,7 +740,7 @@
             </Lod>
           </Region>
           <Link>
-            <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/khaz_algar.kml</href>
+            <href>https://wow-commander-campaign.pages.dev/campaign/khaz_algar.kml</href>
             <viewRefreshMode>onInterval</viewRefreshMode>
             <viewRefreshTime>60</viewRefreshTime>
           </Link>
@@ -763,7 +763,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/siren_isle.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/siren_isle.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -783,7 +783,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/kezan.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/kezan.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -807,7 +807,7 @@
               </Lod>
             </Region>
             <Link>
-              <href>https://wow-commander-campaign.pages.dev/games/table-01/campaign/misc_islands24.kml</href>
+              <href>https://wow-commander-campaign.pages.dev/campaign/misc_islands24.kml</href>
               <viewRefreshMode>onInterval</viewRefreshMode>
               <viewRefreshTime>60</viewRefreshTime>
             </Link>
@@ -942,6 +942,95 @@
           </LookAt>
         </Placemark>
       </Folder>
+      <Folder>
+        <name>Other Worlds (Quick View)</name>
+        <open>0</open>
+        <description>Double-click to fly to extra-world zones on the far side of the globe.</description>
+        <Placemark>
+          <name>Outland</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>16.823900</longitude>
+            <latitude>12.616300</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>Draenor</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>-57.491800</longitude>
+            <latitude>-15.186400</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>Shadowlands</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>92.444100</longitude>
+            <latitude>-3.628700</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>Zereth Mortis</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>80.239200</longitude>
+            <latitude>27.271000</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>Mardum</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>-28.822100</longitude>
+            <latitude>34.332200</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>K'aresh</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>4.567500</longitude>
+            <latitude>-28.203000</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+        <Placemark>
+          <name>Voidstorm</name>
+          <description>Double-click to fly. tier=strategic range=3,000 mi (4,828,032 m)</description>
+          <LookAt>
+            <longitude>-14.672700</longitude>
+            <latitude>-40.168600</latitude>
+            <altitude>0</altitude>
+            <range>4828032</range>
+            <tilt>0</tilt>
+            <heading>0</heading>
+          </LookAt>
+        </Placemark>
+      </Folder>
       <NetworkLink>
         <name>Terrain underlay (Earth land)</name>
         <open>1</open>
@@ -989,6 +1078,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>294</minLodPixels>
+                <maxLodPixels>44480</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1013,6 +1103,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1038,6 +1129,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1059,6 +1151,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1080,6 +1173,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1101,6 +1195,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1122,10 +1217,58 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
                 <href>misc_islands10/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Kalimdor. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Firelands</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>36.81220000</north>
+                  <south>-9.18780000</south>
+                  <east>156.62182000</east>
+                  <west>130.87738000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>firelands/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Sepulcher of the First Ones</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>36.81220000</north>
+                  <south>-9.18780000</south>
+                  <east>156.62182000</east>
+                  <west>130.87738000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>sepulcher_of_the_first_ones/overview.kml</href>
                 <viewRefreshMode>onStop</viewRefreshMode>
                 <viewRefreshTime>1</viewRefreshTime>
                 <viewBoundScale>1.0</viewBoundScale>
@@ -1148,6 +1291,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>294</minLodPixels>
+                <maxLodPixels>44480</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1172,6 +1316,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1193,6 +1338,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1218,6 +1364,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1239,10 +1386,142 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
                 <href>misc_darkmoonfaire/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Eastern Kingdoms. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Harandar</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>harandar/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Molten Core</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>molten_core/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Blackrock Mountain</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>blackrock_mountain/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Blackrock Depths</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>blackrock_depths/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Gnomeregan</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>gnomeregan/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>Uldaman</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>47.78680000</north>
+                  <south>1.78680000</south>
+                  <east>-103.24463000</east>
+                  <west>-137.34797000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>44480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>uldaman/overview.kml</href>
                 <viewRefreshMode>onStop</viewRefreshMode>
                 <viewRefreshTime>1</viewRefreshTime>
                 <viewBoundScale>1.0</viewBoundScale>
@@ -1265,6 +1544,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>439</minLodPixels>
+                <maxLodPixels>66480</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1293,6 +1573,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1314,10 +1595,37 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
                 <href>misc_northrendbg/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Northrend. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Ulduar</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>72.77890000</north>
+                  <south>44.77890000</south>
+                  <east>203.09384000</east>
+                  <west>134.34316000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>66480</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>ulduar/overview.kml</href>
                 <viewRefreshMode>onStop</viewRefreshMode>
                 <viewRefreshTime>1</viewRefreshTime>
                 <viewBoundScale>1.0</viewBoundScale>
@@ -1340,6 +1648,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>228</minLodPixels>
+                <maxLodPixels>34586</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1364,6 +1673,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1389,6 +1699,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1410,6 +1721,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1436,6 +1748,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1460,6 +1773,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1485,6 +1799,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1506,10 +1821,37 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
                 <href>misc_islands22/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Broken Isles. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Helheim</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>44.93752900</north>
+                  <south>29.34927100</south>
+                  <east>-159.72410000</east>
+                  <west>-175.72410000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>15466</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>helheim/overview.kml</href>
                 <viewRefreshMode>onStop</viewRefreshMode>
                 <viewRefreshTime>1</viewRefreshTime>
                 <viewBoundScale>1.0</viewBoundScale>
@@ -1532,6 +1874,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1549,6 +1892,32 @@
             <name>Minor Isles</name>
             <open>0</open>
           </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Dragon Isles. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Zaralek Caverns</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>48.74091100</north>
+                  <south>36.59688900</south>
+                  <east>-138.38780000</east>
+                  <west>-154.38780000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>15466</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>zaralek_caverns/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
         </Folder>
         <Folder>
           <name>The Maelstrom</name>
@@ -1565,6 +1934,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1582,6 +1952,32 @@
             <name>Minor Isles</name>
             <open>0</open>
           </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under The Maelstrom. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Deepholm</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>28.61671500</north>
+                  <south>13.69508500</south>
+                  <east>-167.07840000</east>
+                  <west>-183.07840000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>15466</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>deepholm/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
         </Folder>
         <Folder>
           <name>Kul Tiras</name>
@@ -1598,6 +1994,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1626,6 +2023,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1652,6 +2050,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1680,6 +2079,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1701,6 +2101,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1727,6 +2128,7 @@
               </LatLonAltBox>
               <Lod>
                 <minLodPixels>103</minLodPixels>
+                <maxLodPixels>15466</maxLodPixels>
               </Lod>
             </Region>
             <Link>
@@ -1751,6 +2153,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1772,6 +2175,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>4346</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1797,6 +2201,7 @@
                 </LatLonAltBox>
                 <Lod>
                   <minLodPixels>57</minLodPixels>
+                  <maxLodPixels>2880</maxLodPixels>
                 </Lod>
               </Region>
               <Link>
@@ -1807,6 +2212,233 @@
               </Link>
             </NetworkLink>
           </Folder>
+          <Folder>
+            <name>Subterranean</name>
+            <open>0</open>
+            <description>Underground zones under Khaz Algar. Surface maps hide at 75 mi; subterranean layers reveal at the same altitude.</description>
+            <NetworkLink>
+              <name>Subsurface Khaz Algar</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>-2.31624800</north>
+                  <south>-15.48895200</south>
+                  <east>167.75520000</east>
+                  <west>151.75520000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>15466</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>subsurface_khaz_algar/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+            <NetworkLink>
+              <name>The Undermine</name>
+              <open>0</open>
+              <Region>
+                <LatLonAltBox>
+                  <north>-2.31624800</north>
+                  <south>-15.48895200</south>
+                  <east>167.75520000</east>
+                  <west>151.75520000</west>
+                </LatLonAltBox>
+                <Lod>
+                  <minLodPixels>15466</minLodPixels>
+                </Lod>
+              </Region>
+              <Link>
+                <href>undermine/overview.kml</href>
+                <viewRefreshMode>onStop</viewRefreshMode>
+                <viewRefreshTime>1</viewRefreshTime>
+                <viewBoundScale>1.0</viewBoundScale>
+              </Link>
+            </NetworkLink>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder>
+        <name>Other Worlds</name>
+        <open>0</open>
+        <description>Extra-world zones on the far side of the globe (Outland, Draenor, Shadowlands, etc.). Install the Other Worlds expansion pack to load tiles.</description>
+        <Folder>
+          <name>Outland</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Outland</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>36.61630000</north>
+                <south>-11.38370000</south>
+                <east>41.41772600</east>
+                <west>-7.76992600</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>82</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>outland/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>Draenor</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Draenor</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>8.81360000</north>
+                <south>-39.18640000</south>
+                <east>-28.47862200</east>
+                <west>-86.50497800</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>97</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>draenor/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>Shadowlands</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Shadowlands</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>20.37130000</north>
+                <south>-27.62870000</south>
+                <east>115.11812900</east>
+                <west>69.77007100</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>81</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>shadowlands/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>Zereth Mortis</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Zereth Mortis</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>35.27100000</north>
+                <south>19.27100000</south>
+                <east>89.23960100</east>
+                <west>71.23879900</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>zereth_mortis/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>Mardum</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Mardum</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>42.33220000</north>
+                <south>26.33220000</south>
+                <east>-15.25919000</east>
+                <west>-42.38501000</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>mardum/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>K'aresh</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>K'aresh</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>-20.20300000</north>
+                <south>-36.20300000</south>
+                <east>14.40169500</east>
+                <west>-5.26669500</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>karesh/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
+        </Folder>
+        <Folder>
+          <name>Voidstorm</name>
+          <open>0</open>
+          <NetworkLink>
+            <name>Voidstorm</name>
+            <open>0</open>
+            <Region>
+              <LatLonAltBox>
+                <north>-32.16860000</north>
+                <south>-48.16860000</south>
+                <east>-4.20354600</east>
+                <west>-25.14185400</west>
+              </LatLonAltBox>
+              <Lod>
+                <minLodPixels>57</minLodPixels>
+              </Lod>
+            </Region>
+            <Link>
+              <href>voidstorm/overview.kml</href>
+              <viewRefreshMode>onStop</viewRefreshMode>
+              <viewRefreshTime>1</viewRefreshTime>
+              <viewBoundScale>1.0</viewBoundScale>
+            </Link>
+          </NetworkLink>
         </Folder>
       </Folder>
     </Folder>

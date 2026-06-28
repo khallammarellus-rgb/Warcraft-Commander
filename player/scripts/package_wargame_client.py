@@ -340,15 +340,21 @@ BLIND PLAY (export-time filtering — not live in GEP)
 
   Without --role, export includes everything (table honor system).
 
-PROXIMITY REVEAL (1 km default)
-  When using --role, moved or newly placed markers trigger reveal of enemy units
-  within reveal_radius_km (default 1.0 in campaign_meta.json). Reveals persist
-  turn-to-turn. Referee manual reveal: white-cell → redcell-discovered or
-  bluecell-discovered (copied into that player's view on export).
+PROXIMITY & SCOUT REVEAL (5 km / 10 km defaults)
+  Each export recomputes range-bound reveals from live positions:
+    - Mutual proximity: enemy pairs within reveal_radius_km (default 5.0 km) see each other
+      only while they remain in range.
+    - Scout one-way: units with scout/recon/pathfinder/sniper/spy in name or description
+      reveal enemies within scout_radius_km (default 10.0 km) to their owner only.
+
+  Revealed intel is copied into white-cell → redcell-discovered/auto/ or
+  bluecell-discovered/auto/. Blind players never see live opponent folders — only
+  merged discovered copies in their export.
 
 WHITE CELL
   Passive referee — only steps in when asked. Full truth export: --role white-cell.
-  Manual reveal folders override blind filtering for the matching side.
+  Manual inject: copy enemy placemarks into redcell-discovered or bluecell-discovered
+  (not under auto/). Those copies persist until you delete them.
 
 MARKER TIPS (keeps turn files small)
   - Point icons only at Strategic/Operational; custom PNGs embed automatically in turn KMZ.

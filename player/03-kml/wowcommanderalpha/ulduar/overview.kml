@@ -17,24 +17,24 @@
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>61.19390000</north>
-          <south>58.76390000</south>
-          <east>171.56764500</east>
-          <west>168.86935500</west>
+          <north>71.34862600</north>
+          <south>69.54117400</south>
+          <east>169.84780000</east>
+          <west>166.84780000</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>288</maxLodPixels>
+          <maxLodPixels>322</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/ulduar/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>61.19390000</north>
-        <south>58.76390000</south>
-        <east>171.56764500</east>
-        <west>168.86935500</west>
+        <north>71.34862600</north>
+        <south>69.54117400</south>
+        <east>169.84780000</east>
+        <west>166.84780000</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

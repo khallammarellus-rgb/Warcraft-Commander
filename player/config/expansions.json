@@ -1,0 +1,23 @@
+{
+  "_comment": "Optional expansion packs — not included in default player download. Install via wizard or apply_expansion.py",
+  "install_root": "expansions",
+  "manifest_file": "expansions_installed.json",
+  "packs": {
+    "subterranean": {
+      "id": "subterranean",
+      "label": "Subterranean",
+      "description": "Dungeon and underground zones under their parent continents (Undermine, Blackrock, Ulduar, etc.)",
+      "layer_type": "subterranean",
+      "places_folder": "Subterranean",
+      "zip_prefix": "wowcommander-expansion-subterranean"
+    },
+    "other_worlds": {
+      "id": "other_worlds",
+      "label": "Other Worlds",
+      "description": "Extra-world zones on the far side of the globe (Outland, Draenor, Shadowlands, etc.)",
+      "hemisphere": "opposite",
+      "places_folder": "Other Worlds",
+      "zip_prefix": "wowcommander-expansion-other-worlds"
+    }
+  }
+}

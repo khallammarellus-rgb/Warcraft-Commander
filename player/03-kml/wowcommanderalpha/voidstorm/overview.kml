@@ -3,36 +3,86 @@
   <Document>
     <name>Voidstorm</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>Voidstorm z0 0/0</name>
-      <drawOrder>85</drawOrder>
+      <name>Voidstorm silhouette</name>
+      <drawOrder>79</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>0.57010000</north>
-          <south>-14.12990000</south>
-          <east>54.66356500</east>
-          <west>39.86003500</west>
+          <north>-32.16860000</north>
+          <south>-48.16860000</south>
+          <east>-4.20354600</east>
+          <west>-25.14185400</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>113</minLodPixels>
-          <maxLodPixels>1600</maxLodPixels>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>169</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/voidstorm/0/0/0.png</href>
+        <href>../../../02-tiles/voidstorm/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>0.57010000</north>
-        <south>-14.12990000</south>
-        <east>54.66356500</east>
-        <west>39.86003500</west>
+        <north>-32.16860000</north>
+        <south>-48.16860000</south>
+        <east>-4.20354600</east>
+        <west>-25.14185400</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Voidstorm planet</name>
+      <drawOrder>80</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-32.16860000</north>
+          <south>-48.16860000</south>
+          <east>-4.20354600</east>
+          <west>-25.14185400</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>151</minLodPixels>
+          <maxLodPixels>377</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/voidstorm/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-32.16860000</north>
+        <south>-48.16860000</south>
+        <east>-4.20354600</east>
+        <west>-25.14185400</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Voidstorm theater</name>
+      <drawOrder>81</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-32.16860000</north>
+          <south>-48.16860000</south>
+          <east>-4.20354600</east>
+          <west>-25.14185400</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>759</minLodPixels>
+          <maxLodPixels>2266</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/voidstorm/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-32.16860000</north>
+        <south>-48.16860000</south>
+        <east>-4.20354600</east>
+        <west>-25.14185400</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

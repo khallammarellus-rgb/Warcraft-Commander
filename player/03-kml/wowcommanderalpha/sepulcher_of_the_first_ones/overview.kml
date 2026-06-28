@@ -12,29 +12,29 @@
     </LookAt>
     <GroundOverlay>
       <name>Sepulcher of the First Ones z0 0/0</name>
-      <drawOrder>147</drawOrder>
+      <drawOrder>146</drawOrder>
       <altitude>-2100.0</altitude>
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>-9.91510000</north>
-          <south>-12.07510000</south>
-          <east>31.54074500</east>
-          <west>29.02605500</west>
+          <north>27.87100000</north>
+          <south>25.47100000</south>
+          <east>82.77392500</east>
+          <west>79.70447500</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>271</maxLodPixels>
+          <maxLodPixels>331</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/sepulcher_of_the_first_ones/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>-9.91510000</north>
-        <south>-12.07510000</south>
-        <east>31.54074500</east>
-        <west>29.02605500</west>
+        <north>27.87100000</north>
+        <south>25.47100000</south>
+        <east>82.77392500</east>
+        <west>79.70447500</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

@@ -3,39 +3,12 @@
   <Document>
     <name>Harandar</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
-    <GroundOverlay>
-      <name>Harandar z0 0/0</name>
-      <drawOrder>146</drawOrder>
-      <altitude>-2000.0</altitude>
-      <altitudeMode>absolute</altitudeMode>
-      <Region>
-        <LatLonAltBox>
-          <north>16.77790000</north>
-          <south>13.62790000</south>
-          <east>-128.03539500</east>
-          <west>-130.95600500</west>
-        </LatLonAltBox>
-        <Lod>
-          <minLodPixels>128</minLodPixels>
-          <maxLodPixels>129</maxLodPixels>
-        </Lod>
-      </Region>
-      <Icon>
-        <href>../../../02-tiles/harandar/0/0/0.png</href>
-      </Icon>
-      <LatLonBox>
-        <north>16.77790000</north>
-        <south>13.62790000</south>
-        <east>-128.03539500</east>
-        <west>-130.95600500</west>
-      </LatLonBox>
-    </GroundOverlay>
   </Document>
 </kml>

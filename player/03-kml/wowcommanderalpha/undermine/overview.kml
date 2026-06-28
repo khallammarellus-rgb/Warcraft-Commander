@@ -12,29 +12,29 @@
     </LookAt>
     <GroundOverlay>
       <name>The Undermine z0 0/0</name>
-      <drawOrder>148</drawOrder>
+      <drawOrder>147</drawOrder>
       <altitude>-1900.0</altitude>
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>-8.75760000</north>
-          <south>-10.64760000</south>
-          <east>161.41392500</east>
-          <west>159.49647500</west>
+          <north>6.60094600</north>
+          <south>3.61285400</south>
+          <east>173.62570000</east>
+          <west>170.62570000</west>
         </LatLonAltBox>
         <Lod>
           <minLodPixels>64</minLodPixels>
-          <maxLodPixels>206</maxLodPixels>
+          <maxLodPixels>322</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/undermine/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>-8.75760000</north>
-        <south>-10.64760000</south>
-        <east>161.41392500</east>
-        <west>159.49647500</west>
+        <north>6.60094600</north>
+        <south>3.61285400</south>
+        <east>173.62570000</east>
+        <west>170.62570000</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

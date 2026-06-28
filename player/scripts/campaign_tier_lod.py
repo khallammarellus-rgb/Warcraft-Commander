@@ -13,6 +13,7 @@ CAMPAIGN_PACKAGE_NAME = "Campaign Package"
 CAMPAIGN_TIER_NAMES = frozenset({"Strategic", "Operational", "Tactical"})
 FACTION_FOLDER_NAMES = frozenset({"red-cell", "blue-cell", "white-cell"})
 DISCOVERED_FOLDER_NAMES = frozenset({"redcell-discovered", "bluecell-discovered"})
+DISCOVERED_AUTO_FOLDER_NAME = "auto"
 
 # (name, description, minLodPixels, maxLodPixels)
 CAMPAIGN_TIER_SPECS: tuple[tuple[str, str, int, int], ...] = (
@@ -96,8 +97,41 @@ def append_campaign_package_folder(document: ET.Element) -> ET.Element:
         append_campaign_tier_folders(faction)
         if faction_name == "white-cell":
             for disc_name, disc_desc in discovered:
-                _append_named_folder(faction, disc_name, disc_desc)
+                disc = _append_named_folder(faction, disc_name, disc_desc)
+                _append_named_folder(
+                    disc,
+                    DISCOVERED_AUTO_FOLDER_NAME,
+                    "System-managed proximity/scout reveals — refreshed each turn. "
+                    "Place manual referee copies in the parent folder, not here.",
+                )
     return package
+
+
+def ensure_discovered_auto_folders(root: ET.Element) -> int:
+    """Ensure auto/ exists under each white-cell discovered folder."""
+    document = root.find(_kml("Document"))
+    if document is None:
+        return 0
+    package = _folder_named(document, CAMPAIGN_PACKAGE_NAME)
+    if package is None:
+        return 0
+    white = _folder_named(package, "white-cell")
+    if white is None:
+        return 0
+    changed = 0
+    for disc_name in DISCOVERED_FOLDER_NAMES:
+        discovered = _folder_named(white, disc_name)
+        if discovered is None:
+            continue
+        if _folder_named(discovered, DISCOVERED_AUTO_FOLDER_NAME) is None:
+            _append_named_folder(
+                discovered,
+                DISCOVERED_AUTO_FOLDER_NAME,
+                "System-managed proximity/scout reveals — refreshed each turn. "
+                "Place manual referee copies in the parent folder, not here.",
+            )
+            changed += 1
+    return changed
 
 
 def _folder_named(parent: ET.Element, name: str) -> ET.Element | None:

@@ -14,7 +14,8 @@ MAJOR_ISLANDS_FOLDER = "Major Islands"
 MINOR_ISLES_FOLDER = "Minor Isles"
 MAP_LAYERS_FOLDER = "Map layers"
 CONTINENTS_FOLDER = "Continents"
-OTHER_WORLDS_FOLDER = "Other worlds"
+OTHER_WORLDS_FOLDER = "Other Worlds"
+SUBTERRANEAN_FOLDER = "Subterranean"
 PLAYER_MAP_LINK_NAME = "Azeroth maps (auto — leave on)"
 
 
@@ -117,6 +118,22 @@ def opposite_hemisphere_ids(config: dict) -> frozenset[str]:
     return frozenset(geo.get("opposite_hemisphere", {}).get("ids", []))
 
 
+def other_worlds_region_ids(config: dict, *, built_only: bool = False) -> list[str]:
+    """Opposite-hemisphere layers for the Other Worlds Places folder."""
+    opposite = opposite_hemisphere_ids(config)
+    ids: list[str] = []
+    for layer in config.get("layers", []):
+        layer_id = layer.get("id")
+        if not layer_id or layer_id not in opposite:
+            continue
+        if layer.get("layer_type") != "minimap":
+            continue
+        if built_only and not layer.get("earth_placement"):
+            continue
+        ids.append(layer_id)
+    return ids
+
+
 def split_pacific_and_opposite(
     region_ids: list[str],
     config: dict,
@@ -126,6 +143,38 @@ def split_pacific_and_opposite(
     pacific = [rid for rid in region_ids if rid not in opposite]
     other = [rid for rid in region_ids if rid in opposite]
     return pacific, other
+
+
+def subterranean_region_ids(config: dict, *, built_only: bool = False) -> list[str]:
+    """All subterranean layer ids (optionally only those with earth_placement)."""
+    ids: list[str] = []
+    for layer in config.get("layers", []):
+        if layer.get("layer_type") != "subterranean":
+            continue
+        layer_id = layer.get("id")
+        if not layer_id:
+            continue
+        if built_only and not layer.get("earth_placement"):
+            continue
+        ids.append(layer_id)
+    return ids
+
+
+def bucket_subterranean_by_parent(
+    subterranean_ids: list[str],
+    config: dict,
+) -> dict[str, list[str]]:
+    """Group subterranean zones under their parent continent (one handoff per parent)."""
+    buckets: dict[str, list[str]] = {parent_id: [] for parent_id in core_parent_ids(config)}
+    for layer_id in subterranean_ids:
+        layer = layer_by_id(config, layer_id)
+        if not layer:
+            continue
+        parent_id = layer.get("parent_region") or resolve_places_parent(layer_id, config)
+        if parent_id not in buckets:
+            parent_id = core_parent_ids(config)[0]
+        buckets[parent_id].append(layer_id)
+    return {pid: zones for pid, zones in buckets.items() if zones}
 
 
 def make_folder(

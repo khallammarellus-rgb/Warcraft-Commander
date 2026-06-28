@@ -3,8 +3,8 @@
   "download_url": "https://github.com/khallammarellus-rgb/Warcraft-Commander",
   "entry_kml": "player/WoW Commander.kml",
   "globe_version": "v3",
-  "packaged_at": "2026-06-26",
-  "tile_files": 36845,
+  "packaged_at": "2026-06-28",
+  "tile_files": 0,
   "region_count": 34,
   "instructions": "Code \u2192 Download ZIP \u2192 open player/WoW Commander.kml"
 }

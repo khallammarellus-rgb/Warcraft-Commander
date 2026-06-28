@@ -184,6 +184,7 @@ class InstallerWizard(tk.Tk):
             checks.check_python(),
             checks.check_google_earth(),
             checks.check_install_layout(self.install_root),
+            checks.check_expansion_packs(self.install_root, self.project_root),
         ]
         for row in results:
             color = COLORS["ok"] if row["ok"] else COLORS["warn"]
@@ -241,6 +242,7 @@ class InstallerWizard(tk.Tk):
 
         tools = [
             ("Extract / join release zip", self._tool_extract),
+            ("Apply expansion pack (.zip)", self._tool_expansion),
             ("Scan duplicate installs", self._tool_dupes),
             ("Clean reinstall (wipe tiles/cache)", self._tool_clean),
             ("Import icons from Downloads", self._tool_icons),
@@ -253,6 +255,34 @@ class InstallerWizard(tk.Tk):
             RetroButton(frame, label, cmd).pack(anchor="w", pady=4)
 
         RetroButton(frame, "Finish", self.show_done).pack(anchor="w", pady=(20, 0))
+
+    def _tool_expansion(self) -> None:
+        path = filedialog.askopenfilename(
+            title="Select expansion pack zip",
+            filetypes=[("Expansion zip", "*.zip")],
+        )
+        if not path:
+            return
+        import subprocess
+
+        script = self.paths["scripts"] / "apply_expansion.py"
+        if not script.is_file():
+            script = core.scripts_dir() / "apply_expansion.py"
+        result = subprocess.run(
+            [
+                core.python_cmd(),
+                str(script),
+                "--zip",
+                path,
+                "--install-root",
+                str(self.install_root),
+            ],
+            cwd=str(self.paths["root"]),
+            capture_output=True,
+            text=True,
+        )
+        self._log(result.stdout.strip() or result.stderr.strip() or "Expansion apply finished")
+        self.show_checks()
 
     def _tool_extract(self) -> None:
         dl = core.downloads_dir()

@@ -111,25 +111,26 @@ def prepare_minimap_mosaic_detail_png(
     *,
     max_long_edge: int,
     globe_config: dict | None,
+    tier_id: str = "detail",
 ) -> Path:
-    """Build overview_detail.png from minimap tiles (Darkmoon-style close-up)."""
+    """Build overview_{tier_id}.png from stitched minimap tiles."""
     input_dir = project_root / layer["input"]
     mosaic = mosaic_minimap(input_dir)
     if mosaic is None:
         raise FileNotFoundError(
             f"minimap_mosaic detail tier: no map##_#_ tiles under {input_dir}"
         )
-    staging = tiles_root / "_detail_mosaic_src.png"
+    staging = tiles_root / f"_{tier_id}_mosaic_src.png"
     tiles_root.mkdir(parents=True, exist_ok=True)
     mosaic.save(staging)
     print(
-        f"  Detail mosaic: {len(load_minimap_tiles(input_dir))} tiles "
+        f"  {tier_id} mosaic: {len(load_minimap_tiles(input_dir))} tiles "
         f"{mosaic.size[0]}x{mosaic.size[1]}px from {input_dir.name}"
     )
     return prepare_overview_png(
         staging,
         tiles_root,
-        tier_id="detail",
+        tier_id=tier_id,
         max_long_edge=max_long_edge,
         globe_config=globe_config,
     )
@@ -289,7 +290,6 @@ MAJOR_LAYER_IDS = frozenset({
     "outland",
     "draenor",
     "shadowlands",
-    "emerald_dream",
     "zereth_mortis",
     "mardum",
     "karesh",
@@ -977,6 +977,41 @@ def asset_href(kml_path: Path, asset_path: Path) -> str:
 GE_MAX_TEXTURE_PX = 16384
 
 
+def opposite_world_overview_png_tiers(globe_config: dict | None) -> dict:
+    """Planet-scale overview stack for opposite-hemisphere zones (no continent PNG exports)."""
+    zoom = (globe_config or {}).get("zoom_transition", {})
+    cam = zoom.get("camera_tiers", {})
+    geo = (globe_config or {}).get("geographic_placement", {})
+    ow = geo.get("other_worlds_overview_tiers", {})
+    from_far = float(
+        ow.get("visible_from_miles") or cam.get("vignette_visible_from_miles", 38000)
+    )
+    silhouette_until = float(
+        ow.get("silhouette_until_miles")
+        or ow.get("visible_until_miles")
+        or cam.get("vignette_overview_until_miles", 10000)
+    )
+    silhouette_edge = int(zoom.get("silhouette_png_max_long_edge", 400))
+    return {
+        "silhouette": {
+            "source_rel": "minimap_mosaic",
+            "max_long_edge": silhouette_edge,
+            "visible_from_miles": from_far,
+            "visible_until_miles": silhouette_until,
+        },
+        "planet": {
+            "source_rel": "minimap_mosaic",
+            "max_long_edge": 800,
+            "visible_until_miles": float(cam.get("planet_overview_until_miles", 4500)),
+        },
+        "theater": {
+            "source_rel": "minimap_mosaic",
+            "max_long_edge": 4096,
+            "visible_until_miles": float(cam.get("continent_overview_until_miles", 750)),
+        },
+    }
+
+
 def resolve_overview_png_tiers(
     layer: dict,
     globe_config: dict | None,
@@ -986,6 +1021,8 @@ def resolve_overview_png_tiers(
     Each tier may set its own ``file``; otherwise the shared ``source`` / ``overview_png`` is used.
     """
     cfg = layer.get("overview_png_tiers")
+    if not cfg and layer.get("hemisphere") == "opposite":
+        cfg = opposite_world_overview_png_tiers(globe_config)
     if not cfg:
         return None
     default_source = cfg.get("source") or layer.get("overview_png")
@@ -1032,10 +1069,13 @@ def resolve_overview_png_tiers(
     zoom_cfg = (globe_config or {}).get("zoom_transition", {})
     silhouette_max_edge = int(zoom_cfg.get("silhouette_png_max_long_edge", 400))
 
+    def tier_source_rel(tier_cfg: dict) -> str | None:
+        return tier_cfg.get("file") or tier_cfg.get("source_rel") or default_source
+
     specs: list[dict] = []
     if cfg.get("silhouette") is not False:
         silhouette_cfg = tier_section("silhouette")
-        silhouette_source = silhouette_cfg.get("file")
+        silhouette_source = tier_source_rel(silhouette_cfg)
         if not silhouette_source:
             planet_file = tier_section("planet").get("file") or default_source or ""
             if planet_file:
@@ -1064,7 +1104,7 @@ def resolve_overview_png_tiers(
         specs.append(
             {
                 "id": "planet",
-                "source_rel": planet_cfg.get("file") or default_source,
+                "source_rel": tier_source_rel(planet_cfg),
                 "max_long_edge": int(planet_cfg.get("max_long_edge", 4096)),
                 "visible_from_miles": silhouette_until,
                 "visible_until_miles": planet_until,
@@ -1075,7 +1115,7 @@ def resolve_overview_png_tiers(
         specs.append(
             {
                 "id": "theater",
-                "source_rel": theater_cfg.get("file") or default_source,
+                "source_rel": tier_source_rel(theater_cfg),
                 "max_long_edge": int(theater_cfg.get("max_long_edge", 12288)),
                 "visible_from_miles": float(
                     theater_cfg.get("visible_from_miles", theater_from_default)
@@ -1470,6 +1510,7 @@ def write_kml(
                     tiles_root,
                     max_long_edge=spec["max_long_edge"],
                     globe_config=globe_config,
+                    tier_id=spec["id"],
                 )
             elif source_rel:
                 source = (project_root / source_rel).resolve()

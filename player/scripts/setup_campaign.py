@@ -542,7 +542,20 @@ def _answers_to_session(project_root: Path, answers: dict, steps: list[WizardSte
 
 def _write_campaign_meta(project_root: Path, game_format: str, *, variant: str = "wowcommanderalpha") -> None:
     path = meta_path(campaign_dir_for_variant(project_root, variant))
-    data = {"game_format": game_format, "reveal_radius_km": 1.0, "reveal_persistent": True}
+    data = {
+        "game_format": game_format,
+        "reveal_radius_km": 5.0,
+        "scout_radius_km": 10.0,
+        "scout_keywords": [
+            "scout",
+            "recon",
+            "reconnaissance",
+            "pathfinder",
+            "sniper",
+            "spy",
+        ],
+        "reveal_persistent": True,
+    }
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
 
 

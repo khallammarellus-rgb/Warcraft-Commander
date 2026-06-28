@@ -82,6 +82,58 @@ export function advanceAfterGhost(state: TurnState): TurnState {
   };
 }
 
+function boardUploadsForTurn(state: TurnState, turn: number): { blue: boolean; red: boolean } {
+  const uploads = state.history.filter((h) => h.type === "board_upload" && h.turn === turn);
+  return {
+    blue: uploads.some((h) => h.cell === "blue-cell"),
+    red: uploads.some((h) => h.cell === "red-cell"),
+  };
+}
+
+/** Derive active_cell/phase from history when KV state drifted (e.g. after lifecycle start). */
+export function reconcileTurnState(state: TurnState): { state: TurnState; changed: boolean } {
+  if (state.status !== "active") return { state, changed: false };
+
+  const turn = state.turn;
+  const { blue: blueDone, red: redDone } = boardUploadsForTurn(state, turn);
+  const ghostDone = state.history.some((h) => h.type === "ghost_turn" && h.turn === turn);
+
+  const next = { ...state };
+  let changed = false;
+
+  if (state.phase === "ghost") {
+    if (!ghostDone && blueDone && redDone) {
+      if (next.active_cell !== "white-cell" || next.phase !== "ghost") {
+        next.active_cell = "white-cell";
+        next.phase = "ghost";
+        changed = true;
+      }
+    }
+  } else {
+    if (!blueDone) {
+      if (next.active_cell !== "blue-cell" || next.phase !== "board") {
+        next.active_cell = "blue-cell";
+        next.phase = "board";
+        changed = true;
+      }
+    } else if (!redDone) {
+      if (next.active_cell !== "red-cell" || next.phase !== "board") {
+        next.active_cell = "red-cell";
+        next.phase = "board";
+        changed = true;
+      }
+    } else if (!ghostDone) {
+      if (next.active_cell !== "white-cell" || next.phase !== "ghost") {
+        next.active_cell = "white-cell";
+        next.phase = "ghost";
+        changed = true;
+      }
+    }
+  }
+
+  return { state: next, changed };
+}
+
 export function canAcceptBoardUpload(
   state: TurnState,
   cell: Cell,

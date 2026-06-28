@@ -3,36 +3,86 @@
   <Document>
     <name>Mardum</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>Mardum z0 0/0</name>
-      <drawOrder>88</drawOrder>
+      <name>Mardum silhouette</name>
+      <drawOrder>72</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>5.55670000</north>
-          <south>-2.84330000</south>
-          <east>28.22994500</east>
-          <west>16.46665500</west>
+          <north>42.33220000</north>
+          <south>26.33220000</south>
+          <east>-15.25919000</east>
+          <west>-42.38501000</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>113</minLodPixels>
-          <maxLodPixels>1272</maxLodPixels>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>219</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/mardum/0/0/0.png</href>
+        <href>../../../02-tiles/mardum/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>5.55670000</north>
-        <south>-2.84330000</south>
-        <east>28.22994500</east>
-        <west>16.46665500</west>
+        <north>42.33220000</north>
+        <south>26.33220000</south>
+        <east>-15.25919000</east>
+        <west>-42.38501000</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Mardum planet</name>
+      <drawOrder>73</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>42.33220000</north>
+          <south>26.33220000</south>
+          <east>-15.25919000</east>
+          <west>-42.38501000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>196</minLodPixels>
+          <maxLodPixels>488</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/mardum/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>42.33220000</north>
+        <south>26.33220000</south>
+        <east>-15.25919000</east>
+        <west>-42.38501000</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>Mardum theater</name>
+      <drawOrder>74</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>42.33220000</north>
+          <south>26.33220000</south>
+          <east>-15.25919000</east>
+          <west>-42.38501000</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>983</minLodPixels>
+          <maxLodPixels>2935</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/mardum/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>42.33220000</north>
+        <south>26.33220000</south>
+        <east>-15.25919000</east>
+        <west>-42.38501000</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

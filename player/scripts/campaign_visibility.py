@@ -3,6 +3,10 @@ Fog-of-war and blind-mode filtering for campaign turn exports.
 
 Google Earth Pro cannot hide folders at runtime — each player receives a filtered
 KMZ built from the shared master campaign/*.kml on disk.
+
+Revealed enemy intel is copied into white-cell discovered folders (auto/ for
+proximity/scout, root for manual referee injects). Blind players never see live
+opponent positions — only merged discovered copies.
 """
 
 from __future__ import annotations
@@ -10,25 +14,41 @@ from __future__ import annotations
 import copy
 import json
 import math
+import re
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
 from campaign_tier_lod import (
     CAMPAIGN_PACKAGE_NAME,
+    DISCOVERED_AUTO_FOLDER_NAME,
     DISCOVERED_FOLDER_NAMES,
     FACTION_FOLDER_NAMES,
     KML_NS,
+    ensure_discovered_auto_folders,
 )
 
 GAME_FORMATS = frozenset({"no-blind", "single-blind", "double-blind"})
 VIEWER_ROLES = frozenset({"red-cell", "blue-cell", "white-cell"})
 OPPONENT = {"red-cell": "blue-cell", "blue-cell": "red-cell"}
 
+DEFAULT_SCOUT_KEYWORDS = (
+    "scout",
+    "recon",
+    "reconnaissance",
+    "pathfinder",
+    "sniper",
+    "spy",
+)
+
 DEFAULT_META = {
     "game_format": "no-blind",
-    "reveal_radius_km": 1.0,
+    "reveal_radius_km": 5.0,
+    "scout_radius_km": 10.0,
+    "scout_keywords": list(DEFAULT_SCOUT_KEYWORDS),
     "reveal_persistent": True,
 }
+
+SOURCE_KEY_PREFIX = "wowcmd:source_key="
 
 
 def _kml(tag: str) -> str:
@@ -50,6 +70,8 @@ def load_campaign_meta(campaign_dir: Path) -> dict:
     data = json.loads(path.read_text(encoding="utf-8"))
     merged = dict(DEFAULT_META)
     merged.update(data)
+    if not merged.get("scout_keywords"):
+        merged["scout_keywords"] = list(DEFAULT_SCOUT_KEYWORDS)
     return merged
 
 
@@ -107,6 +129,33 @@ def _campaign_package(document: ET.Element) -> ET.Element | None:
     return _folder_named(document, CAMPAIGN_PACKAGE_NAME)
 
 
+def _placemark_id(placemark: ET.Element) -> str:
+    name_el = placemark.find(_kml("name"))
+    if name_el is not None and (name_el.text or "").strip():
+        return (name_el.text or "").strip()
+    coords = placemark_coords(placemark)
+    if coords is not None:
+        return f"@{coords[0]:.5f},{coords[1]:.5f}"
+    return "placemark"
+
+
+def _placemark_label_text(placemark: ET.Element) -> str:
+    parts: list[str] = []
+    for tag in ("name", "description"):
+        el = placemark.find(_kml(tag))
+        if el is not None and (el.text or "").strip():
+            parts.append(el.text or "")
+    return " ".join(parts)
+
+
+def _is_scout_unit(placemark: ET.Element, keywords: list[str]) -> bool:
+    text = _placemark_label_text(placemark).lower()
+    for keyword in keywords:
+        if re.search(rf"\b{re.escape(keyword.lower())}\b", text):
+            return True
+    return False
+
+
 def _iter_faction_placemarks(
     package: ET.Element,
     faction: str,
@@ -134,58 +183,129 @@ def _iter_faction_placemarks(
     return results
 
 
-def _placemark_id(placemark: ET.Element) -> str:
-    name_el = placemark.find(_kml("name"))
-    if name_el is not None and (name_el.text or "").strip():
-        return (name_el.text or "").strip()
-    coords = placemark_coords(placemark)
-    if coords is not None:
-        return f"@{coords[0]:.5f},{coords[1]:.5f}"
-    return "placemark"
+def _proximity_mutual_reveals(
+    red_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    blue_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    radius_km: float,
+) -> tuple[set[str], set[str]]:
+    red_sees_blue: set[str] = set()
+    blue_sees_red: set[str] = set()
+    for r_key, _r_pm, r_coords in red_units:
+        if r_coords is None:
+            continue
+        for b_key, _b_pm, b_coords in blue_units:
+            if b_coords is None:
+                continue
+            if haversine_km(r_coords[0], r_coords[1], b_coords[0], b_coords[1]) <= radius_km:
+                red_sees_blue.add(b_key)
+                blue_sees_red.add(r_key)
+    return red_sees_blue, blue_sees_red
 
 
-def _discovered_placemarks(package: ET.Element, folder_name: str) -> list[ET.Element]:
+def _scout_one_way_reveals(
+    scout_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    enemy_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    radius_km: float,
+) -> set[str]:
+    revealed: set[str] = set()
+    for _s_key, _s_pm, s_coords in scout_units:
+        if s_coords is None:
+            continue
+        for e_key, _e_pm, e_coords in enemy_units:
+            if e_coords is None:
+                continue
+            if haversine_km(s_coords[0], s_coords[1], e_coords[0], e_coords[1]) <= radius_km:
+                revealed.add(e_key)
+    return revealed
+
+
+def compute_reveals(
+    red_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    blue_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
+    *,
+    radius_km: float,
+    scout_radius_km: float,
+    scout_keywords: list[str],
+) -> tuple[set[str], set[str]]:
+    red_sees_blue, blue_sees_red = _proximity_mutual_reveals(red_units, blue_units, radius_km)
+
+    red_scouts = [(k, pm, c) for k, pm, c in red_units if _is_scout_unit(pm, scout_keywords)]
+    blue_scouts = [(k, pm, c) for k, pm, c in blue_units if _is_scout_unit(pm, scout_keywords)]
+
+    red_sees_blue |= _scout_one_way_reveals(red_scouts, blue_units, scout_radius_km)
+    blue_sees_red |= _scout_one_way_reveals(blue_scouts, red_units, scout_radius_km)
+    return red_sees_blue, blue_sees_red
+
+
+def _set_source_key(placemark: ET.Element, source_key: str) -> None:
+    desc_el = placemark.find(_kml("description"))
+    if desc_el is None:
+        desc_el = ET.SubElement(placemark, _kml("description"))
+    lines = [
+        line
+        for line in (desc_el.text or "").splitlines()
+        if not line.strip().startswith(SOURCE_KEY_PREFIX)
+    ]
+    lines.append(f"{SOURCE_KEY_PREFIX}{source_key}")
+    desc_el.text = "\n".join(lines).strip()
+
+
+def _clear_auto_discovered_folder(discovered: ET.Element) -> None:
+    auto = _folder_named(discovered, DISCOVERED_AUTO_FOLDER_NAME)
+    if auto is None:
+        return
+    for child in list(auto):
+        if child.tag == _kml("Placemark"):
+            auto.remove(child)
+
+
+def sync_discovered_copies(
+    root: ET.Element,
+    *,
+    red_sees_blue: set[str],
+    blue_sees_red: set[str],
+) -> int:
+    """
+    Refresh auto/ copies under white-cell discovered folders.
+    Manual placemarks at discovered-folder root are never touched.
+    """
+    document = root.find(_kml("Document"))
+    package = _campaign_package(document) if document is not None else None
+    if package is None:
+        return 0
+
+    ensure_discovered_auto_folders(root)
     white = _folder_named(package, "white-cell")
     if white is None:
-        return []
-    discovered = _folder_named(white, folder_name)
-    if discovered is None:
-        return []
-    return list(discovered.findall(_kml("Placemark")))
+        return 0
 
+    red_units = _iter_faction_placemarks(package, "red-cell")
+    blue_units = _iter_faction_placemarks(package, "blue-cell")
+    red_by_key = {key: pm for key, pm, _ in red_units}
+    blue_by_key = {key: pm for key, pm, _ in blue_units}
 
-def _proximity_reveals(
-    *,
-    viewer_faction: str,
-    own_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
-    enemy_units: list[tuple[str, ET.Element, tuple[float, float] | None]],
-    state: dict,
-    radius_km: float,
-    persistent: bool,
-) -> set[str]:
-    opponent = OPPONENT[viewer_faction]
-    reveal_key = "red_sees_blue" if viewer_faction == "red-cell" else "blue_sees_red"
-    prev_positions: dict = state.get("positions", {})
-    revealed: set[str] = set(state.get("reveals", {}).get(reveal_key, [])) if persistent else set()
-
-    triggers: list[tuple[float, float]] = []
-    for key, _pm, coords in own_units:
-        if coords is None:
+    changed = 0
+    pairs = (
+        ("redcell-discovered", red_sees_blue, blue_by_key),
+        ("bluecell-discovered", blue_sees_red, red_by_key),
+    )
+    for discovered_name, reveal_keys, enemy_by_key in pairs:
+        discovered = _folder_named(white, discovered_name)
+        if discovered is None:
             continue
-        prev = prev_positions.get(key)
-        if prev is None or prev != [coords[0], coords[1]]:
-            triggers.append(coords)
-
-    for _key, _pm, enemy_coords in enemy_units:
-        if enemy_coords is None:
+        auto = _folder_named(discovered, DISCOVERED_AUTO_FOLDER_NAME)
+        if auto is None:
             continue
-        enemy_id = _key
-        for tlon, tlat in triggers:
-            if haversine_km(tlon, tlat, enemy_coords[0], enemy_coords[1]) <= radius_km:
-                revealed.add(enemy_id)
-                break
-
-    return revealed
+        _clear_auto_discovered_folder(discovered)
+        for key in sorted(reveal_keys):
+            source = enemy_by_key.get(key)
+            if source is None:
+                continue
+            copied = copy.deepcopy(source)
+            _set_source_key(copied, key)
+            auto.append(copied)
+            changed += 1
+    return changed
 
 
 def update_reveal_state_for_document(
@@ -194,7 +314,8 @@ def update_reveal_state_for_document(
     campaign_dir: Path,
     turn: int,
     radius_km: float,
-    persistent: bool,
+    scout_radius_km: float,
+    scout_keywords: list[str],
 ) -> dict:
     document = root.find(_kml("Document"))
     package = _campaign_package(document) if document is not None else None
@@ -202,24 +323,22 @@ def update_reveal_state_for_document(
     if package is None:
         return state
 
+    ensure_discovered_auto_folders(root)
     red_units = _iter_faction_placemarks(package, "red-cell")
     blue_units = _iter_faction_placemarks(package, "blue-cell")
 
-    red_revealed = _proximity_reveals(
-        viewer_faction="red-cell",
-        own_units=red_units,
-        enemy_units=blue_units,
-        state=state,
+    red_revealed, blue_revealed = compute_reveals(
+        red_units,
+        blue_units,
         radius_km=radius_km,
-        persistent=persistent,
+        scout_radius_km=scout_radius_km,
+        scout_keywords=scout_keywords,
     )
-    blue_revealed = _proximity_reveals(
-        viewer_faction="blue-cell",
-        own_units=blue_units,
-        enemy_units=red_units,
-        state=state,
-        radius_km=radius_km,
-        persistent=persistent,
+
+    sync_discovered_copies(
+        root,
+        red_sees_blue=red_revealed,
+        blue_sees_red=blue_revealed,
     )
 
     positions: dict[str, list[float]] = {}
@@ -229,8 +348,67 @@ def update_reveal_state_for_document(
 
     state["turn"] = turn
     state["positions"] = positions
-    state["reveals"] = {"red_sees_blue": sorted(red_revealed), "blue_sees_red": sorted(blue_revealed)}
+    state["reveals"] = {
+        "red_sees_blue": sorted(red_revealed),
+        "blue_sees_red": sorted(blue_revealed),
+    }
     save_reveal_state(campaign_dir, state)
+    return state
+
+
+def refresh_reveals_for_document(
+    root: ET.Element,
+    *,
+    campaign_dir: Path,
+    turn: int,
+    meta: dict | None = None,
+) -> dict:
+    """Compute range-bound reveals, sync discovered auto copies, persist reveal_state."""
+    cfg = meta or load_campaign_meta(campaign_dir)
+    return update_reveal_state_for_document(
+        root,
+        campaign_dir=campaign_dir,
+        turn=turn,
+        radius_km=float(cfg.get("reveal_radius_km", 5.0)),
+        scout_radius_km=float(cfg.get("scout_radius_km", 10.0)),
+        scout_keywords=list(cfg.get("scout_keywords") or DEFAULT_SCOUT_KEYWORDS),
+    )
+
+
+def write_kml_root(path: Path, root: ET.Element) -> None:
+    tree = ET.ElementTree(root)
+    ET.indent(tree, space="  ")
+    tree.write(path, encoding="utf-8", xml_declaration=True)
+
+
+def apply_reveal_sync_to_theater(
+    path: Path,
+    *,
+    campaign_dir: Path,
+    turn: int | None = None,
+) -> dict:
+    """Recompute reveals on a theater master KML and save discovered auto copies."""
+    from campaign_tier_lod import (
+        inject_placemark_tier_regions,
+        migrate_to_campaign_package,
+        strip_tier_folder_regions,
+    )
+
+    meta = load_campaign_meta(campaign_dir)
+    root = ET.parse(path).getroot()
+    migrate_to_campaign_package(root)
+    strip_tier_folder_regions(root)
+    inject_placemark_tier_regions(root)
+
+    state = load_reveal_state(campaign_dir)
+    effective_turn = turn if turn is not None else int(state.get("turn", 0)) + 1
+    state = refresh_reveals_for_document(
+        root,
+        campaign_dir=campaign_dir,
+        turn=effective_turn,
+        meta=meta,
+    )
+    write_kml_root(path, root)
     return state
 
 
@@ -250,16 +428,12 @@ def viewer_sees_everything(game_format: str, viewer: str) -> bool:
     return False
 
 
-def _remove_placemarks_not_in(folder: ET.Element, keep_ids: set[str], path_prefix: list[str]) -> None:
+def _remove_all_placemarks(folder: ET.Element) -> None:
     for child in list(folder):
         if child.tag == _kml("Placemark"):
-            key = placemark_path_key(path_prefix + [_placemark_id(child)])
-            if key not in keep_ids:
-                folder.remove(child)
+            folder.remove(child)
         elif child.tag == _kml("Folder"):
-            name_el = child.find(_kml("name"))
-            sub = (name_el.text or "") if name_el is not None else "folder"
-            _remove_placemarks_not_in(child, keep_ids, path_prefix + [sub])
+            _remove_all_placemarks(child)
 
 
 def _strip_faction(package: ET.Element, faction: str) -> None:
@@ -268,15 +442,11 @@ def _strip_faction(package: ET.Element, faction: str) -> None:
         package.remove(target)
 
 
-def _filter_opponent_folder(
-    package: ET.Element,
-    opponent: str,
-    keep_ids: set[str],
-) -> None:
+def _strip_live_opponent_placemarks(package: ET.Element, opponent: str) -> None:
     folder = _folder_named(package, opponent)
     if folder is None:
         return
-    _remove_placemarks_not_in(folder, keep_ids, [opponent])
+    _remove_all_placemarks(folder)
 
 
 def _filter_white_cell_for_viewer(package: ET.Element, viewer: str) -> None:
@@ -285,8 +455,10 @@ def _filter_white_cell_for_viewer(package: ET.Element, viewer: str) -> None:
         return
     keep_discovered = "redcell-discovered" if viewer == "red-cell" else "bluecell-discovered"
     for child in list(white):
-        if child.tag != _kml("Folder"):
+        if child.tag == _kml("Placemark"):
             white.remove(child)
+            continue
+        if child.tag != _kml("Folder"):
             continue
         name_el = child.find(_kml("name"))
         name = (name_el.text or "") if name_el is not None else ""
@@ -302,6 +474,7 @@ def filter_campaign_root(
     state: dict,
 ) -> ET.Element:
     """Return a copy of root filtered for viewer role and blind format."""
+    del state  # reveals materialize as discovered copies; live opponent markers are stripped
     if viewer is None or viewer_sees_everything(game_format, viewer):
         return root
 
@@ -311,23 +484,40 @@ def filter_campaign_root(
     if package is None:
         return filtered
 
-    reveals = state.get("reveals", {})
     if viewer == "red-cell":
-        keep = set(reveals.get("red_sees_blue", []))
-        _filter_opponent_folder(package, "blue-cell", keep)
+        _strip_live_opponent_placemarks(package, "blue-cell")
         _filter_white_cell_for_viewer(package, "red-cell")
     elif viewer == "blue-cell":
-        keep = set(reveals.get("blue_sees_red", []))
-        _filter_opponent_folder(package, "red-cell", keep)
+        _strip_live_opponent_placemarks(package, "red-cell")
         _filter_white_cell_for_viewer(package, "blue-cell")
 
     return filtered
 
 
+def _discovered_placemarks(package: ET.Element, folder_name: str) -> list[ET.Element]:
+    white = _folder_named(package, "white-cell")
+    if white is None:
+        return []
+    discovered = _folder_named(white, folder_name)
+    if discovered is None:
+        return []
+
+    results: list[ET.Element] = []
+
+    def collect(folder: ET.Element) -> None:
+        for child in folder:
+            if child.tag == _kml("Placemark"):
+                results.append(child)
+            elif child.tag == _kml("Folder"):
+                collect(child)
+
+    collect(discovered)
+    return results
+
+
 def merge_discovered_into_opponent_view(root: ET.Element, viewer: str) -> None:
     """
-    Copy white-cell discovered placemarks into opponent faction folder for visibility.
-    Manual referee markers in redcell-discovered become visible to red without path-key matching.
+    Copy white-cell discovered placemarks (manual + auto/) into opponent faction folder.
     """
     document = root.find(_kml("Document"))
     package = _campaign_package(document) if document is not None else None
@@ -349,7 +539,9 @@ def merge_discovered_into_opponent_view(root: ET.Element, viewer: str) -> None:
     if target is None:
         return
 
-    tactical = _folder_named(target, "Tactical") or target
+    tactical = _folder_named(target, "Tactical")
+    if tactical is None:
+        tactical = target
     for pm in manual:
         tactical.append(copy.deepcopy(pm))
 
@@ -362,7 +554,10 @@ def prepare_view_kml_xml(
     viewer: str | None,
     game_format: str | None,
     radius_km: float | None,
+    scout_radius_km: float | None,
+    scout_keywords: list[str] | None,
     persistent: bool | None,
+    save_master: bool = True,
 ) -> str:
     """Full pipeline: migrate, LOD, reveal state, blind filter."""
     from campaign_tier_lod import (
@@ -375,8 +570,12 @@ def prepare_view_kml_xml(
     fmt = game_format or meta.get("game_format", "no-blind")
     if fmt not in GAME_FORMATS:
         fmt = "no-blind"
-    radius = radius_km if radius_km is not None else float(meta.get("reveal_radius_km", 1.0))
-    persist = persistent if persistent is not None else bool(meta.get("reveal_persistent", True))
+    radius = radius_km if radius_km is not None else float(meta.get("reveal_radius_km", 5.0))
+    scout_radius = (
+        scout_radius_km if scout_radius_km is not None else float(meta.get("scout_radius_km", 10.0))
+    )
+    keywords = scout_keywords or list(meta.get("scout_keywords") or DEFAULT_SCOUT_KEYWORDS)
+    del persistent  # manual copies persist in discovered root; auto copies are range-bound
 
     root = ET.parse(path).getroot()
     migrate_to_campaign_package(root)
@@ -388,8 +587,12 @@ def prepare_view_kml_xml(
         campaign_dir=campaign_dir,
         turn=turn,
         radius_km=radius,
-        persistent=persist,
+        scout_radius_km=scout_radius,
+        scout_keywords=keywords,
     )
+
+    if save_master:
+        write_kml_root(path, root)
 
     fmt = effective_format(fmt, viewer)
     filtered = filter_campaign_root(root, viewer=viewer, game_format=fmt, state=state)

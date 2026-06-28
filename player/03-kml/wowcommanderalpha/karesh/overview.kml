@@ -3,36 +3,86 @@
   <Document>
     <name>K'aresh</name>
     <LookAt>
-      <longitude>-177.350900</longitude>
-      <latitude>20.239600</latitude>
+      <longitude>-175.078400</longitude>
+      <latitude>21.155900</latitude>
       <altitude>0</altitude>
       <range>25000000</range>
       <tilt>0</tilt>
       <heading>0</heading>
     </LookAt>
     <GroundOverlay>
-      <name>K'aresh z0 0/0</name>
-      <drawOrder>84</drawOrder>
+      <name>K'aresh silhouette</name>
+      <drawOrder>80</drawOrder>
       <Region>
         <LatLonAltBox>
-          <north>12.32450000</north>
-          <south>-2.37550000</south>
-          <east>36.34560000</east>
-          <west>20.36040000</west>
+          <north>-20.20300000</north>
+          <south>-36.20300000</south>
+          <east>14.40169500</east>
+          <west>-5.26669500</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>113</minLodPixels>
-          <maxLodPixels>1729</maxLodPixels>
+          <minLodPixels>64</minLodPixels>
+          <maxLodPixels>159</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
-        <href>../../../02-tiles/karesh/0/0/0.png</href>
+        <href>../../../02-tiles/karesh/overview_silhouette.png</href>
       </Icon>
       <LatLonBox>
-        <north>12.32450000</north>
-        <south>-2.37550000</south>
-        <east>36.34560000</east>
-        <west>20.36040000</west>
+        <north>-20.20300000</north>
+        <south>-36.20300000</south>
+        <east>14.40169500</east>
+        <west>-5.26669500</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>K'aresh planet</name>
+      <drawOrder>81</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-20.20300000</north>
+          <south>-36.20300000</south>
+          <east>14.40169500</east>
+          <west>-5.26669500</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>142</minLodPixels>
+          <maxLodPixels>353</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/karesh/overview_planet.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-20.20300000</north>
+        <south>-36.20300000</south>
+        <east>14.40169500</east>
+        <west>-5.26669500</west>
+      </LatLonBox>
+    </GroundOverlay>
+    <GroundOverlay>
+      <name>K'aresh theater</name>
+      <drawOrder>82</drawOrder>
+      <Region>
+        <LatLonAltBox>
+          <north>-20.20300000</north>
+          <south>-36.20300000</south>
+          <east>14.40169500</east>
+          <west>-5.26669500</west>
+        </LatLonAltBox>
+        <Lod>
+          <minLodPixels>713</minLodPixels>
+          <maxLodPixels>2129</maxLodPixels>
+        </Lod>
+      </Region>
+      <Icon>
+        <href>../../../02-tiles/karesh/overview_theater.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>-20.20300000</north>
+        <south>-36.20300000</south>
+        <east>14.40169500</east>
+        <west>-5.26669500</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

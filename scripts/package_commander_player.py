@@ -33,7 +33,14 @@ SOURCE_VARIANT = "wowcommanderalpha"
 COMMANDER_REPO = "khallammarellus-rgb/Warcraft-Commander"
 REPO_URL = f"https://github.com/{COMMANDER_REPO}"
 
-PACKAGE_ROOT_FILES = (ENTRY_KML, "README.md", "manifest.json", "requirements.txt")
+PACKAGE_ROOT_FILES = (
+    ENTRY_KML,
+    "README.md",
+    "manifest.json",
+    "requirements.txt",
+    "Open Map.cmd",
+    "WINDOWS_SETUP.txt",
+)
 PACKAGE_DIRS = ("kml", "tiles", "scripts", "config", "assets", "03-kml")
 
 SHARED_KML_FILES = frozenset({"terrain_underlay.kml", "pacific_vignette.kml"})
@@ -44,6 +51,7 @@ SKIP_KML_NAMES = frozenset(
 PLAYER_SCRIPTS = [
     "WOW Commander.command",
     "WOW Commander.cmd",
+    "win_find_python.cmd",
     "player_install_wizard.py",
     "campaign_icons.py",
     "package_icon_pack.py",
@@ -83,7 +91,12 @@ CONFIG_PATHS = [
     "config/globe.json",
     "config/placements",
     "config/subterranean.json",
+    "config/expansions.json",
+    "config/expansion_placement.json",
     "config/misc_islands.json",
+    "scripts/expansions.py",
+    "scripts/apply_expansion.py",
+    "scripts/package_expansion.py",
     "assets/faction_library",
     "assets/branding",
     "assets/player_custom_icons",
@@ -178,6 +191,14 @@ def copy_tiles(project_root: Path, out_dir: Path, region_ids: list[str]) -> int:
         _hardlink_tree(src, tiles_dest / region_id)
         count += sum(1 for _ in (tiles_dest / region_id).rglob("*") if _.is_file())
     return count
+
+
+def copy_windows_player_helpers(project_root: Path, out_dir: Path) -> None:
+    templates = project_root / "scripts" / "templates" / "player"
+    for name in ("Open Map.cmd", "WINDOWS_SETUP.txt"):
+        src = templates / name
+        if src.is_file():
+            shutil.copy2(src, out_dir / name)
 
 
 def copy_scripts_and_config(project_root: Path, out_dir: Path) -> None:
@@ -322,6 +343,7 @@ def package_commander_player(
         tile_count = copy_tiles(project_root, out_dir, region_ids)
 
     copy_scripts_and_config(project_root, out_dir)
+    copy_windows_player_helpers(project_root, out_dir)
     validate_package(out_dir, region_ids, require_tiles=not skip_tiles)
 
     globe = load_globe_config(project_root)

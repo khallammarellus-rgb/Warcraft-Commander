@@ -12,29 +12,29 @@
     </LookAt>
     <GroundOverlay>
       <name>Subsurface Khaz Algar z0 0/0</name>
-      <drawOrder>146</drawOrder>
+      <drawOrder>134</drawOrder>
       <altitude>-1400.0</altitude>
       <altitudeMode>absolute</altitudeMode>
       <Region>
         <LatLonAltBox>
-          <north>-7.01260000</north>
-          <south>-10.79260000</south>
-          <east>161.54867500</east>
-          <west>157.96172500</west>
+          <north>-0.75650000</north>
+          <south>-16.75650000</south>
+          <east>166.47704900</east>
+          <west>151.30015100</west>
         </LatLonAltBox>
         <Lod>
-          <minLodPixels>64</minLodPixels>
-          <maxLodPixels>408</maxLodPixels>
+          <minLodPixels>103</minLodPixels>
+          <maxLodPixels>1731</maxLodPixels>
         </Lod>
       </Region>
       <Icon>
         <href>../../../02-tiles/subsurface_khaz_algar/0/0/0.png</href>
       </Icon>
       <LatLonBox>
-        <north>-7.01260000</north>
-        <south>-10.79260000</south>
-        <east>161.54867500</east>
-        <west>157.96172500</west>
+        <north>-0.75650000</north>
+        <south>-16.75650000</south>
+        <east>166.47704900</east>
+        <west>151.30015100</west>
       </LatLonBox>
     </GroundOverlay>
   </Document>

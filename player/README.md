@@ -2,7 +2,7 @@
 
 Play on the hosted campaign board in **Google Earth Pro**.
 
-**Globe:** v3 · Built 2026-06-27
+**Globe:** v3 · Built 2026-06-28
 
 ---
 
